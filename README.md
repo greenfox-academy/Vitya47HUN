@@ -1,1 +1,1 @@
-https://github.com/greenfox-academy/Vitya47HUN
+https://vitya47hun.github.io/
