@@ -1,0 +1,164 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+.background{
+
+  background-color: rgba(55, 76, 29, 0.8);
+}
+
+main{
+  text-align: left;
+  margin: 0px 16px;
+  padding-left: 21.5%;
+  padding-right: 21.5%;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  line-height: 30px;
+
+}
+
+header{
+  border-top: 4px black solid;
+  height: 411px;
+  width: auto;
+  background-image: url(anakin.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+  margin: 0px 25px;
+
+}
+
+.intro{
+  font-family: 'Abril Fatface', cursive;
+  font-weight: light;
+ line-height: 30px;
+ text-align: center;
+ font-weight: lighter;
+ color: rgba(0, 0, 0, 0.8);
+
+ }
+
+ .intro1{
+   font-size: 35px;
+   padding: 250px 430px 0px 0px;
+ }
+
+.intro2{
+   font-size: 70px;
+   padding: 20px 80px 0px 0px;
+ }
+
+.mainsects{
+padding: 40px 0px;
+}
+
+.subheadings{
+  padding: 0px 0px 40px 0px;
+}
+span{
+
+  font-weight: bolder;
+}
+
+.lists{
+padding: 30px 50px 20px 50px;
+line-height: 25px;
+list-style: square;
+
+}
+
+.simlist{
+
+padding: 15px 50px 20px 50px;
+
+}
+
+h4{
+
+  font-style: italic;
+}
+
+.subheadings{
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.quotes{
+  font-family: 'Abril Fatface', cursive;
+  font-size: 50px;
+  color: white;
+  background-color: #444;
+  height: 170px;
+  text-align: left;
+  padding: 50px 0px 20px 50px;
+  line-height: 70px;
+  margin: 0px -70px;
+  background-image: url(qutation.png);
+  background-size: 7%;
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+
+.quote1 {
+  height: 100px;
+  padding: 50px 20px 20px 20px;
+  margin: 0px -40px;
+}
+
+.border {
+
+  border-top: 4px solid black;
+  padding-top: 20px;
+  margin-top: 40px;
+  padding-bottom: 40px;
+  margin-bottom: 10px;
+
+}
+
+.texthead{
+padding-bottom: 20px;
+}
+
+.maintext {
+font-size: 12px;
+word-spacing: .5px;
+line-height: 17px;
+font-weight: bold;
+padding-bottom: 20px;
+}
+
+.share a {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  text-indent: 110%;
+  overflow: hidden;
+  background-size: contain;
+  position: relative;
+  transition: top .5s, left .5s, box-shadow .5s;
+  box-shadow: grey;
+  top: 0px;
+  left: 0px;
+}
+
+.share a:hover {
+  top: -5px;
+  left: -5px;
+  box-shadow: 5px 5px 0 grey
+}
+
+.facebook {
+  background: url(facebook.svg);
+}
+
+.lightsaber {
+  background: url(lightsaber.svg);
+  box-shadow: grey;
+}
+
+.linkedin {
+  background: url(linkedin.svg);
+}

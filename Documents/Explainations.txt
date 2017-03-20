@@ -1,0 +1,100 @@
+<html> HTML tag defines that its an HTML document. The html element represents the root of a document. It's a container for all other html elements
+
+<head> head of the html, here you determine the settings, references, charactersets.,stores metadata
+
+<link> link to an other file, css, which your webpage is going to use
+
+<script> element either contains scripting statements, or it points to an external script file through the src attribute.
+	Common uses for JavaScript are image manipulation, form validation, and dynamic changes of content.
+
+<body> body of the webpage, it wraps up the content.
+
+<meta> provides metadata about the HTML document, used by browsers, search engines
+       determines metadata as: characterset, keywords, author etc...
+
+<title> title of your webpage, it appears on the sidebar.
+
+<h1> - <h6> headings, articlen belül 1db h1, oldalanként 1db h1.
+
+<p> paragraph, unformatted paragraph
+
+<a> anchor, reference to another webpage, document
+
+<img> image
+
+<article> main article of the webpage, search engines find these.
+
+<aside> defines some content aside from the content it is placed in.
+	The aside content should be related to the surrounding content.
+
+<strong> nem gyakran hasznalt, kiemeles betunek, fontosabb rész,felolvasó program számára fontosabb
+
+<em> dõltbetû,nem fontosabb a felolvasó program számára
+
+<q> idézet, inline elem
+
+<span> The tag provides no visual change by itself. (jelentés nélkül in-line akarok valamit csinálni)
+The tag provides a way to add a hook to a part of a text or a part of a document.
+When the text is hooked in a span element you can add styles to the content, 
+or manipulate the content with for example JavaScript.
+
+<div> divides sections
+
+<header> it says to the software, its not part of the article, its the articles header
+
+<main>  represents the main content of  the <body> of a document or 
+application. The main content area consists of content that 
+is directly related to, or expands upon the central topic of a 
+document or the central functionality of an application.
+
+<footer> A footer typically contains information about the author of the section, copyright data or links to related documents.
+
+<section> sectioning is only for styling purposes.epresents a generic section of a document, i.e., a thematic grouping of content, typically with a heading.
+
+<ul> unordered list
+
+<ol> ordered list
+
+<li> list element
+
+<dl> definiton list
+
+<dd> tag is used to describe a term/name in a description list.
+     tag you can put paragraphs, line breaks, images, links, lists, etc.
+
+<dt> defines terms/names
+
+<pre> text, preedited text
+
+<br> line break
+
+<hr> horizontal line
+
+class - osztaly , can add multiple, nem kezdõdhet számmal, nem lehet benne space.
+id - uniqe identification
+Descendant selector - leszarmazott selectorok , div p, .wrap p, valami valamit tartalmaz
+Conflict - utkozes, hiba , 2 same rule for the same div,p,etc.
+Inheritance - örökölt érték
+Specificity - specifikusság, egy element mennyivel van elõrébb 1 másiknál : ID=100 PONT CLASSES =10PONT stb...
+The Box model - box model, element-width-height-padding-margin
+Shorthand - CSSben több adat meghatarozasa 1 sorban
+Default browser styles - a böngészõ alap beállítása,  stílusa : betütípus , szín , amit ha nem adunk meg értéket akkor a defaultot állítja be.
+
+Multiple elements selector - 
+Combine selectors - article.bees
+Universal selector - * , Selects every element including the default browser rules
+Attribute selector - id , class alapjan valo kivalasztas. div[href]{
+Child selector  -  1 levellel kissebb , tartalom. #main-conent > p{
+Adjacent selector - olyan selector ami 1 bizonyos dolog után választ, szomszédos dolgot választ
+Pseudo selector - special keywords that go after selectors, can be used to give effect, react when user hovers his cursor over text etc...
+first-child, last-child, nth-child, nth-type - x edik gyermek, kiválasztása, 
+important - !important
+font-size - betu meretek
+font-family - font típusok
+text-decoration - font dekoralas,alahuzott, athuzott stb
+font-weight - betuvastagsag
+text-transform - szoveg atalakitas, nagybetu minden szonak, stb
+block element - !
+inline element - !
+inline-block - !
+comments -

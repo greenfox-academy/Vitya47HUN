@@ -1,0 +1,14 @@
+CSS BEN
+
+. AZ CLASSRA UTAL
+# ID-RE UTAL
+
+P{
+	color:red !important       - felülírja a másik egybeesõ szabályokat!
+}
+
+
+
+  border-top-width: 10px;
+  border-top-style: solid;
+  border-top-color: blue;      ugyanaz mint : border-top: 10px solid blue;

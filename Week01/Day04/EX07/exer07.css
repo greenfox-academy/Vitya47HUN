@@ -1,0 +1,25 @@
+.big{
+
+  color: blue;
+
+}
+
+.container div{
+  border: 1px;
+  border-color: green;
+  border-style: solid;
+
+}
+
+div.asteroid{
+
+  font-weight: bold;
+  font-family: 'Arial', serif;
+
+}
+
+p.big{
+
+  background-color: yellow;
+  background-size: contain;
+}

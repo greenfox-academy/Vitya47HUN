@@ -1,0 +1,42 @@
+article{
+  font-size: 20px;
+  font-weight: normal;
+}
+
+article h2{
+  font-size: 2em;
+
+}
+
+article p{
+  font-size: 80%
+  font-family: arial, helvetica, sans-serif;
+}
+
+a{
+  text-decoration: line-through;
+  font-weight: normal;
+}
+
+article p{
+  text-transform: capitalize;
+
+}
+
+h1{
+background: url(https://upload.wikimedia.org/wikipedia/commons/7/71/2010-kodiak-bear-1.jpg)
+
+}
+
+p{
+  letter-spacing: 5px;
+  word-spacing: 10px;
+  line-height: 20px;
+}
+.bees{
+  background-color: white;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Small-city-symbol.svg/348px-Small-city-symbol.svg.png), url(http://www.adweek.com/galleycat/files/2013/01/logo-mark-black-300x300.jpeg);
+  background-size: 100px;
+  border: black 5px solid;
+  border-radius: 2px 5px 10px 20px;
+}

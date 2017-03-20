@@ -1,0 +1,41 @@
+.main-content{
+  background-color: #4285F4;
+  height: 512px;
+  width: 340px;
+  font-size: 36px;
+  font-family: sans-serif;
+  color: white;
+  padding: 20px;
+}
+
+.box{
+  width: 340px;
+  height: 40px;
+  text-align: center;
+  padding: 40px 0px 48px 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+
+}
+
+.north{
+  background-color: #E67676;
+
+}
+
+.east{
+  background-color: #F2F062;
+
+}
+
+
+
+.south{
+  background-color: #A9E6E6;
+
+}
+
+.west{
+  background-color: #7692E4;
+
+}

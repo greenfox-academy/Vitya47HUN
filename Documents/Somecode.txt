@@ -1,0 +1,239 @@
+var offset = 30;
+var size = 30;
+c.fillStyle ="lime";
+c.fillRect(0, 0, 500, 500);
+c.fillStyle ="black";
+c.fillRect(25, 0, 30, 60);
+c.fillRect(340, 0, 30, 60);
+c.fillRect(40, 150, 15, 15);
+offset = + 15;
+c.fillRect(25 , 150 + offset, 15, 15);
+c.fillRect(55 , 120 + offset , 15, 15);
+c.fillRect(55 , 120 + offset , 285, 15);
+c.fillRect(340 , 135 + offset, 15, 15);
+c.fillRect(355 , 150 + offset, 15, 15);
+c.fillRect(355 , 165 + offset, 15, 15);
+c.fillRect(55 , 120 + offset , 15, 15);
+offset = + 90;
+c.fillRect(25 , 90 + offset, 15, 15);
+c.fillRect(40 , 105 + offset , 15, 15);
+c.fillRect(55 , 120 + offset , 285, 15);
+c.fillRect(340 , 105 + offset, 15, 15);
+c.fillRect(55 , 120 + offset , 15, 15);
+c.fillStyle ="white";
+c.fillRect(40, 30, 15, 15);
+c.fillRect(340, 30, 15, 15);
+c.fillStyle ="yellow";
+offset = 55;
+c.fillRect(offset , 150, 15, 60);
+offset = offset + 30;
+c.fillRect(offset, 150, 15, 60);
+offset = offset + 30;
+c.fillRect(offset, 150, 15, 60);
+offset = offset + 30;
+c.fillRect(offset, 150, 15, 60);
+offset = offset + 30;
+c.fillRect(offset, 150, 15, 60);
+offset = offset + 30;
+c.fillRect(offset, 150, 15, 60);
+offset = offset + 30;
+c.fillRect(offset, 150, 15, 60);
+offset = offset + 30;
+c.fillRect(offset, 150, 15, 60);
+offset = offset + 30;
+c.fillRect(offset, 150, 15, 60);
+offset = offset + 30;
+c.fillRect(offset, 150, 15, 60);
+c.fillRect(15, 175, 365, 10);
+var size = 45;
+
+if (size < 50) {
+  c.fillStyle = "rgba(0, 0, 120, 0.6)";
+  c.fillRect(0, 0, 500, 500);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+var size = 80;
+var offset = 20;
+
+c.fillStyle ="blue";
+for (var i = 0; i < 3; i = i + 1) {
+  c.fillRect(offset, offset, size, size);
+  offset = offset + 40;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+var size = 20;
+var offset0 = 0;
+var offset1 = 0;
+
+c.fillStyle ="crimson";
+for (var i = 0; i < 15; i = i + 1) 
+{
+  
+  c.fillRect(offset0, offset1, size, size);
+  
+  c.fillRect(offset0, offset1 + 40, size, size);
+
+  offset0 = offset0 + 30;
+  offset1 = offset1 + 15;
+ 
+}
+var size = 20;
+var offset0 = 375;
+var offset1 = 0;
+
+c.fillStyle ="green";
+for (var i = 0; i < 15; i = i + 1) 
+{
+  
+  c.fillRect(offset0, offset1, size, size);
+  
+  c.fillRect(offset0, offset1 + 40, size, size);
+
+  offset0 = offset0 - 30;
+  offset1 = offset1 + 15;
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+var size = 20;
+var offset1 = 0;
+var offset2 = 0;
+
+for (var i = 0; i < 20; i = i + 1) {
+  var b = i * 25;
+  var rgba = "rgba(100, 255, " + b + ", 0.8)";
+  c.fillStyle = rgba;
+  c.fillRect(offset1, offset2, size, size);
+  offset1 = offset1 + 5;
+  offset2 = offset2 + 15;
+}
+var size = 20;
+var offset1 = 100;
+var offset2 = 0;
+
+for (var i = 0; i < 20; i = i + 1) {
+  var b = i * 25;
+  var rgba = "rgba(100, 0, " + b + ", 0.8)";
+  c.fillStyle = rgba;
+  c.fillRect(offset1, offset2, size, size);
+  offset1 = offset1 + 10;
+  offset2 = offset2 + 10;
+}
+var size = 20;
+
+var offset1 = 200;
+var offset2 = 0;
+
+//for (var j = 0; j < 20; j = j - 5)
+
+for (var i = 1; i < 20; i = i + 0.6) {
+  var b = i * 25;
+  var rgba = "rgba(50, 100, " + b + ", 0.8)";
+  c.fillStyle = rgba;
+  c.fillRect(offset1, offset2, size-i, size-i);
+  offset1 = offset1 - 10;
+  offset2 = offset2 + 10;
+}
+
+
+
+
+
+
+
+
+
+
+
+c.fillStyle ="lime";
+c.beginPath();
+c.moveTo(30, 20);
+c.lineTo(40, 155);
+c.lineTo(100, 155);
+c.lineTo(100, 250);
+c.lineTo(200, 20);
+c.lineTo(30, 20);
+c.stroke();
+
+
+
+
+
+
+
+
+
+
+
+
+
+var pane = document.getElementById('pane');
+
+pane.onmousemove = function(evt) {
+  var x = evt.clientX;
+  var y = evt.clientY;
+  c.fillRect(x, y, 40, 40);
+};
+
+
+
+
+
+
+
+
+
+
+
+________________________
+
+<br> nagyobb hangv. szünet
+<a href="http://muledesign.com/" target="_blank"> link új lapon
+<strong> kijelölés
+<em> kiemel döltbetû
+<article> tartalom jelentése
+<body> tartalom megjelölés
+<head> fõinformációk,metainformációk 
+<meta> karakterinformáció stb
+
+__________________________
+css - cascading stylesheet
+
+a - selector | { - bracket | color -  property: | purple; - value  | }
+
+
+

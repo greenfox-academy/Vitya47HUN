@@ -1,0 +1,26 @@
+span[class]{
+
+  color: purple;
+
+}
+
+div[id]{
+
+background: grey;
+}
+
+a[title="Google"]{
+
+  color: red;
+}
+/* THIS MEANS IF INCLUDED THE DECK TAG ASWELL*/
+span[class~="deck"]{
+
+  color: purple;
+
+}
+/* THIS MEANS IF HTE HREF ENDS WITH PDF IT SELECTS IT */
+a[href$="pdf"]{
+
+  color: ORANGE;
+}

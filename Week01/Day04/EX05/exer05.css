@@ -1,0 +1,30 @@
+.squarelist{
+
+list-style: square;
+
+}
+.circlelist{
+
+list-style: disc;
+
+}
+
+h1{
+  color: #0000DB;
+}
+
+h2{
+  color: #F39D24;
+}
+
+.red{
+  color:#E20A17;
+}
+
+.blue{
+color: #0C05A0;
+}
+
+.black{
+  color: black;
+}

@@ -1,0 +1,31 @@
+body{
+  text-align: left;
+  margin: 0px auto;
+
+}
+
+.background{
+
+  background-color: rgba(55, 76, 29, 0.8);
+}
+
+header{
+  height: 400px;
+  width: auto;
+  background-image: url(snake.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+}
+
+.intro{
+  font-family: 'Abril Fatface', cursive;
+ padding: inherit;
+ line-height: 5px;
+ text-align: left;
+ position: center;
+
+ }
+
+ .intro.

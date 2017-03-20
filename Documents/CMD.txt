@@ -1,0 +1,52 @@
+pwd - print working directory
+ls - list directories
+ls -a    - list the files aswell, hidden aswell
+mkdir - make a directory, only works on empty dir
+cd .. - take you back to previous directory
+cd ~ - takes back to home dir
+cd / - takes back to root
+rmdir - delete directory
+rm -R - remove everything with dir
+touch - it creates new file inside the directory
+-l - lists all contents of a directory in long format
+-t - order files and directories by the time they were last modified.
+ls -alt - lists all contents, including hidden files and directories, in long format, ordered by the date and time they were last modified.
+cp - copies files or dirs into a directory
+* select all file in the working directory
+mv - moves files or rename files
+echo - 
+standard input, abbreviated as stdin, is information inputted into the terminal through the keyboard or input device.
+standard output, abbreviated as stdout, is the information outputted after a process is run.
+standard error, abbreviated as stderr, is an error message outputted by a failed process.
+< - jobboldali inputot kuldi a baloldalira, filebol kifele viszi commandba
+> - command redirects the standard output to a file. overwrites all original content
+cat - command outputs the contents of a file to the terminal. 
+>> - adds the output to the file, adds to original content
+| - 2 parancs egyszerre
+sort - sorts alphabetical in file
+uniq - stands for "unique" and filters out adjacent, duplicate lines in a file.
+grep - stands for "global regular expression print". It searches files for lines that match a pattern and returns the results. It is also case sensitive., 
+grep -i - enables the command to be case insensitive. 
+grep -r - megmutatja a filenevet is
+grep -R Arctic - can also be used to search within a directory. In the terminal
+sed - stands for "stream editor". It accepts standard input and modifies it based on an expression, before displaying it as output data. It is similar to "find and replace".
+	's/snow/rain/'
+	s: stands for "substitution". it is always used when using sed for substitution.
+	snow: the search string, the text to find.
+	rain: the replacement string, the text to add in place.
+
+nano ~/.bash_profile
+
+echo -  creates text in the bash profile, which is saved
+	The ~ represents the user's home directory.
+	The . indicates a hidden file.
+
+ source ~/.bash_profile activates the changes in ~/.bash_profile for the current session. Instead of closing the terminal and needing to start a new session, source makes the changes available right away in the session we are in.
+
+alias - command allows you to create keyboard shortcuts, or aliases, for commonly used commands.
+	alias pd="pwd" - creates the alias pd for the pwd command, which is then saved in the bash profile. Each time you enter pd, the output will be the same as the pwd command.
+
+export - makes the variable to be available to all child sessions initiated from the session you are in. 
+This is a way to make the variable persist across programs.
+echo $USER - returns the value of the variable. 
+env - stands for "environment", and returns a list of the environment variables for the current user.

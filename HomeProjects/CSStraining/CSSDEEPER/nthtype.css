@@ -1,0 +1,14 @@
+/* 2. P ELEMENT CHILD OF SOMETHING */
+
+p:nth-child(2){
+    background: grey;
+}
+
+/* 2ND TYPE OF THAT SPECIFIC ELEMNT */
+p:nth-of-type(2){
+    background: orange;
+}
+
+li:nth-of-type(odd){
+    background: orange;
+}

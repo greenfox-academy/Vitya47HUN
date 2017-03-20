@@ -1,0 +1,12 @@
+a:hover{
+  color: green;
+}
+
+/* WHEN YOU CLICK*/
+a:active{
+  color: orange;
+}
+
+a:visited{
+  color: purple;
+}

@@ -1,0 +1,2 @@
+cat < lakes.txt
+cat lakes.txt 

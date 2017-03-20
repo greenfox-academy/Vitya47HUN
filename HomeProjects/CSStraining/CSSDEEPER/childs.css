@@ -1,0 +1,21 @@
+article p:first-of-type{
+  font-weight: bolder;
+}
+
+article p:last-of-type{
+  color:red
+}
+
+/* YOU CAN USE THIS
+li:nth-child(2), li:nth-child(4){
+font-weight: bold;
+}
+
+li:nth-child(even){
+  background: pink;
+}
+*/
+
+li:nth-child(3n + 1){
+  color: green;
+}

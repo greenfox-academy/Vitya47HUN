@@ -1,0 +1,11 @@
+/* COMMENT */
+#all-articles h2 + p{
+
+color: green;
+
+}
+
+#child-selector > h1{
+
+  color: red;
+}

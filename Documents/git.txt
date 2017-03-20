@@ -1,0 +1,10 @@
+git remote add origin
+push
+pull
+config
+init
+git commit -m "asdasd" 
+git clone
+git rm
+git ignore - ne kovesse a rendszer
+git reset

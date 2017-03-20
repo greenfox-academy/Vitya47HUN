@@ -1,0 +1,16 @@
+p{
+
+  width: 350px;
+  text-align: left;
+  font-size: 18px;
+  border-left-color: black;
+  border-left-style: solid;
+  border-left-width: 2px;
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+h1{
+
+  font-size: 34px;
+}
