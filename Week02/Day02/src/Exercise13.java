@@ -91,14 +91,20 @@ public class Exercise13 {
     int j = 1521;
     // tell if j is dividable by 3 or 5 (print as a boolean)
 
-
-
+    if ((j % 3 == j / 3) || (j % 5 == j / 5)) {
+      System.out.println(true);
+    }
+    else {
+      System.out.println(false);
+    }
 
     String k = "Apple";
+    k = k + k + k;
+
     //fill the k variable with its cotnent 4 times
 
 
-    //System.out.println(k);
+    System.out.println(k);
   }
 
 }
