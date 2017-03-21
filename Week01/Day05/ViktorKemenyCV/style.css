@@ -1,0 +1,68 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+.leftside{
+
+  display: inline-block;
+  border: black solid 2px;
+  height: 1000px;
+  width: 550px;
+  text-align: center;
+
+}
+
+.rightside{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  display: inline-block;
+  border: black solid 2px;
+  height: 1000px;
+  width: 750px;
+  text-align: center;
+
+}
+
+img{
+position: relative;
+left: 0px;
+top: 10px;
+
+}
+
+.heading{
+padding-top: 15px;
+
+}
+
+
+.contact a {
+  margin-top: 40px;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  text-indent: 110%;
+  overflow: hidden;
+  background-size: contain;
+  position: relative;
+  transition: top .5s, left .5s, box-shadow .5s;
+  box-shadow: 0 0 0 grey;
+  top: 0px;
+  left: 0px;
+}
+
+.contact a:hover {
+  top: -5px;
+  left: -5px;
+  box-shadow: 5px 5px 0 grey;
+}
+
+.facebook{
+  background: url(facebook.svg);
+}
+
+.linkedin{
+  background: url(linkedin.svg);
+}

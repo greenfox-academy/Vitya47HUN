@@ -1,0 +1,36 @@
+java - virtual machine, multiplatform, foleg szerveroldali alkalmazasok
+IntelliJ IDEA - intelligent development enviorment, IDE,
+statement - kijelentes , a forgatokonyvben 1 elem, csinal vmit a program
+	pl :  System.out.println("alma");
+
+psvm - public static void ... gyorsgomb.
+sout - System.out.print .... gyorsgomb
+
+
+/* Equal to ------------ ==
+ * Greater than -------- >
+ * Less than ----------- <
+ * Not equal to -------- !=
+ * Less OR equal to ---- <=
+ * Greater OR equal to - >=
+
+
+boolean a = ;
+variable - ertekek amiknek neveket adunk
+	String - szoveg
+	boolean - igen/nem true/false
+	(float - 0.52)
+	double - 3.14 inkabb mint float
+	int - 199999
+		int aples = 123;
+
+operator - 
+	% maradekot ad
+	+= annyit ad hozza valtozohoz
+	++ 1el megnoveli a valtozot
+	== vizsgalja h egyenlo,ugyan az -e, nem pedig ugyanolyan -e szamokon kivul ,true or false
+	! nem egyenlo
+	|| vagy operator
+	&& es operator erosebb mint a vagy
+	
+for - while kibovitve ,
