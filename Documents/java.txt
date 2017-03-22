@@ -34,3 +34,15 @@ operator -
 	&& es operator erosebb mint a vagy
 	
 for - while kibovitve ,
+
+Scanner scanner = New Scanner(System.in);
+String answer = scanner.nextLine();
+Systen.out.println(answer);
+
+
+Array - list of data , datastructure , x number of bubbles
+	pl : int arrayname[]=new int[10];  second number is how many values,variables u gonna store
+		arrayname[1] = 21;
+		arrayname[2] = 21;
+	VAGY
+		int arrayname[]={2,5,6,3,6,1};
