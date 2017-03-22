@@ -2,7 +2,6 @@ import java.util.Scanner;
 public class Exercise28 {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
-
     System.out.println("Type a number");
     int userInput1 = scanner.nextInt();
     for (int i=1; i<userInput1; i += 2)
