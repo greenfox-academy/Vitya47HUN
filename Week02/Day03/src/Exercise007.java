@@ -5,10 +5,6 @@ public class Exercise007 {
   public static void main(String[] args) {
 
     int q[] = {4,5,6,7};
-    System.out.println();
-  }
-
-  public static int printer(int print) {
-
+    System.out.println(q[2]);
   }
 }

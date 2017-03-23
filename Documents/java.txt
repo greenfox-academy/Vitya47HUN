@@ -46,3 +46,84 @@ Array - list of data , datastructure , x number of bubbles
 		arrayname[2] = 21;
 	VAGY
 		int arrayname[]={2,5,6,3,6,1};
+
+Declaring
+constants - 
+	final - nem valtoztathato szam
+initial values of arrays {}
+new keyword - 
+Functions
+void - csinal valamit
+return a value - vissza ad erteket
+
+can be used to compartmentalise code (make more readable)
+have own variables
+take parameters
+Arrays
+can be measured (have length)
+can be iterated through
+type definition (e.g. String[])
+toString - szovegge alakitas
+copyOf - lemasol
+sort - elrendezes
+binarySearch - megfelezi a dolgot, megkeresi az adott szamot ezzel a modszerrel.
+for each statement - milyen tipusu adatokkal dolgozok, megadok 1 valtozo nevet s megmondom, hogy mibol 
+		kerem ezt a dolgot
+
+
+
+
+ArrayLists - collection - are objects which group multiple elements into a single unit, variable size
+		they are dynamic size, can store objects only
+
+ 
+means to add and remove
+.addAll()
+.contains() 
+.containsAll()
+.clear()
+.isEmpty()
+initialize
+what are the situation? empty, with values
+how does one use such; loops
+.add() (to the next position, at an index)
+.remove() (by index, by value) - remove stored element from memory
+.set()
+.size() - 
+.isEmpty()
+searching: .contains(), .containsAll()
+assigning between arrays (copying .toArray(), .addAll())
+casting as string .toString()
+
+String
+
+.length() - karakterek szama, hossza
+.subString() - is going to print everything after the given index
+.replace() - kicserel 2 karaktert
+.charAt() - prints the n th character
+.equals() - egyenlo
+.compare() - osszeveti a 2 stringet s a kulonbseget mutatja ASCII kodban
+.toLowerCase() - prints strings lowercase
+.contains() - igaz hamisat ad vissza, ha van e benne olyan elem amire rakeresunk.
+.endsWith() - azzal vegzodik, hogy... true falset ad vissza
+.startsWith() - azzal kezdodik, true falset ad vissza
+.indexOf() - index of the first something going to print out, legelso erteket kiirja
+	pl : String s = "word rrrrgf"   ---> 2
+	
+.lastIndexOf()
+.split()
+HashMap - 
+key - hashmap neve, taroloja
+value - ertek, adat amit eltarol a memoria
+.put() - put values into strings
+.get() - get indexes, elements printed
+Object
+
+sout" something.toUpperCase() - makes strings uppercase
+sout" something.concat() - fancy word to add together 2 things
+if something.startsWith("word") - if valami ezzel kezdodik.
+if something.equals() - egyenlo
+if something.equalsIgnoreCase() - egyenlo nem figyelembe veve a kis nagy betuket
+
+
+

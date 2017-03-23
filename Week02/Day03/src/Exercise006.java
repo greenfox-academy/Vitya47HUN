@@ -4,18 +4,30 @@
 // - Create a function called `printer`
 //   which prints the input String parameters
 //   (can have multiple number of arguments)
-public class Exercise006 {
-  public static void main(String[] args) {
-    String [] texts = {"a","b","c","d"};
+import java.util.Scanner;
+    public class Exercise006 {
+      public static void main(String[] args) {
+        Scanner myScanner = new Scanner(System.in);
+        System.out.println("How many lines do you want to print?");
+        int linesToPrint = myScanner.nextInt();
 
-    printer(texts);
-  }
+        String[] toPrint = new String[linesToPrint];
 
-  public static void printer(String... texts) {
-    for (String random:texts) {
-      System.out.println(random);
+        myScanner.nextLine();
 
-    }
+        for (int i = 0; i < linesToPrint; i++) {
+          System.out.println("Line " + (i + 1) + " please:");
+          toPrint[i] = myScanner.nextLine();
+        }
+
+        printer(toPrint);
+      }
+
+      private static void printer(String... toPrint) {
+
+        for (String print : toPrint) {
+          System.out.println(print);
+        }
 
   }
 }
