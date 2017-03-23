@@ -4,10 +4,11 @@
 public class Exercise02 {
   public static void main(String... args) {
     String url = "https//www.reddit.com/r/nevertellmethebots";
-    String url2 =  url.replace("bots","odds");
-    String url3 = url.substring(6) + ":" ;
+    String url2 = url.replace("bots","odds");
+    url2 = url2.substring(5,url2.length());
+    String url4 = url.substring(0,5) + ":" ;
 
-    System.out.println(url3);
+    System.out.println(url4 + url2);
   }
 }
 
