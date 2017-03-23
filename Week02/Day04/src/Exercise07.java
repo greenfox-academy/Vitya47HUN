@@ -9,11 +9,10 @@ public class Exercise07 {
 
     for (int i = 0; i < length; i++) {
 
-
       order.add(girls.get(i));
       order.add(boys.get(i));
-      System.out.print(order);
     }
+    System.out.print(order);
   }
 }
 
