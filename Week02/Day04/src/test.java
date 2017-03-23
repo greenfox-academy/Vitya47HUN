@@ -5,23 +5,11 @@
 public class test {
   public static void main(String... args) {
     String reversed = ".eslaf eb t'ndluow ecnetnes siht ,dehctiws erew eslaf dna eurt fo sgninaem eht fI";
-
-
-    System.out.print(reversed.charAt());
     int count = reversed.length();
+    for (int i = count - 1; i >= 0; i--){
 
-  }
-
-  public static int returnnum(int count) {
-
-    for (int i = count; i >= 0; i--) {
-
+      System.out.print(reversed.charAt(i));
     }
-    return ;
-
-
   }
-
-
 }
 
