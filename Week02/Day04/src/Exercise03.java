@@ -8,6 +8,7 @@ public class Exercise03 {
     String quote2 = "always takes longer than ";
             quote =  quote.substring(0,quote.indexOf("you"))+ quote2 + quote.substring(quote.indexOf("you"),quote.length());
     System.out.println(quote);
+
   }
 }
 
