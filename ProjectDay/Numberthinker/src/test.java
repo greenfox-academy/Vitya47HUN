@@ -1,6 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
-public class NumberThinker {
+public class test {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     System.out.println("Please give a boundary of 0 - x!");
@@ -12,7 +12,7 @@ public class NumberThinker {
     System.out.println("Please think of a number between 1 - " + boundary);
 
     int lives = 4;
-    while (lives >= 0) {
+    for (int i = lives;i >= 0; i--) {
       int answer = scanner.nextInt();
 
       if (answer == randomNumber) {
@@ -31,4 +31,3 @@ public class NumberThinker {
     }
   }
 }
-
