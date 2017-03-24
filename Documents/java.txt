@@ -70,28 +70,27 @@ binarySearch - megfelezi a dolgot, megkeresi az adott szamot ezzel a modszerrel.
 for each statement - milyen tipusu adatokkal dolgozok, megadok 1 valtozo nevet s megmondom, hogy mibol 
 		kerem ezt a dolgot
 
-
+new - ha new al hozok letre lesznek tulajdonsagai, erteke
 
 
 ArrayLists - collection - are objects which group multiple elements into a single unit, variable size
 		they are dynamic size, can store objects only
 
  
-means to add and remove
-.addAll()
-.contains() 
-.containsAll()
-.clear()
-.isEmpty()
+.addAll() - 
+.contains() - megnezi van e benne olyan elem
+.containsAll() - megnezi hogy minden eleme benne van e
+.clear() - kiszedi az osszes elemet az arraylistnek
+.isEmpty() - megnezi ures e az array
 initialize
-what are the situation? empty, with values
-how does one use such; loops
-.add() (to the next position, at an index)
-.remove() (by index, by value) - remove stored element from memory
-.set()
-.size() - 
-.isEmpty()
+
+.add() (to the next position, at an index) - hozza ad elemet
+.remove() (by index, by value) - remove stored element from memory - kitorol 1 elemet
+.set() - megvaltoztat 1 indexet 1 masik ertekre
+.size() - meret
+.isEmpty() - megnezi ures e az array , true or false
 searching: .contains(), .containsAll()
+
 assigning between arrays (copying .toArray(), .addAll())
 casting as string .toString()
 
@@ -110,8 +109,8 @@ String
 .indexOf() - index of the first something going to print out, legelso erteket kiirja
 	pl : String s = "word rrrrgf"   ---> 2
 	
-.lastIndexOf()
-.split()
+.lastIndexOf() - legutolso elofordulast sorszamozza egy karakternek
+.split() - elvalasztja
 HashMap - 
 key - hashmap neve, taroloja
 value - ertek, adat amit eltarol a memoria

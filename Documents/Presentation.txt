@@ -1,0 +1,23 @@
+- My name is K.V
+- My Project is going to be the palindrome builder.
+- Program mukodese.
+
+- Hogy epitettem fel : kissebb tavlatu celokat tuztem magam ele.
+			-mindig  a leheto legrovidebb megoldas megtalalasa, legkevesebb sorbol valo
+			megoldas.
+			- kerdez felelek megirasa
+			- valasz eltarolasa
+			- a valaszom viszont kiirasa
+			- a valaszom palindromma alakitasa --> a valaszomat 2szer irta ki egymas melle
+						
+	
+
+
+- kerdezz felelek :
+		- hatarertek megadasa 1 sorban,
+		- a valasz string INT -e alakitasa
+		- a valasz alapjan a program 2 opciot irhat ki, nagyobb, kissebb
+		- az eletek szamlalasa, csokkentese
+		- ujra kerdezes rossz talalat utan
+		- gyozelem vereseg utan , program leallitas
+		- fenallo hiba, ha szam helyett Stringet irok be
