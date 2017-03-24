@@ -9,18 +9,18 @@ public class Palindrome {
       if (answer.equals("Exit program")) {
         System.exit(0);
       } else {
-        System.out.println(answer + createPalindrome(answer));
+        System.out.println(answer + reversePalindrome(answer));
       }
     } while (true);
   }
 
-  public static String createPalindrome(String index) {
-    int length = index.length();
-    String answer2 = "";
+  public static String reversePalindrome(String text) {
+    int length = text.length();
+    String reversed = "";
     for (int i = length - 1; i >= 0; i--) {
-      answer2 = answer2 + index.charAt(i);
+      reversed = reversed + text.charAt(i);
     }
-    return answer2;
+    return reversed;
   }
 
 }
