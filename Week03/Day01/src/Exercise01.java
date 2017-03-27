@@ -12,12 +12,20 @@ public class Exercise01 {
     try {
       Path filePath = Paths.get("otos.csv");
       List<String> lines = Files.readAllLines(filePath);
-      for(int i = 0;i < lines.size();i++)
-        System.out.println(Arrays.toString(lines.get(i).split(";")));
+//      for(int i = 0;i < lines.size();i++) {
+//        List<String> subList = lines.subList(lines.size()-5, lines.size() - 1);
+//        System.out.println(subList);
+
+//      }
+      List<String> list = Arrays.asList(lines.get(0).split(";"));
+      List<String> allNumbers = "";
+      System.out.println(list.subList(list.size()-5, list.size()));
+
 
     }
 
     catch (Exception e){
+      e.printStackTrace();
       System.out.println("Error");
     }
   }
