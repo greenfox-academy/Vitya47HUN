@@ -12,14 +12,12 @@ public class Exercise01 {
     try {
       Path filePath = Paths.get("otos.csv");
       List<String> lines = Files.readAllLines(filePath);
-//      for(int i = 0;i < lines.size();i++) {
-//        List<String> subList = lines.subList(lines.size()-5, lines.size() - 1);
-//        System.out.println(subList);
+      for(int i = 0;i < lines.size();i++) {
 
-//      }
-      List<String> list = Arrays.asList(lines.get(0).split(";"));
-      List<String> allNumbers = "";
-      System.out.println(list.subList(list.size()-5, list.size()));
+        List<String> list = Arrays.asList(lines.get(i).split(";"));
+        List<String> allNumbers = (list.subList(list.size() - 5, list.size()));
+        System.out.println(list.subList(list.size() - 5, list.size()));
+      }
 
 
     }
