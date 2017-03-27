@@ -9,7 +9,7 @@ public class NumberThinker {
     Random nm = new Random();
     int randomNumber = nm.nextInt(Integer.valueOf(boundary));
 
-    System.out.println("Please think of a number between 1 - " + boundary);
+    System.out.println("Please guess a number between 0 - " + boundary);
 
     int lives = 4;
     while (lives >= 0) {
