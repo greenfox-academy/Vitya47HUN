@@ -133,7 +133,7 @@ readAllLines()
 write()
 RuntimeException - mindent elkap
 
-list - 
+list - List<int> myList = valami;
 Arraylist - ArrayList<int> valami = new ArrayList<int>(); -
 
 

@@ -32,9 +32,10 @@ public class Exercise01 {
         map.get(key);
         for (int k = 0; k < key.length(); k++) {
           int max = key.indexOf(k);
-
-          System.out.println(key);
+          System.out.println(max);
         }
+
+//        System.out.println();
 
 //      System.out.println(numbers);
 
