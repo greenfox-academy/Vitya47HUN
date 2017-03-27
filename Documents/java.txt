@@ -124,5 +124,16 @@ if something.startsWith("word") - if valami ezzel kezdodik.
 if something.equals() - egyenlo
 if something.equalsIgnoreCase() - egyenlo nem figyelembe veve a kis nagy betuket
 
+Exception
+try - megprobal lefutni, ha errort kap akkor lefuttatja a catchet
+catch - barmennyi lehet
+Path and Paths.get() - file eleresi utja, scanner tudja megszerezni,
+File - hasonlo mint a path,
+readAllLines()
+write()
+RuntimeException - mindent elkap
+
+list - 
+Arraylist - ArrayList<int> valami = new ArrayList<int>(); -
 
 
