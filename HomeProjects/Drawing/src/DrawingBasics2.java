@@ -4,8 +4,8 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class DrawingBasics2 extends JPanel {
-  public void paintComponent2(Graphics g) {
-    super.paintComponent(g);
+  public void paintComponent (Graphics g) {
+    super.paintComponent (g);
     this.setBackground(Color.WHITE);
 
     g.setColor(Color.BLUE);
@@ -19,6 +19,6 @@ public class DrawingBasics2 extends JPanel {
 
     g.setColor(Color.ORANGE);
     g.fill3DRect(10,160,100,50,true);
-    
+
   }
 }
