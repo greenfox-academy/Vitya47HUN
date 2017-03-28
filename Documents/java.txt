@@ -136,4 +136,12 @@ RuntimeException - mindent elkap
 list - List<int> myList = valami;
 Arraylist - ArrayList<int> valami = new ArrayList<int>(); -
 
-
+Graphics - 
+drawLine, fillLine - 
+drawRect, fillRect - 
+drawOval, fillOval - 
+drawPolygon, fillPolygon - 
+setColor, Color - 
+(int)(Math.random() * 10) - returns a random integer beteen 0 and 9
+50 + (int)(Math.random() * 50) - returns a random integer between 50 and 99
+a + Math.random() * b - returns a random numver between a and a + b, excluding a + b.
