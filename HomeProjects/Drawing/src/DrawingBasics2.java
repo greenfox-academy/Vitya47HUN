@@ -12,7 +12,7 @@ public class DrawingBasics2 extends JPanel {
     g.drawLine(10,25,200,45);
 
     g.setColor(Color.RED);
-    g.drawRect(10,55,100,30);
+    g.drawRect(10,55,(int)(Math.random() * 10),(int)(Math.random() * 20));
 
     g.setColor(Color.GREEN);
     g.fillOval(10,95,100,30);
