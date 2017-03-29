@@ -37,6 +37,16 @@ public class Exercise17 {
       xstart = xstart - 10;
       yfinish = yfinish - 10;
     }
+    xstart = 150;
+    ystart = 150;
+    yfinish = 300;
+    xfinish = 150;
+    for (int l = 0; l < 15; l++) {
+      graphics.setColor(Color.GREEN);
+      graphics.drawLine(xstart, ystart, xfinish, yfinish);
+      xstart = xstart + 10;
+      yfinish = yfinish - 10;
+    }
   }
 
   //    Don't touch the code below
