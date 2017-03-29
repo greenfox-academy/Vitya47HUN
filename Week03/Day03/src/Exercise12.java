@@ -12,8 +12,8 @@ public class Exercise12 {
       graphics.drawRect(xpos, ypos, xsize, ysize);
       graphics.setColor(Color.MAGENTA);
       graphics.fillRect(xpos, ypos, xsize, ysize);
-      xpos = xpos + xpos / 2;
-      ypos = ypos + ypos / 2;
+      xpos = xpos + xsize;
+      ypos = ypos + ysize;
       xsize = xsize + xsize / 2;
       ysize = ysize + ysize / 2;
 
