@@ -11,25 +11,26 @@ public class Exercise09 {
     // and draws a square of that size and color to the center of the canvas.
     // create a loop that fills the canvas with rainbow colored squares.
     Scanner scanner = new Scanner(System.in);
-    System.out.println("Please add the square's fill color and the size (X,Y)");
-    Color inputColor = new Color(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
-    drawSquare(graphics,inputColor, scanner.nextInt(), scanner.nextInt());
 
+    int r = 255;
+    int g = 0;
+    int b = 0;
+    int x = 300;
+    int y = 300;
     for(int i = 0;i < 7; i++){
-      int r = 255;
-      int g = 0;
-      int b = 0;
       Color rainbowColor = new Color(r ,g, b);
-      drawSquare(graphics,rainbowColor, + 30,  + 30);
+      drawSquare(graphics,rainbowColor, x , y);
       r = r - 25;
       g = + 25;
       b = + 25;
+      x = x - 25;
+      y = y - 25;
     }
   }
     public static void drawSquare(Graphics graphics,Color colorinput, int x, int y) {
       graphics.setColor(colorinput);
       y = x;
-      graphics.fillRect(150, 150, x, y);
+      graphics.fillRect(0, 0, x, y);
     }
 
 
