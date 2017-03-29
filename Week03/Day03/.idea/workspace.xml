@@ -56,8 +56,8 @@
       <file leaf-file-name="Exercise18.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Exercise18.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="23" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="136">
+              <caret line="29" column="29" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -697,15 +697,15 @@
       <option name="presentableId" value="Default" />
       <updated>1490714057820</updated>
       <workItem from="1490714060556" duration="432000" />
-      <workItem from="1490770533724" duration="28477000" />
+      <workItem from="1490770533724" duration="28655000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28909000" />
+    <option name="totallyTimeSpent" value="29087000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1112,8 +1112,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Exercise18.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="136">
+          <caret line="29" column="29" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

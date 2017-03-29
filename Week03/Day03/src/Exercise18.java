@@ -22,15 +22,15 @@ public class Exercise18 {
 
   public static void connectPoints(int numbers[][],Graphics graphics) {
     int startx = 0;
-    int sarty = 0;
+    int starty = 0;
     int endx = 0;
     int endy = 0;
-    for (int i = 0;i < numbers.length;i++){
+    for (int i = 0;i < numbers.length - 1;i++){
       startx = numbers[i][0];
-      startx = numbers[i][1];
+      starty = numbers[i][1];
       endx = numbers[i + 1][0];
       endy = numbers[i + 1][1];
-      graphics.drawLine(startx,sarty,endx,endy);
+      graphics.drawLine(startx,starty,endx,endy);
     }
 
   }
