@@ -4,7 +4,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Exercise16 {
 
-  public static void mainDraw(Graphics graphics){
+  public static void mainDraw(Graphics graphics) {
     // divide the canvas into 4 parts
     // and repeat this pattern in each quarter:
     // [https://github.com/greenfox-academy/teaching-materials/blob/master/exercises/drawing/line-play/r1.png]
@@ -12,7 +12,7 @@ public class Exercise16 {
     int yfinish = 0;
     int xstart = 0;
     int ystart = 150;
-    for (int k = 0;k <= 1; k++) {
+    for (int k = 0; k <= 3; k++) {
       if (xstart == 0 && ystart == 150) {
         for (int i = 0; i < 15; i++) {
           graphics.setColor(Color.GREEN);
@@ -20,8 +20,7 @@ public class Exercise16 {
           xstart = xstart + 10;
           yfinish = yfinish + 10;
         }
-      }
-      else {
+      } else if (xfinish == 0 && yfinish == 150) {
         xfinish = 150;
         yfinish = 0;
         for (int j = 0; j < 15; j++) {
@@ -30,9 +29,20 @@ public class Exercise16 {
           ystart = ystart - 10;
           xfinish = xfinish - 10;
         }
+      } else if (xfinish == 0 && ystart == 0) {
+        xstart = 150;
+        yfinish = 150;
+        xfinish = 150;
+        for(int l = 0; l < 15; l++){
+          graphics.setColor(Color.GREEN);
+          graphics.drawLine(xstart, ystart, xfinish, yfinish);
+          xstart = xstart + 10;
+          yfinish = yfinish - 10;
+        }
       }
     }
   }
+
 
 
 
