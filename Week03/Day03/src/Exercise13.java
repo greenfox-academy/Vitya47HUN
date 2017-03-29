@@ -9,9 +9,11 @@ public class Exercise13 {
     int xsize = 25;
     int ysize = 25;
     // fill the canvas with a checkerboard pattern.
-  for(int length = 0; length < 12; length++){
+  for(int length = 1; length < 12; length++){
+
     if (length % 2 == 0){
-      xpos = -25;
+      xpos = + 25;
+      ypos = ypos + 25;
     }
     else {
       xpos = 0;
