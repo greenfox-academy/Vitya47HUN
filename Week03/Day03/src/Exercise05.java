@@ -14,6 +14,10 @@ public class Exercise05 {
     Scanner scanner = new Scanner(System.in);
     System.out.println("Please add X and Y starting point");
     drawLine(graphics, scanner.nextInt(), scanner.nextInt());
+    System.out.println("Please add X and Y starting point");
+    drawLine(graphics, scanner.nextInt(), scanner.nextInt());
+    System.out.println("Please add X and Y starting point");
+    drawLine(graphics, scanner.nextInt(), scanner.nextInt());
 
 
   }
