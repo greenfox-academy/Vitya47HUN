@@ -6,12 +6,20 @@ public class Exercise07 {
 
   public static void mainDraw(Graphics graphics){
     // draw four different size and color rectangles.
+    int xPos = (int) (Math.random() * 300);
+    int yPos = (int) (Math.random() * 300);
+    int xSize = (int) (Math.random() * 100);
+    int ySize = (int) (Math.random() * 100);
+
     int R = (int) (Math.random() * 255);
     int G = (int) (Math.random() * 255);
     int B = (int) (Math.random() * 255);
     Color randomColor = new Color(R ,G, B);
-    graphics.setColor(Color (randomColor));
-    graphics.drawRect(140,140, 10, 10);
+    graphics.setColor(randomColor);
+    graphics.fillRect(xPos,yPos, xSize, ySize);
+    graphics.fillRect(xPos,yPos, xSize, ySize);
+    graphics.fillRect(xPos,yPos, xSize, ySize);
+
 
   }
 
