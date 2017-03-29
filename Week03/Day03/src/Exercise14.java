@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Exercise14 {
@@ -8,16 +9,28 @@ public class Exercise14 {
     // the x and y coordinates of the line's starting point
     // and draws a line from that point to the center of the canvas.
     // fill the canvas with lines from the edges, every 20 px, to the center.
-    int x = 0;
-    int y = 0;
+    int xi = 0;
+    int yi = 0;
 
-    drawLine(graphics, x, y);
+    drawLine(graphics,xi , yi);
   }
 
-    public static void drawLine (Graphics graphics, int x, int y) {
-      graphics.setColor(Color.blue);
-      graphics.drawLine(x, y, 50, 50);
+  public static void drawLine(Graphics graphics, int x, int y) {
+    int xi = 0;
+    int yi = 0;
+    for (int i = 0; i < 15; i++) {
+      if (xi == 300) {
+        graphics.setColor(Color.blue);
+        graphics.drawLine(xi, yi, 150, 150);
+        yi = yi + 20;
+      }
+      else if(yi == 0) {
+        graphics.setColor(Color.blue);
+        graphics.drawLine(xi, yi, 150, 150);
+        xi = xi + 20;
+      }
     }
+  }
 
 
   //    Don't touch the code below
@@ -30,7 +43,7 @@ public class Exercise14 {
     jFrame.setVisible(true);
   }
 
-  static class ImagePanel extends JPanel{
+  static class ImagePanel extends JPanel {
     @Override
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
