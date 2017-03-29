@@ -10,11 +10,23 @@ public class Exercise13 {
     int ysize = 25;
     // fill the canvas with a checkerboard pattern.
   for(int length = 0; length < 12; length++){
+    if (length == 0){
+    }
+    else {
+      xpos = 0;
+      ypos = ysize + 25;
+    }
     for (int row = 0; row < 12; row++){
-      graphics.setColor(Color.BLACK);
-      graphics.fillRect(xpos, ypos, xsize, ysize);
-      xpos = xpos + xsize;
-
+      if (row % 2 == 0) {
+        graphics.setColor(Color.BLACK);
+        graphics.fillRect(xpos, ypos, xsize, ysize);
+        xpos = xpos + xsize;
+      }
+      else {
+        graphics.setColor(Color.WHITE);
+        graphics.fillRect(xpos, ypos, xsize, ysize);
+        xpos = xpos + xsize;
+      }
 
     }
   }
