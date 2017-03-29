@@ -20,17 +20,16 @@ public class Exercise09 {
     for(int i = 0;i < 7; i++){
       Color rainbowColor = new Color(r ,g, b);
       drawSquare(graphics,rainbowColor, x , y);
-      r = r - 25;
-      g = + 25;
-      b = + 25;
+      r = r - 35;
+      g = g + 35;
+      b = + b + 35;
       x = x - 25;
       y = y - 25;
     }
   }
     public static void drawSquare(Graphics graphics,Color colorinput, int x, int y) {
       graphics.setColor(colorinput);
-      y = x;
-      graphics.fillRect(0, 0, x, y);
+      graphics.fillRect((150 - x / 2),(150 - y / 2), x, y);
     }
 
 
