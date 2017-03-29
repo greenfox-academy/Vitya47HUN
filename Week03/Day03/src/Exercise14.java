@@ -27,6 +27,14 @@ public class Exercise14 {
         }
       }
 
+      else if (xi == 0 && yi == 300) {
+        for (int j = 0; j < 15; j++) {
+          graphics.setColor(Color.blue);
+          graphics.drawLine(xi, yi, 150, 150);
+          yi = yi - 20;
+        }
+      }
+
       else if (xi == 300) {
         graphics.setColor(Color.blue);
         graphics.drawLine(xi, yi, 150, 150);
@@ -41,7 +49,7 @@ public class Exercise14 {
 
       }
     }
-  
+
 
 
   //    Don't touch the code below
