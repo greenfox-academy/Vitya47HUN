@@ -4,22 +4,16 @@ import java.awt.event.*;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Exercise01 {
-  public void mainDraw(Graphics graphics){
+
+  public static void mainDraw(Graphics graphics){
     //  draw a red horizontal line to the canvas' middle.
     //  draw a green vertical line to the canvas' middle.
-    
-
-    graphics.setColor(Color.BLUE);
-    graphics.drawLine(10,25,200,45);
 
     graphics.setColor(Color.RED);
-    graphics.drawRect(10,55,(int)(Math.random() * 10),(int)(Math.random() * 20));
+    graphics.drawLine(0,150,300,150);
 
     graphics.setColor(Color.GREEN);
-    graphics.fillOval(10,95,100,30);
-
-    graphics.setColor(Color.ORANGE);
-    graphics.fill3DRect(10,160,100,50,true);
+    graphics.drawLine(150,0,150,300);
 
   }
 
