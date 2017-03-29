@@ -11,17 +11,28 @@ public class Exercise18 {
     // connect these to get a box: {{10, 10}, {290,  10}, {290, 290}, {10, 290}}
     // connect these: {{50, 100}, {70, 70}, {80, 90}, {90, 90}, {100, 70},
     // {120, 100}, {85, 130}, {50, 100}}
+
     int box[][] = {{10, 10}, {290, 10}, {290, 290}, {10, 290}};
     int other[][] = {{50, 100}, {70, 70}, {80, 90}, {90, 90}, {100, 70}, {120, 100}, {85, 130}, {50, 100}};
-    
+
+     connectPoints(box, graphics);
+
+
   }
 
-  public static void drawLine(Graphics graphics, int x, int y) {
-    int xi = 0;
-    int yi = 0;
-    graphics.setColor(Color.blue);
-    graphics.drawLine(xi, yi, 150, 150);
-
+  public static void connectPoints(int[][] numbers, Graphics graphics) {
+    int startX = 0;
+    int startY = 0;
+    int endX = 0;
+    int endY = 0;
+    for (int i = 0; i < numbers.length-1; i++) {
+      startX = numbers[i][0];
+      startY = numbers[i][1];
+      endX = numbers[i + 1][0];
+      endY = numbers[i + 1][1];
+      graphics.drawLine(startX, startY, endX, endY);
+    }
+    graphics.drawLine(endX,endY,numbers[0][0],numbers[0][1]);
   }
 
 
