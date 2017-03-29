@@ -12,7 +12,7 @@ public class Exercise16 {
     int yfinish = 0;
     int xstart = 0;
     int ystart = 150;
-    for (int k = 0; k <= 3; k++) {
+    for (int k = 0; k <= 4; k++) {
       if (xstart == 0 && ystart == 150) {
         for (int i = 0; i < 15; i++) {
           graphics.setColor(Color.GREEN);
@@ -38,6 +38,18 @@ public class Exercise16 {
           graphics.drawLine(xstart, ystart, xfinish, yfinish);
           xstart = xstart + 10;
           yfinish = yfinish - 10;
+        }
+      }
+      else if (xfinish == 150 && ystart == 0) {
+        xstart = 300;
+        ystart = 150;
+        yfinish = 0;
+        xfinish = 300;
+        for(int l = 0; l < 15; l++){
+          graphics.setColor(Color.BLUE);
+          graphics.drawLine(xstart, ystart, xfinish, yfinish);
+          xstart = xstart - 10;
+          yfinish = yfinish + 10;
         }
       }
     }
