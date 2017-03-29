@@ -15,6 +15,7 @@ public class Exercise18 {
     int box[][] = {{10, 10}, {290, 10}, {290, 290}, {10, 290}};
     int other[][] = {{50, 100}, {70, 70}, {80, 90}, {90, 90}, {100, 70}, {120, 100}, {85, 130}, {50, 100}};
 
+    connectPoints(box, graphics);
      connectPoints(other, graphics);
 
 
@@ -34,6 +35,7 @@ public class Exercise18 {
     }
 
   }
+
 
   //    Don't touch the code below
   public static void main(String[] args) {
