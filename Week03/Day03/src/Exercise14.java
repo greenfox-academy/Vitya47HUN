@@ -19,19 +19,29 @@ public class Exercise14 {
     int xi = 0;
     int yi = 0;
     for (int i = 0; i <= 60; i++) {
-      if (xi == 300) {
+      if(xi == 300 && yi == 300) {
+        for (int j = 0; j < 15; j++) {
+          graphics.setColor(Color.blue);
+          graphics.drawLine(xi, yi, 150, 150);
+          xi = xi - 20;
+        }
+      }
+
+      else if (xi == 300) {
         graphics.setColor(Color.blue);
         graphics.drawLine(xi, yi, 150, 150);
         yi = yi + 20;
       }
+
       else if(yi == 0) {
         graphics.setColor(Color.blue);
         graphics.drawLine(xi, yi, 150, 150);
         xi = xi + 20;
       }
-      
+
+      }
     }
-  }
+  
 
 
   //    Don't touch the code below
