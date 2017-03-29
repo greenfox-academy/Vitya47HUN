@@ -14,18 +14,16 @@ public class Exercise04 {
 
       Scanner scanner = new Scanner(System.in);
       System.out.println("Please add X and Y starting point");
-      int x = scanner.nextInt();
-      int y = scanner.nextInt();
-
-      graphics.setColor(Color.RED);
-      graphics.drawLine(x, y, 150, 150);
-
-
+      drawLine(graphics,scanner.nextInt(),scanner.nextInt());
+      drawLine(graphics,scanner.nextInt(),scanner.nextInt());
+      drawLine(graphics,scanner.nextInt(),scanner.nextInt());
 
     }
 
-
-
+  public static void drawLine (Graphics graphics2, int x,int y) {
+    graphics2.setColor(Color.blue);
+    graphics2.drawLine(x, y, 150, 150 );
+  }
 
   //    Don't touch the code below
 
