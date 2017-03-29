@@ -18,6 +18,7 @@ public class Exercise08 {
     System.out.println("Please add the 3rd square starting parameters (X,Y)");
     drawLine(graphics, scanner.nextInt(), scanner.nextInt());
 
+    return;
   }
 
   public static void drawLine(Graphics graphics, int x, int y) {
