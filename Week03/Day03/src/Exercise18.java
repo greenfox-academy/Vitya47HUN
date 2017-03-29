@@ -15,26 +15,25 @@ public class Exercise18 {
     int box[][] = {{10, 10}, {290, 10}, {290, 290}, {10, 290}};
     int other[][] = {{50, 100}, {70, 70}, {80, 90}, {90, 90}, {100, 70}, {120, 100}, {85, 130}, {50, 100}};
 
-     connectPoints(box, graphics);
+     connectPoints(other, graphics);
 
 
   }
 
-  public static void connectPoints(int[][] numbers, Graphics graphics) {
-    int startX = 0;
-    int startY = 0;
-    int endX = 0;
-    int endY = 0;
-    for (int i = 0; i < numbers.length-1; i++) {
-      startX = numbers[i][0];
-      startY = numbers[i][1];
-      endX = numbers[i + 1][0];
-      endY = numbers[i + 1][1];
-      graphics.drawLine(startX, startY, endX, endY);
+  public static void connectPoints(int numbers[][],Graphics graphics) {
+    int startx = 0;
+    int sarty = 0;
+    int endx = 0;
+    int endy = 0;
+    for (int i = 0;i < numbers.length;i++){
+      startx = numbers[i][0];
+      startx = numbers[i][1];
+      endx = numbers[i + 1][0];
+      endy = numbers[i + 1][1];
+      graphics.drawLine(startx,sarty,endx,endy);
     }
-    graphics.drawLine(endX,endY,numbers[0][0],numbers[0][1]);
-  }
 
+  }
 
   //    Don't touch the code below
   public static void main(String[] args) {
