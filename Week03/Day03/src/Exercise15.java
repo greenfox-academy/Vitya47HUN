@@ -8,8 +8,13 @@ public class Exercise15 {
     // reproduce this:
     // [https://github.com/greenfox-academy/teaching-materials/blob/master/exercises/drawing/line-play/r1.png]
 
-
-
+    int xstart = 25;
+    int ystart = 300;
+    for (int i = 0;i < 15; i++) {
+      graphics.setColor(Color.blue);
+      graphics.drawLine(xstart, ystart, 0, 0);
+      xstart = xstart + 25;
+    }
   }
 
   //    Don't touch the code below
