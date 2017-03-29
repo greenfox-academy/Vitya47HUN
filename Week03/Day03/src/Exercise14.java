@@ -18,7 +18,7 @@ public class Exercise14 {
   public static void drawLine(Graphics graphics, int x, int y) {
     int xi = 0;
     int yi = 0;
-    for (int i = 0; i < 15; i++) {
+    for (int i = 0; i <= 60; i++) {
       if (xi == 300) {
         graphics.setColor(Color.blue);
         graphics.drawLine(xi, yi, 150, 150);
@@ -29,6 +29,7 @@ public class Exercise14 {
         graphics.drawLine(xi, yi, 150, 150);
         xi = xi + 20;
       }
+      
     }
   }
 
