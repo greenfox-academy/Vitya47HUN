@@ -1,5 +1,4 @@
 import sun.java2d.windows.GDIRenderer;
-
 import javax.swing.*;
 import java.awt.*;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
@@ -10,14 +9,17 @@ public class Exercise11BoxesinBoxes {
     int y = 0;
     int w = 100;
     int h = 100;
-    for(int i = 0; i < 4; i++){
-      graphics.setColor(Color.BLACK);
-    graphics.drawRect(x,y,w,h);
-    x = x + 100;
-    y = y + 100;
+    for (int i = 0; i < 2; i++) {
+      for (int j = 0; j < 2; j++) {
+        graphics.setColor(Color.BLACK);
+        graphics.drawRect(x, y, w, h);
+        x = x + 100;
+        y = y + 100;
+      }
+        x = x - 300;
+      y = y - 100;
+    }
   }
-  }
-
 
 
   //    Don't touch the code below
