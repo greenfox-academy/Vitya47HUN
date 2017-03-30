@@ -6,12 +6,15 @@ public class Exercise03 {
     System.out.println(digitSum(123));
   }
   public static int digitSum(int n) {
+    System.out.println("This is n : " + n);
     int r = n % 10;       //remainder, last digit of the number
     int num = n / 10;     //the rest of the number without the last digit
     if (num == 0) {
       return n;
     } else {
-      return digitSum(num) + r;
+      int k = digitSum(num) + r;
+      System.out.println("This is return value : " + k);
+      return k;
     }
   }
 }
