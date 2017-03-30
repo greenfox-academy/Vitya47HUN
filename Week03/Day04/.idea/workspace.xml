@@ -39,14 +39,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Exercise03.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Exercise03.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Exercise03.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="37" lean-forward="true" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="15" selection-end-column="3" />
               <folding>
                 <element signature="e#296#297#0" expanded="true" />
                 <element signature="e#339#340#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Exercise04.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Exercise04.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="14" lean-forward="false" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="44" />
+              <folding>
+                <element signature="e#214#215#0" expanded="true" />
+                <element signature="e#257#258#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -73,6 +86,7 @@
         <option value="$PROJECT_DIR$/src/Exercise01.java" />
         <option value="$PROJECT_DIR$/src/Exercise02.java" />
         <option value="$PROJECT_DIR$/src/Exercise03.java" />
+        <option value="$PROJECT_DIR$/src/Exercise04.java" />
       </list>
     </option>
   </component>
@@ -152,7 +166,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Exercise03">
+  <component name="RunManager" selected="Application.Exercise04">
     <configuration default="false" name="Exercise01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="Exercise01" />
@@ -186,6 +200,21 @@
     <configuration default="false" name="Exercise03" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="Exercise03" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Day04" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Exercise04" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="Exercise04" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -578,16 +607,18 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Application.Exercise01" />
       <item index="1" class="java.lang.String" itemvalue="Application.Exercise02" />
       <item index="2" class="java.lang.String" itemvalue="Application.Exercise03" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Exercise04" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Application.Exercise03" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Exercise02" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Exercise01" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Application.Exercise04" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Exercise03" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Exercise02" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Exercise01" />
       </list>
     </recent_temporary>
   </component>
@@ -601,12 +632,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1490857162467</updated>
-      <workItem from="1490857166120" duration="5819000" />
+      <workItem from="1490857166120" duration="6735000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5819000" />
+    <option name="totallyTimeSpent" value="6735000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
@@ -676,6 +707,14 @@
           </properties>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Exercise04.java</url>
+          <line>7</line>
+          <properties class="Exercise04" method="powered">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Exercise02.java</url>
           <line>7</line>
@@ -683,7 +722,7 @@
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="11" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -741,10 +780,21 @@
     <entry file="file://$PROJECT_DIR$/src/Exercise03.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="37" lean-forward="true" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="15" selection-end-column="3" />
           <folding>
             <element signature="e#296#297#0" expanded="true" />
             <element signature="e#339#340#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Exercise04.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="14" lean-forward="false" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="44" />
+          <folding>
+            <element signature="e#214#215#0" expanded="true" />
+            <element signature="e#257#258#0" expanded="true" />
           </folding>
         </state>
       </provider>
