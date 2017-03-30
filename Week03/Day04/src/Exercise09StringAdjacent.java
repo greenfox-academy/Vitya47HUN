@@ -7,18 +7,19 @@ public class Exercise09StringAdjacent {
   }
 
   public static String letterchange(String text) {
-    char x = 'x';
-    char y = 'y';
+    int character = 0;
     int end = 0;
 
     if (text.length() < 1) {
       return text;
     }
     else if (end < text.length()) {
-      return text.substring(0) + "*" + letterchange(text.substring(1));
+      end++;
+      character++;
+      return text.substring(character - 1) + "*" + letterchange(text.substring(character + 1));
     }
     else {
-      return text.charAt(0) + letterchange(text.substring(1));
+      return text;
     }
   }
 }
