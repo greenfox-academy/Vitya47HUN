@@ -2,7 +2,7 @@
 // the value of base to the n power, so powerN(3, 2) is 9 (3 squared).
 public class Exercise04 {
   public static void main(String[] args) {
-    System.out.println(powered(3, 5));
+    System.out.println(powered(4, 4));
   }
 
   public static int powered(int base, int power) {
