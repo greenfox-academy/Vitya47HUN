@@ -8,7 +8,6 @@ public class Exercise09StringAdjacent {
 
   public static String letterchange(String text) {
     int character = 0;
-    int end = 0;
 
     if (text.length() < 1) {
       return text;
