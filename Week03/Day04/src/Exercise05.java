@@ -2,7 +2,7 @@
 // We want to compute the total number of ears across all the bunnies recursively (without loops or multiplication).
 public class Exercise05 {
   public static void main(String[] args) {
-    System.out.println(bunnyEars(4));
+    System.out.println(bunnyEars(12));
 
   }
   public static int bunnyEars(int bunnies) {
