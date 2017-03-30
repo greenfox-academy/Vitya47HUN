@@ -17,10 +17,10 @@ public class Exercise09StringAdjacent {
 
       return text.charAt(character) + "*" + letterchange(text.substring(character + 1));
     }
-    else {
-      return text.charAt(0) + "*" + letterchange(text.substring(1));
-    }
+
+    return text;
   }
+
 }
 
 
