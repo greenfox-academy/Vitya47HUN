@@ -145,3 +145,7 @@ setColor, Color -
 (int)(Math.random() * 10) - returns a random integer beteen 0 and 9
 50 + (int)(Math.random() * 50) - returns a random integer between 50 and 99
 a + Math.random() * b - returns a random numver between a and a + b, excluding a + b.
+
+recursion - concept, a way that we solve a problem, taking a problem and breaking down
+		into subproblems,
+base case - 
