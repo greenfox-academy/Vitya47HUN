@@ -1,14 +1,24 @@
-import sun.java2d.windows.GDIRenderer;
 import javax.swing.*;
 import java.awt.*;
+
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Exercise11BoxesinBoxes {
   public static void mainDraw(Graphics graphics) {
-    int x = 100;
+    int x = 0;
     int y = 0;
-    int w = 100;
-    int h = 100;
+    int w = 0;
+    int h = 0;
+
+    mainboxes(x, y, w, h, graphics);
+  }
+
+
+  public static void mainboxes(int x, int y, int w, int h, Graphics graphics) {
+    x = 100;
+    y = 0;
+    w = 100;
+    h = 100;
     for (int i = 0; i < 2; i++) {
       for (int j = 0; j < 2; j++) {
         graphics.setColor(Color.BLACK);
@@ -16,7 +26,7 @@ public class Exercise11BoxesinBoxes {
         x = x + 100;
         y = y + 100;
       }
-        x = x - 300;
+      x = x - 300;
       y = y - 100;
     }
   }
@@ -41,6 +51,7 @@ public class Exercise11BoxesinBoxes {
 
     }
   }
-
 }
+
+
 
