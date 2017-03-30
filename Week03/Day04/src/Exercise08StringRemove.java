@@ -2,7 +2,7 @@
 public class Exercise08StringRemove {
   public static void main(String[] args) {
 
-    System.out.println(letterchange("xerxes was a king."));
+    System.out.println(letterchange("xerxes wasxxx a king."));
   }
 
   public static String letterchange(String text) {
