@@ -13,7 +13,6 @@ public class Exercise09StringAdjacent {
       return text;
     }
     else if (text.length() > 1) {
-
       return text.charAt(character) + "*" + letterchange(text.substring(character + 1));
     }
 

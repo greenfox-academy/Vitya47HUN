@@ -36,8 +36,8 @@
       <file leaf-file-name="Exercise08StringRemove.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Exercise08StringRemove.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="20" selection-end-column="3" />
+            <state relative-caret-position="153">
+              <caret line="15" column="49" lean-forward="true" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -46,8 +46,8 @@
       <file leaf-file-name="Exercise09StringAdjacent.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Exercise09StringAdjacent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state relative-caret-position="187">
+              <caret line="14" column="33" lean-forward="false" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -56,8 +56,8 @@
       <file leaf-file-name="Exercise10Fibonacci.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Exercise10Fibonacci.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="136">
+              <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -662,8 +662,8 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.Exercise10Fibonacci" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Exercise09StringAdjacent" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Exercise08StringRemove" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Exercise08StringRemove" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Exercise09StringAdjacent" />
         <item index="3" class="java.lang.String" itemvalue="Application.Exercise07Strings" />
         <item index="4" class="java.lang.String" itemvalue="Application.Exercise06MoreBunnies" />
       </list>
@@ -679,15 +679,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1490857162467</updated>
-      <workItem from="1490857166120" duration="17108000" />
+      <workItem from="1490857166120" duration="17968000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17108000" />
+    <option name="totallyTimeSpent" value="17968000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -794,6 +794,14 @@
           </properties>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Exercise10Fibonacci.java</url>
+          <line>11</line>
+          <properties class="Exercise10Fibonacci" method="fibonacci">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Exercise02.java</url>
           <line>7</line>
@@ -801,7 +809,7 @@
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="18" />
+      <option name="time" value="22" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -922,26 +930,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exercise09StringAdjacent.java">
+    <entry file="file://$PROJECT_DIR$/src/Exercise08StringRemove.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="153">
+          <caret line="15" column="49" lean-forward="true" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exercise08StringRemove.java">
+    <entry file="file://$PROJECT_DIR$/src/Exercise09StringAdjacent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="20" selection-end-column="3" />
+        <state relative-caret-position="187">
+          <caret line="14" column="33" lean-forward="false" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Exercise10Fibonacci.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="136">
+          <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
           <folding />
         </state>
       </provider>

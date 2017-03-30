@@ -6,15 +6,15 @@
 // fibonacci number, with n=0 representing the start of the sequence.
 public class Exercise10Fibonacci {
   public static void main(String[] args) {
-    System.out.println(fibonacci(0));
+    System.out.println(fibonacci(6));
 
   }
   public static int fibonacci(int number) {
 
     if (number == 0) {
-      return number;
+      return 0;
     }
-    else if (number < 2) {
+    else if (number > 1) {
 
       return fibonacci(number - 1) + fibonacci(number - 2);
     }
