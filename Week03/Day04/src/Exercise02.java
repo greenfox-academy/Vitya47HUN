@@ -6,10 +6,10 @@ public class Exercise02 {
 
   public static int sumnumbers(int n) {
     if(n > 0){
-
+      System.out.println(n);
       return n + sumnumbers(--n);
     }
-   else return n;
+   else return 0;
   }
 
 }
