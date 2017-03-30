@@ -8,9 +8,9 @@ public class Exercise11BoxesinBoxes {
     int x = 0;
     int y = 0;
     int w = 0;
-    int h = 0;
 
-    mainboxes(x, y, w, h, graphics);
+
+    mainboxes(x, y, w, w, graphics);
   }
 
 
@@ -18,11 +18,10 @@ public class Exercise11BoxesinBoxes {
     x = 100;
     y = 0;
     w = 100;
-    h = 100;
     for (int i = 0; i < 2; i++) {
       for (int j = 0; j < 2; j++) {
         graphics.setColor(Color.BLACK);
-        graphics.drawRect(x, y, w, h);
+        graphics.drawRect(x, y, w, w);
         x = x + 100;
         y = y + 100;
       }
