@@ -3,15 +3,23 @@
 public class Exercise07Strings {
   public static void main(String[] args) {
 
-    System.out.println(letterchange("Xerxes is a king.",'x', 'y'));
+    System.out.println(letterchange("xerxes was a king."));
   }
 
-  public static String letterchange(String text, char x, char y) {
-    int count = 0;
-    if (text.charAt(0) == x){
-      count = count + 1;
-      return letterchange(text, x = y, y);
+  public static String letterchange(String text) {
+    char x = 'x';
+    char y = 'y';
+
+    if (text.length() < 1) {
+      return text;
     }
-      else return text;
+    else if (x == text.charAt(0)) {
+        return y + letterchange(text.substring(1));
+      }
+      else {
+        return text.charAt(0) + letterchange(text.substring(1));
+      }
+    }
   }
-}
+
+
