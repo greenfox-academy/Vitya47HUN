@@ -13,13 +13,12 @@ public class Exercise09StringAdjacent {
     if (text.length() < 1) {
       return text;
     }
-    else if (end < text.length()) {
-      end++;
-      character++;
-      return text.substring(character - 1) + "*" + letterchange(text.substring(character + 1));
+    else if (text.length() > 1) {
+
+      return text.charAt(character) + "*" + letterchange(text.substring(character + 1));
     }
     else {
-      return text;
+      return text.charAt(0) + "*" + letterchange(text.substring(1));
     }
   }
 }
