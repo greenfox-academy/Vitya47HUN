@@ -23,8 +23,8 @@ public class SquareGrid {
 
     mainboxes(x - (w / 4), y - (h / 4), w / 2, h / 2, graphics);
     mainboxes(x + 3 * (w / 4), y - (h / 4), w / 2, h / 2, graphics);
-    mainboxes(x - (w / 4), y + h, w / 2, h / 2, graphics);
-    mainboxes(x + 3 * (w / 4), y + h, h / 2,h / 2, graphics);
+    mainboxes(x - (w / 4), y + (h / 4) * 3 , w / 2, h / 2, graphics);
+    mainboxes(x + 3 * (w / 4), y + (h / 4 * 3), h / 2,h / 2, graphics);
 
 
   }
