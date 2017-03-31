@@ -3,30 +3,28 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class Trilanges {
+public class SquareGrid {
   public static void mainDraw(Graphics graphics) {
+
     int x = 0;
     int y = 0;
     int w = 300;
     int h = 300;
-    int npoints = 7;
-    mainTrilanges(x,y,npoints,w,h,graphics);
-
+    mainboxes(x, y, w, h, graphics);
   }
 
 
-  public static void mainTrilanges(int x1, int y1,int nsize,int width,int height, Graphics graphics) {
-    int x [] ={x1 , x1 + (width / 2), x1 + width};
-    int y [] ={y1, y1 + height, y1};
-
-    if (nsize == 0) {
+  public static void mainboxes(int x, int y, int w, int h, Graphics graphics) {
+    graphics.setColor(Color.BLACK);
+    if (w < 5) {
       return;
     }
-    graphics.setColor(Color.WHITE);
-    graphics.drawPolygon(x,y,3);
-    mainTrilanges(x1,y1,nsize - 1,width / 2,height / 2,graphics);
-    mainTrilanges(x1 + (width / 2),y1,nsize - 1,width / 2,height / 2, graphics);
-    mainTrilanges(x1 + (width / 4),y1 + (height / 2),nsize - 1,width / 2,height / 2, graphics);
+
+    graphics.drawRect(x, y, w, h);
+    mainboxes(x + (w / 8), y + (h / 8), w / 3, h / 3, graphics);
+    mainboxes(x, y + h / 3, w / 3, h / 3, graphics);
+    mainboxes(x, y, w / 3, h / 3, graphics);
+    mainboxes(x + (w / 3), y, w / 3, h / 3, graphics);
 
   }
 
@@ -45,7 +43,7 @@ public class Trilanges {
     @Override
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
-      this.setBackground(Color.BLACK);
+      this.setBackground(Color.WHITE);
       mainDraw(graphics);
 
     }
