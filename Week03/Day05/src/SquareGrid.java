@@ -6,8 +6,8 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class SquareGrid {
   public static void mainDraw(Graphics graphics) {
 
-    int x = 0;
-    int y = 0;
+    int x = 150;
+    int y = 150;
     int w = 300;
     int h = 300;
     mainboxes(x, y, w, h, graphics);
@@ -16,15 +16,15 @@ public class SquareGrid {
 
   public static void mainboxes(int x, int y, int w, int h, Graphics graphics) {
     graphics.setColor(Color.BLACK);
-    if (w < 5) {
+    if (w < 10) {
       return;
     }
 
     graphics.drawRect(x, y, w, h);
-    mainboxes(x + (w / 8), y + (h / 8), w / 4, h / 4, graphics);
-    mainboxes(x + (w / 8) * 5, y + (h / 8), w / 4, h / 4, graphics);
-    mainboxes(x + (w / 8), y + (h / 8) * 5, w / 4, h / 4, graphics);
-    mainboxes(x + (w / 8) * 5, y + (h / 8) * 5, w / 4, h / 4, graphics);
+    mainboxes(x - (w / 8), y - (h / 8), w / 2, h / 2, graphics);
+    mainboxes(x + (w / 8) * 7, y - (h / 8), w / 2, h / 2, graphics);
+    mainboxes(x - (w / 8), y + (h / 8) * 7, w / 2, h / 2, graphics);
+    mainboxes(x + (w / 8) * 7, y + (h / 8) * 7, w / 2, h / 2, graphics);
 
   }
 
