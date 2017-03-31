@@ -16,7 +16,7 @@ public class Exercise18 {
     int other[][] = {{50, 100}, {70, 70}, {80, 90}, {90, 90}, {100, 70}, {120, 100}, {85, 130}, {50, 100}};
 
     connectPoints(box, graphics);
-     connectPoints(other, graphics);
+    connectPoints(other, graphics);
 
 
   }
