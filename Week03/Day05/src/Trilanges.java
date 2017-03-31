@@ -1,6 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Trilanges {
@@ -11,10 +10,7 @@ public class Trilanges {
     int h = 300;
     int npoints = 7;
     mainTrilanges(x,y,npoints,w,h,graphics);
-
   }
-
-
   public static void mainTrilanges(int x1, int y1,int nsize,int width,int height, Graphics graphics) {
     int x [] ={x1 , x1 + (width / 2), x1 + width};
     int y [] ={y1, y1 + height, y1};
@@ -27,10 +23,7 @@ public class Trilanges {
     mainTrilanges(x1,y1,nsize - 1,width / 2,height / 2,graphics);
     mainTrilanges(x1 + (width / 2),y1,nsize - 1,width / 2,height / 2, graphics);
     mainTrilanges(x1 + (width / 4),y1 + (height / 2),nsize - 1,width / 2,height / 2, graphics);
-
   }
-
-
   //    Don't touch the code below
   public static void main(String[] args) {
     JFrame jFrame = new JFrame("Drawing");

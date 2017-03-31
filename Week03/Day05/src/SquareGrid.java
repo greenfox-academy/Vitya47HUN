@@ -1,8 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
-
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
-
 
 public class SquareGrid {
   public static void mainDraw(Graphics graphics) {
@@ -30,10 +28,7 @@ public class SquareGrid {
     mainboxes(x - (w / 4), y + (h / 4) * 3, w / 2, h / 2, g2, level / 2);
     g2.setStroke(new BasicStroke((level)));
     mainboxes(x + 3 * (w / 4), y + (h / 4 * 3), h / 2, h / 2, g2, level / 2);
-
   }
-
-
   //    Don't touch the code below
   public static void main(String[] args) {
     JFrame jFrame = new JFrame("Drawing");

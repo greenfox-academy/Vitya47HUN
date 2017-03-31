@@ -1,18 +1,15 @@
 import javax.swing.*;
 import java.awt.*;
-
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class SierpinskyCarpet {
   public static void mainDraw(Graphics graphics) {
-
     int x = 0;
     int y = 0;
     int w = 300;
     int h = 300;
     mainboxes(x, y, w, h, graphics);
   }
-
 
   public static void mainboxes(int x, int y, int w, int h, Graphics graphics) {
     graphics.setColor(Color.WHITE);
@@ -29,7 +26,6 @@ public class SierpinskyCarpet {
     mainboxes(x + (w / 3) * 2, y + (h / 3) * 2, w / 3, h / 3, graphics);
     mainboxes(x + w / 3, y + (h / 3) * 2, w / 3, h / 3, graphics);
   }
-
 
   //    Don't touch the code below
   public static void main(String[] args) {
