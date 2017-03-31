@@ -21,10 +21,10 @@ public class SquareGrid {
     }
 
     graphics.drawRect(x, y, w, h);
-    mainboxes(x + (w / 8), y + (h / 8), w / 3, h / 3, graphics);
-    mainboxes(x, y + h / 3, w / 3, h / 3, graphics);
-    mainboxes(x, y, w / 3, h / 3, graphics);
-    mainboxes(x + (w / 3), y, w / 3, h / 3, graphics);
+    mainboxes(x + (w / 8), y + (h / 8), w / 4, h / 4, graphics);
+    mainboxes(x, y + (h / 8), w / 4, h / 4, graphics);
+    mainboxes(x, y, w / 4, h / 4, graphics);
+    mainboxes(x + (w / 3), y, w / 4, h / 4, graphics);
 
   }
 

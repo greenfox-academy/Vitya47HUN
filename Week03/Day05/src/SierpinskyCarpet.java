@@ -8,8 +8,8 @@ public class SierpinskyCarpet {
 
     int x = 0;
     int y = 0;
-    int w = 500;
-    int h = 500;
+    int w = 300;
+    int h = 300;
     mainboxes(x, y, w, h, graphics);
   }
 
