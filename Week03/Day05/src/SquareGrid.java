@@ -15,16 +15,17 @@ public class SquareGrid {
 
 
   public static void mainboxes(int x, int y, int w, int h, Graphics graphics) {
-    graphics.setColor(Color.BLACK);
     if (w < 15) {
       return;
     }
-
+    graphics.setColor(Color.BLACK);
     graphics.drawRect(x, y, w, h);
-    mainboxes(x / 2, y / 2, w / 2, h / 2, graphics);
-    mainboxes(x / 2 + w, y / 2, w / 2, h / 2, graphics);
-    mainboxes(x / 2, y / 2 + h, w / 2, h / 2, graphics);
-    mainboxes(x / 2 + w, y / 2 + h, w / 2, h / 2, graphics);
+
+    mainboxes(x - (w / 4), y - (h / 4), w / 2, h / 2, graphics);
+    mainboxes(x + 3 * (w / 4), y - (h / 4), w / 2, h / 2, graphics);
+    mainboxes(x - (w / 4), y + h, w / 2, h / 2, graphics);
+    mainboxes(x + 3 * (w / 4), y + h, h / 2,h / 2, graphics);
+
 
   }
 
