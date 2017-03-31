@@ -5,26 +5,29 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Trilanges {
   public static void mainDraw(Graphics graphics) {
-    int xpoints[] = {0, 150, 300};
-    int ypoints[] = {0, 300, 0};
-    int npoints = 3;
-    graphics.drawPolygon(xpoints,ypoints,npoints);
+    int x = 0;
+    int y = 0;
+    int w = 300;
+    int h = 300;
+    int npoints = 5;
+    mainTrilanges(x,y,npoints,w,h,graphics);
 
   }
 
 
-//  public static void mainTrilanges(int x1, int y1, int x2, int x2,int x3,int y3, Graphics graphics) {
-//
-//    graphics.setColor(Color.WHITE);
-//    if (w < 2) {
-//      return;
-//    }
-//    graphics.drawPolygon(x, y, w, h);
-//    mainTrilanges(x, y + (h / 3) * 2, w / 3, h / 3, graphics);
-//    mainTrilanges(x, y + h / 3, w / 3, h / 3, graphics);
-//    mainTrilanges(x, y, w / 3, h / 3, graphics);
-//
-//  }
+  public static void mainTrilanges(int x1, int y1,int nsize,int width,int height, Graphics graphics) {
+    int x [] ={x1 , x1 + (width / 2), x1 + width};
+    int y [] ={y1, y1 + height, y1};
+    graphics.setColor(Color.WHITE);
+    if (nsize == 0) {
+      return;
+    }
+    graphics.drawPolygon(x,y,nsize);
+    mainTrilanges(x1,y1,nsize - 1,width / 2,height / 2,graphics);
+    mainTrilanges(x1 + (width / 2),y1,nsize - 1,width / 2,height / 2, graphics);
+    mainTrilanges(x1 + (width / 5),y1 + (height / 2),nsize - 1,width / 2,height / 2, graphics);
+
+  }
 
 
   //    Don't touch the code below
