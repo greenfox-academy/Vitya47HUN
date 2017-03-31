@@ -1,30 +1,36 @@
 import javax.swing.*;
 import java.awt.*;
-
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
+
 
 public class SquareGrid {
   public static void mainDraw(Graphics graphics) {
-
+    Graphics2D g1 = (Graphics2D) graphics;
     int x = 75;
     int y = 75;
     int w = 150;
     int h = 150;
+    g1.setStroke(new BasicStroke (10));
     mainboxes(x, y, w, h, graphics);
   }
 
 
   public static void mainboxes(int x, int y, int w, int h, Graphics graphics) {
+    Graphics2D g2 = (Graphics2D) graphics;
     if (w < 15) {
       return;
     }
-    graphics.setColor(Color.BLACK);
-    graphics.drawRect(x, y, w, h);
 
-    mainboxes(x - (w / 4), y - (h / 4), w / 2, h / 2, graphics);
-    mainboxes(x + 3 * (w / 4), y - (h / 4), w / 2, h / 2, graphics);
-    mainboxes(x - (w / 4), y + (h / 4) * 3 , w / 2, h / 2, graphics);
-    mainboxes(x + 3 * (w / 4), y + (h / 4 * 3), h / 2,h / 2, graphics);
+      graphics.setColor(Color.BLACK);
+      graphics.drawRect(x, y, w, h);
+      g2.setStroke(new BasicStroke ((w / 100) * 8));
+      mainboxes(x - (w / 4), y - (h / 4), w / 2, h / 2, g2);
+    g2.setStroke(new BasicStroke ((w / 100) * 8));
+      mainboxes(x + 3 * (w / 4), y - (h / 4), w / 2, h / 2, g2);
+    g2.setStroke(new BasicStroke ((w / 100) * 8));
+      mainboxes(x - (w / 4), y + (h / 4) * 3, w / 2, h / 2, g2);
+    g2.setStroke(new BasicStroke ((w / 100) * 8));
+      mainboxes(x + 3 * (w / 4), y + (h / 4 * 3), h / 2, h / 2, g2);
 
 
   }
