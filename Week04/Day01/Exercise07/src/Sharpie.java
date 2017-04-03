@@ -1,5 +1,3 @@
-import sun.security.provider.SHA;
-
 //Create Sharpie class
 //We should know about each sharpie their color (which should be a string), width (which will be a floating point number), inkAmount (another floating point number)
 //        When creating one, we need to specify the color and the width
@@ -11,16 +9,24 @@ public class Sharpie {
   float width;
   float inkAmount;
 
-  public Sharpie(String color,float width){
+  public Sharpie(String color, float width) {
     this.color = color;
     this.width = width;
-    this.inkAmount = 100f;
+    this.inkAmount = 100;
 
   }
 
-public void use(){
-  inkAmount = inkAmount - width * 1f;
-  System.out.println(inkAmount);
-}
+  @Override
+  public String toString() {
+    return "Sharpie{" +
+            "color='" + color + '\'' +
+            ", width=" + width +
+            ", inkAmount=" + inkAmount +
+            '}';
+  }
+
+  public void use() {
+    inkAmount = inkAmount - width * 1;
+  }
 }
 
