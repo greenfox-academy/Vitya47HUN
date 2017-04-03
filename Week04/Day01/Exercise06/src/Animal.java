@@ -14,7 +14,7 @@ public class Animal {
     this("unkown", 0, 0);
   }
 
-  public Human(String name, int hunger, int thirst) {
+  public Animal(String name, int hunger, int thirst) {
     this.name = name;
     this.hunger = hunger;
     this.thirst = thirst;
@@ -23,6 +23,9 @@ public class Animal {
   public static void main(String[] args) {
     Animal gepard = new Animal();
     Animal turtle = new Animal();
+    gepard.thirst = 50;
+    gepard.hunger = 50;
 
+    System.out.println(gepard);
   }
 }
