@@ -137,11 +137,11 @@ list - List<int> myList = valami;
 Arraylist - ArrayList<int> valami = new ArrayList<int>(); -
 
 Graphics - 
-drawLine, fillLine - 
-drawRect, fillRect - 
-drawOval, fillOval - 
-drawPolygon, fillPolygon - 
-setColor, Color - 
+drawLine, fillLine - rajzol vonalat
+drawRect, fillRect - rajzol negyzetet
+drawOval, fillOval - rajzol ovalist
+drawPolygon, fillPolygon - poligon rajzolas
+setColor, Color - szin meghatarozas
 (int)(Math.random() * 10) - returns a random integer beteen 0 and 9
 50 + (int)(Math.random() * 50) - returns a random integer between 50 and 99
 a + Math.random() * b - returns a random numver between a and a + b, excluding a + b.
@@ -153,11 +153,11 @@ base case -
 Class - osztaly ami kulonbozo attributokat tartalmaz, objektumokat s meg lehet hivni, kodunk rendszerezett lesz. Tervrajz ami alapjan letrehozzuk az objektumot
 Object - 
 Fields - 
-Encapsulation - 
+Encapsulation - a sok valtozot s fuggvenyt enkapszulalja az objektum.
 This - objectumon belul akarok hivatkozni a sajat valtozora
 New - 
 Static vs. !Static - 
-method - 
+method - method a javaban a function, fuggveny
 function - 
 static - egy helyen kell megvaltoztatni az erteket s mindenhol valtozni fog ahol meg  van hivva.
-constructor - 
+constructor - definialunk benne, hogy csinaljunk valamit
