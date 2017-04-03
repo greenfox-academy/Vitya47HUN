@@ -11,7 +11,7 @@
 public class PetrolStation {
   public static void main(String[] args) {
     Car suzuki = new Car();
-    
+    suzuki.refill();
     System.out.println(suzuki);
   }
 
