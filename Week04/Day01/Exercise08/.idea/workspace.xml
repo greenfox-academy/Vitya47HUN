@@ -13,12 +13,13 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Counter.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Counter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Counter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+            <state relative-caret-position="459">
+              <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
               <folding>
+                <element signature="e#951#952#0" expanded="true" />
                 <element signature="e#981#982#0" expanded="true" />
                 <element signature="e#1004#1005#0" expanded="true" />
                 <element signature="e#1033#1034#0" expanded="true" />
@@ -29,7 +30,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
@@ -577,12 +578,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1491225922507</updated>
-      <workItem from="1491225925799" duration="3147000" />
+      <workItem from="1491225925799" duration="3600000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3147000" />
+    <option name="totallyTimeSpent" value="3600000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -652,25 +653,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Counter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+        <state relative-caret-position="459">
+          <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
           <folding>
+            <element signature="e#951#952#0" expanded="true" />
             <element signature="e#981#982#0" expanded="true" />
             <element signature="e#1004#1005#0" expanded="true" />
             <element signature="e#1033#1034#0" expanded="true" />
             <element signature="e#1058#1059#0" expanded="true" />
             <element signature="e#1078#1079#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
