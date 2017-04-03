@@ -12,7 +12,20 @@
 public class FleetOfThings {
   public static void main(String[] args) {
     Fleet fleet = new Fleet();
-    fleet.add(true);
+    Thing milk = new Thing("Get milk");
+    Thing obsctacles = new Thing("Remove the obstacles");
+    Thing standup = new Thing("Stand up");
+    Thing lunch = new Thing("Eat lunch");
+
+    standup.complete();
+    lunch.complete();
+
+    fleet.add(milk);
+    fleet.add(obsctacles);
+    fleet.add(standup);
+    fleet.add(lunch);
+
+
     // Create a fleet of things to have this output:
     // 1. [ ] Get milk
     // 2. [ ] Remove the obstacles

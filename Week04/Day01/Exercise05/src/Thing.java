@@ -10,6 +10,7 @@ public class Thing {
     this.completed = true;
   }
 
+
   @Override
   public String toString() {
     return (completed ? "[x] " : "[ ] ") + name;
