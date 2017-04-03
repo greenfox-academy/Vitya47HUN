@@ -43,6 +43,5 @@ public class Dice {
     myDice.getCurrent();
     myDice.reroll(4);
     myDice.getCurrent();
-
   }
 }
