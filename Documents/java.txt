@@ -149,3 +149,15 @@ a + Math.random() * b - returns a random numver between a and a + b, excluding a
 recursion - concept, a way that we solve a problem, taking a problem and breaking down
 		into subproblems,
 base case - 
+
+Class - osztaly ami kulonbozo attributokat tartalmaz, objektumokat s meg lehet hivni, kodunk rendszerezett lesz. Tervrajz ami alapjan letrehozzuk az objektumot
+Object - 
+Fields - 
+Encapsulation - 
+This - objectumon belul akarok hivatkozni a sajat valtozora
+New - 
+Static vs. !Static - 
+method - 
+function - 
+static - egy helyen kell megvaltoztatni az erteket s mindenhol valtozni fog ahol meg  van hivva.
+constructor - 
