@@ -1,5 +1,10 @@
 import java.util.ArrayList;
 
 public class Dominoes {
-  ArrayList dominoNumber;
+  ArrayList<Integer> dominoNumber;
+
+
+  public Dominoes {
+    this.dominoNumber = dominoNumber;
+  }
 }
