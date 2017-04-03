@@ -4,7 +4,6 @@ public class Roll {
     myDice.roll();
     for (int i = 0; i < 6; i++) {
       if (myDice.getCurrent(i) == 6) {
-        System.out.println(myDice.getCurrent(i));
       }
       while (myDice.getCurrent(i) < 6) {
         myDice.reroll(i);
