@@ -10,19 +10,25 @@
 //        If something's red in it, ALT+Enter Add JUnit5 to classpath (5 aka JUnit FIVE not 4 or 3)
 //        Then run the tests with the green play button before the lines (run all of them before the classname)
 public class Counter {
-  int number;
+  int number = 0;
 
 
+  @Override
+  public String toString() {
+    return "Counter{" +
+            "number=" + number +
+            '}';
+  }
 
-  public void get(int number) {
+  public void get() {
     this.number = number;
   }
 
-  public void add(int newnumber){
+  public void add(){
     number = number + 1;
   }
 
   public void reset() {
-
+    number = 0;
   }
 }
