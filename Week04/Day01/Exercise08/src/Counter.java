@@ -24,7 +24,7 @@ public class Counter {
     this.number = number;
   }
 
-  public void add(){
+  public void add() {
     number = number + 1;
   }
 
