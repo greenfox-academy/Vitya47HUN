@@ -37,14 +37,20 @@ public class Animal {
     gepard.hunger = 50;
     gepard.drink = 1;
 
-    System.out.println("Feed the gepard");
+    System.out.println("Feed the gepard with meat pieces :");
     int feeding = scanner.nextInt();
-    gepard.eat = feeding;
-    System.out.println("Gepard is : " + (gepard.hunger - gepard.eat) + "% hungry");
+    gepard.hunger = gepard.hunger - feeding;
+    System.out.println("Gepard is : " + (gepard.hunger) + "% hungry");
 
-    System.out.println("Give some water to the gepard");
+    System.out.println("Give some water to the gepard (dl) :");
     int drinking = scanner.nextInt();
     gepard.thirst = gepard.thirst - drinking;
-    System.out.println(gepard.thirst);
+    System.out.println("Gepard is : " + gepard.thirst + "% thirsty");
+
+    System.out.println("Play with the gepard some hours :");
+    int playtime = scanner.nextInt();
+    gepard.thirst = gepard.thirst + playtime;
+    gepard.hunger = gepard.hunger + playtime;
+    System.out.println("Gepard is : " + gepard.thirst + "% thirsty. | " + "Gepard is : " + (gepard.hunger) + "% hungry");
   }
 }
