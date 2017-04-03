@@ -19,7 +19,8 @@ public class Sharpie {
   }
 
 public void use(){
-  inkAmount = inkAmount - 1f;
+  inkAmount = inkAmount - width * 1f;
+  System.out.println(inkAmount);
 }
 }
 
