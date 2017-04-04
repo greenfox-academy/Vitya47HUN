@@ -3,39 +3,37 @@ import java.util.ArrayList;
 public class Garden {
   public static void main(String[] args) {
 
-    ArrayList<Flowers> allFlowers = new ArrayList<>();
+    ArrayList<Plants> allPlants = new ArrayList<>();
 
     Flowers rose = new Flowers("blue", 2, 5);
-    allFlowers.add(rose);
+    allPlants.add(rose);
     Flowers tulip = new Flowers("white", 2, 5);
-    allFlowers.add(tulip);
-    Flowers pitypang = new Flowers("green", 3, 5);
-    allFlowers.add(pitypang);
-    Flowers szotyi = new Flowers("red", 6, 5);
-    allFlowers.add(szotyi);
+    allPlants.add(tulip);
+    Trees oak = new Trees("green", 5, 10.0);
+    allPlants.add(oak);
+    Trees tolgy = new Trees ("red", 5, 10.0);
+    allPlants.add(tolgy);
 
     double thristyPlants = 0.0;
 
-    for (int i = 0; i < allFlowers.size(); i++) {
-      if (allFlowers.get(i).waterlevel < 5) {
+    for (int i = 0; i < allPlants.size(); i++) {
+      if (allPlants.get(i).waterlevel < allPlants.get(i).waterlimit) {
         thristyPlants += 1.0;
       }
-
     }
-    for (int j = 0; j < allFlowers.size(); j++) {
-      if (allFlowers.get(j).waterlevel < 5) {
-        allFlowers.get(j).watering(6.0 / thristyPlants);
-
-
+    for (int j = 0; j < allPlants.size(); j++) {
+      if (allPlants.get(j).waterlevel < allPlants.get(j).waterlimit) {
+        allPlants.get(j).watering(6.0 / thristyPlants);
+        System.out.println("The " + allPlants.get(j).color + " " + allPlants.get(j).getClass() + " needs water");
       }
     }
-    for (int i = 0; i < allFlowers.size(); i++) {
-      System.out.println(allFlowers.get(i));
-    }
+//    for (int i = 0; i < allPlants.size(); i++) {
+//      System.out.println(allPlants.get(i));
+//    }
   }
 }
 
-  
+
 
 
 

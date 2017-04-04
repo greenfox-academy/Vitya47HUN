@@ -9,7 +9,7 @@ public class Flowers extends Plants {
             '}';
   }
 
-  Flowers(String color, int waterlevel, int waterlimit) {
+  Flowers(String color, double waterlevel, double waterlimit) {
     this.color = color;
     this.waterlevel = waterlevel;
     this.waterlimit = waterlimit;
@@ -23,7 +23,5 @@ public class Flowers extends Plants {
     this.waterlimit = 5.0;
   }
 
-//  public void absorb(int waterincome){
-//    this.watering((waterincome * 75) / 100);
-//  }
+
 }
