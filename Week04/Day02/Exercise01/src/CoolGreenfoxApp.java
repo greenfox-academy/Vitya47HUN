@@ -1,5 +1,7 @@
-public class CoolGreenfoxApp {
+import java.util.ArrayList;
+import java.util.List;
 
+public class CoolGreenfoxApp {
   public static void main(String[] args) {
 
 //    Person myPerson = new Person();
@@ -9,9 +11,43 @@ public class CoolGreenfoxApp {
 //    myStudent.introduce();
 //    myStudent.skipdays(5);
 //    myStudent.introduce();
+    ArrayList<Person> people = new ArrayList<>();
 
-    Mentor myMentor = new Mentor();
-    System.out.println(myMentor.level);
+    Person mark = new Person("Mark", 46, "male");
+    people.add(mark);
+    Person jane = new Person();
+    people.add(jane);
+    Student john = new Student("John Doe", 20, "male", "BME");
+    people.add(john);
+    Student student = new Student();
+    people.add(student);
+    Mentor gandhi = new Mentor("Gandhi", 148, "male", "senior");
+    people.add(gandhi);
+    Mentor mentor = new Mentor();
+    people.add(mentor);
+    Sponsor sponsor = new Sponsor();
+    people.add(sponsor);
+    Sponsor elon = new Sponsor("Elon Musk", 46, "male", "SpaceX");
 
+    student.skipdays(3);
+
+    for (int i = 0; i < 5; i++) {
+      elon.hire();
+    }
+    for (int i = 0; i < 3; i++) {
+      sponsor.hire();
+    }
+
+    for(Person person : people) {
+      person.introduce();
+      person.getGoal();
+    }
+
+    LagopusClass badass = new LagopusClass("BADA55");
+    badass.addStudent(student);
+    badass.addStudent(john);
+    badass.addMentor(mentor);
+    badass.addMentor(gandhi);
+    badass.info();
   }
 }

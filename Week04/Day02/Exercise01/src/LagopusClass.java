@@ -1,9 +1,10 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class LagopusClass {
   String className;
-  List<Student> students;
-  List<Mentor> mentors;
+  ArrayList<Student> students;
+  ArrayList<Mentor> mentors;
 
   public void addStudent(Student newStudent) {
     this.students.add(newStudent);
@@ -14,7 +15,12 @@ public class LagopusClass {
   }
 
   public void info(){
-    System.out.println( "Lagopus " + className + " class has " + students.size() + "students and " + mentors.size() + " mentors.");
+    System.out.println( "Lagopus " + className + " class has " + students.size() + " students and " + mentors.size() + "  mentors.");
   }
 
+  LagopusClass(String className){
+    this.className = className;
+    students = new ArrayList<>();
+    mentors = new ArrayList<>();
+  }
 }
