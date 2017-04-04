@@ -162,20 +162,25 @@ function -
 static - egy helyen kell megvaltoztatni az erteket s mindenhol valtozni fog ahol meg  van hivva.
 constructor - definialunk benne, hogy csinaljunk valamit
 
-extends - hasznalhato mas classban
-super() and super
-relationships
-is-a - o valami,
-has-a - van 1 tulajdonsaga
-<variable> instanceof <Class>
-access modifiers: public, protected, default, private
-getters, setters
-final
-casting subClass as Class
-Optional
+extends - specializalni szeretnek 1 objektumot,class Dog extends Animals,
+	
+super() and super - 
+relationships - a valtozok nem oroklodnek a methodok viszont igen.
+is-a - o valami, ha szarmaztatunk
+has-a - van 1 tulajdonsaga, 
+<variable> instanceof <Class> - a valtozo abba a classba tartozik e vagy sem.
+access modifiers: public - mindegyik class latja
+protected - package class s subclass latja, de a vilagon mas nem
+default - class , package latja
+private - csak a class latja
+getters, setters - 
+final - valtozokat finalozunk, nem lehet oket modositani,methodra s classra is lehet
+	final classbol nem lehet orokoltetni,
+casting subClass as Class - 
+statis - 
 
-Packages
-package keyword
+Packages - osszetartozo osztalyok gyujtemenye
+package keyword - importalni tudjuk,
 resolve to a type
 import <package>.<class>
 import <package>.*
