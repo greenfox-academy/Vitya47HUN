@@ -10,7 +10,8 @@ public class CoolGreenfoxApp {
 //    myStudent.skipdays(5);
 //    myStudent.introduce();
 
-    Person myPerson = new Student();
+    Mentor myMentor = new Mentor();
+    System.out.println(myMentor.level);
 
   }
 }
