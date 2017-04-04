@@ -3,8 +3,8 @@ public class Plants {
   int waterlevel;
   int waterlimit;
 
-  public void watering() {
-    this.waterlevel = waterlevel + 1;
+  public void watering(int waterIncome) {
+    waterlevel = waterlevel + waterIncome;
   }
 
   public void setcolor(String color){
