@@ -1,5 +1,14 @@
 public class Flowers extends Plants {
 
+  @Override
+  public String toString() {
+    return "Flowers{" +
+            "color='" + color + '\'' +
+            ", waterlevel=" + waterlevel +
+            ", waterlimit=" + waterlimit +
+            '}';
+  }
+
   Flowers(String color, int waterlevel, int waterlimit) {
     this.color = color;
     this.waterlevel = waterlevel;
