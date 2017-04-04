@@ -1,13 +1,7 @@
-public class Flowers {
-  String color;
-  int waterlevel;
+public class Flowers extends Plants {
 
-  public void watering(){
-    waterlevel = waterlevel + 1;
-  }
-
-  Flowers(String color, int waterlevel){
-   this.color = color;
-   this.waterlevel = waterlevel;
+  Flowers(String color, int waterlevel) {
+    this.color = color;
+    this.waterlevel = waterlevel;
   }
 }

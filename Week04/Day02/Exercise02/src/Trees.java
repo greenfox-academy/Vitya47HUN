@@ -1,4 +1,7 @@
-public class Trees {
-  String color;
-  int waterlevel;
+public class Trees extends Plants {
+
+  Trees(String color, int waterlevel) {
+    this.color = color;
+    this.waterlevel = waterlevel;
+  }
 }
