@@ -161,3 +161,21 @@ method - method a javaban a function, fuggveny
 function - 
 static - egy helyen kell megvaltoztatni az erteket s mindenhol valtozni fog ahol meg  van hivva.
 constructor - definialunk benne, hogy csinaljunk valamit
+
+extends - hasznalhato mas classban
+super() and super
+relationships
+is-a - o valami,
+has-a - van 1 tulajdonsaga
+<variable> instanceof <Class>
+access modifiers: public, protected, default, private
+getters, setters
+final
+casting subClass as Class
+Optional
+
+Packages
+package keyword
+resolve to a type
+import <package>.<class>
+import <package>.*
