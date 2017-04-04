@@ -4,4 +4,8 @@ public class Trees extends Plants {
     this.color = color;
     this.waterlevel = waterlevel;
   }
+
+  Trees(){
+    this.waterlimit = 30;
+  }
 }
