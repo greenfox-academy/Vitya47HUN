@@ -1,6 +1,6 @@
 public class Sponsor extends Person {
-  private String company;
-  private int hiredStudents;
+  String company;
+  int hiredStudents;
 
   @Override
   public void introduce(){

@@ -1,5 +1,5 @@
 public class Mentor extends Person {
-  private String level;
+   String level;
 
   @Override
   public void getGoal(){
