@@ -1,9 +1,9 @@
 public class Plants {
   String color;
-  int waterlevel;
-  int waterlimit;
+  double waterlevel;
+  double waterlimit;
 
-  public void watering(int waterIncome) {
+  public void watering(double waterIncome) {
     waterlevel = waterlevel + waterIncome;
   }
 

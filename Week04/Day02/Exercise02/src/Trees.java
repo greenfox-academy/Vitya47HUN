@@ -11,7 +11,7 @@ public class Trees extends Plants {
   }
 
   @Override
-  public void watering(int waterIncome) {
-    waterlevel = waterlevel + waterIncome * 40 / 100;
+  public void watering(double waterIncome) {
+    waterlevel = waterlevel + waterIncome * 0.75;
   }
 }
