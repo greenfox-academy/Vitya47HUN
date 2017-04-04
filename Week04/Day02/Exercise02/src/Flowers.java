@@ -5,15 +5,13 @@ public class Flowers extends Plants {
     this.waterlevel = waterlevel;
     this.waterlimit = waterlimit;
   }
-
-
+  @Override
   public void watering(int waterIncome) {
     waterlevel = waterlevel + waterIncome * 75 / 100;
   }
 
-
-  Flowers(){
-    this.waterlimit = 10;
+  Flowers() {
+    this.waterlimit = 5;
   }
 
 //  public void absorb(int waterincome){
