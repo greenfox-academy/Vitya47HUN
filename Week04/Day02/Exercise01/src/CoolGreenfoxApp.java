@@ -28,14 +28,15 @@ public class CoolGreenfoxApp {
     Sponsor sponsor = new Sponsor();
     people.add(sponsor);
     Sponsor elon = new Sponsor("Elon Musk", 46, "male", "SpaceX");
+    people.add(elon);
 
     student.skipdays(3);
 
     for (int i = 0; i < 5; i++) {
-      elon.hire();
+      sponsor.hire();
     }
     for (int i = 0; i < 3; i++) {
-      sponsor.hire();
+      elon.hire();
     }
 
     for(Person person : people) {
