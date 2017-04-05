@@ -23,4 +23,6 @@ public class Trees extends Plants {
   public void watering(double waterIncome) {
     waterlevel = waterlevel + waterIncome * 0.40;
   }
+
+
 }
