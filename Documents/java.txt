@@ -184,3 +184,10 @@ package keyword - importalni tudjuk,
 resolve to a type
 import <package>.<class>
 import <package>.*
+
+Persistent data
+@Test
+Expectation
+@Before, @BeforeClass
+@After, @AfterClass
+assertEquals(), assertTrue(), assertFalse()
