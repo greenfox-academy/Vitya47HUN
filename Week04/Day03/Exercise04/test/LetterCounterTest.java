@@ -7,8 +7,8 @@ public class LetterCounterTest {
   @Test
   public void testCountLetters() throws Exception {
     LetterCounter myCounter = new LetterCounter();
-    String string = "blmafaa";
-    assertEquals(a, myCounter.letterCounter("a"));
+    String text = "bbread";
+    assertEquals(1,(int)myCounter.letterCounter(text).get("b"));
   }
 
 }
