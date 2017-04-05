@@ -3,9 +3,8 @@ import java.util.Map;
 
 public class LetterCounter {
   public static void main(String[] args) {
-    String letters = "abcdefghhh";
+    String letters = "bbcdefghhh";
     System.out.println(letterCounter(letters));
-
 
   }
 
