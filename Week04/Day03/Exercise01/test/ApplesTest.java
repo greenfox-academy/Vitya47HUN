@@ -5,21 +5,15 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class ApplesTest {
-static String apple;
-
-@Before
-
-  public static void testApple(){
-
-    apple = new Apples();
+  @Test
+  public void testgetApple() throws Exception {
+    Apples myApple = new Apples();
+    assertEquals("apple", myApple.getApple());
   }
-
-
 
   @Test
-  public void testDefaultName() throws Exception {
-    assertEquals(apple, );
+  public void testgetApple2() throws Exception {
+    Apples myApple = new Apples();
+    assertEquals("orange",myApple.getApple());
   }
 }
-
-@After

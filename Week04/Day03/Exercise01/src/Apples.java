@@ -1,9 +1,9 @@
 public class Apples {
 
-  private String fruit = "apple";
+  private String apple = "apple";
 
   public String getApple(){
-    return fruit;
+    return apple;
   }
 
 }
