@@ -41,12 +41,12 @@ class ExtensionTest {
 
   @Test
   void testIsVowel_a() {
-    assertTrue(extension.isVowel('a'));
+    assertTrue(extension.isVowel('e'));
   }
 
   @Test
   void testIsVowel_u() {
-    assertTrue(extension.isVowel('u'));
+    assertTrue(extension.isVowel('i'));
   }
 
   @Test
