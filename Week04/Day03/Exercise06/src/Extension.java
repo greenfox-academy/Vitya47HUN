@@ -18,11 +18,12 @@ public class Extension {
 
   double median(List<Integer> pool) {
     Collections.sort(pool);
-    if(pool.size() % 2 == 0){
-      return pool.get((pool.size() % 2));
+    if(pool.size() % 2 != 0){
+      return (double)(pool.get((pool.size() - 1) / 2));
     }
     else {
-      return pool.get((pool.size() / 2));
+
+      return (double)(pool.get(pool.size() / 2) + pool.get(pool.size() / 2 - 1)) / 2;
     }
 
   }
