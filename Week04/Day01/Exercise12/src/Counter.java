@@ -2,19 +2,21 @@ public class Counter {
   int value;
   int initialValue;
 
-  public Counter( int value) {
-    value = 0;
-    initialValue = 0;
+  public Counter(int value) {
+    this.value = value;
+    initialValue = value;
+
   }
 
   public Counter() {
     value = 0;
     initialValue = 0;
+
   }
 
 
   public int add(int number){
-    value += number;
+    this.value += number;
     return value;
   }
 
