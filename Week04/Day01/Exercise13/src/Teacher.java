@@ -1,7 +1,8 @@
 
 public class Teacher{
 
-  public void answer(){
-    System.out.println("The answer is one");
+  public String answer(){
+    String answer = "The answer is one";
+    return answer;
   }
 }

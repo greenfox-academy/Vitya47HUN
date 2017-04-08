@@ -7,11 +7,16 @@
 //        answer()
 public class Student {
   public static void main(String[] args) {
-    
+  Teacher marika = new Teacher();
+  Student pistika = new Student();
+  pistika.question(marika);
+  marika.answer();
+    System.out.println(pistika);
+
   }
 
-  public void learn(){
-
+  public void learn(Teacher teacher){
+  String knowledge = teacher.answer();
   }
 
   public void question(Teacher teacher){
