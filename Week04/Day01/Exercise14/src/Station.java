@@ -9,5 +9,14 @@
 //        initialize gasAmount -> 0
 //        initialize capacity -> 100
 public class Station {
+  Car porsche = new Car();
+  Station moll = new Station();
+  
+
+
+  public void refill(Car car){
+    car.gasAmount = 100;
+
+  }
 
 }
