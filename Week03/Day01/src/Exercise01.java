@@ -1,50 +1,72 @@
-import java.io.File;
-import java.util.*;
+
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.*;
 
 public class Exercise01 {
+  final public static String CSV_PATH = "otos.csv";
+  final public static String SEPARATOR = ";";
+  final public static int NUMBER_START_INDEX = 11;
+  final public static int LOTTERY_COUNT = 5;
+
   public static void main(String[] args) {
-    // Create a method that find the 5 most common lotto numbers assets/lotto.csv
-    Map<String, Integer> map = new HashMap<String, Integer>();
-    try {
-      Path filePath = Paths.get("otos.csv");
-      List<String> lines = Files.readAllLines(filePath);
-      List<String> numbers = new ArrayList<String>();
-      for (int i = 0; i < lines.size(); i++) {
+    List<String> allNumbers = parseAllNumbersFromFile();
+    Map<String, Integer> numberCounts = getNumberCounts(allNumbers);
+    List<Integer> topFiveCounts = getTopFiveCounts(numberCounts);
 
-        List<String> list = Arrays.asList(lines.get(i).split(";"));
-        List<String> allNumbers = (list.subList(list.size() - 5, list.size()));
-        numbers.addAll(allNumbers);
-//        System.out.println(list.subList(list.size() - 5, list.size()));x
-
+    for (Map.Entry<String, Integer> entry : numberCounts.entrySet()) {
+      if (topFiveCounts.contains(entry.getValue())) {
+        System.out.println(entry.getKey() + "/" + entry.getValue());
       }
-
-      for (int j = 0; j < numbers.size(); j++) {
-        Integer count = map.get(numbers.get(j));
-        map.put(numbers.get(j), count == null ? 1 : count + 1);   //auto boxing and count
-      }
-
-//      System.out.println(map);
-
-      for (String key : map.keySet()) {
-        map.get(key);
-        for (int k = 0; k < key.length(); k++) {
-          int max = key.indexOf(k);
-          System.out.println(max);
-        }
-
-//        System.out.println();
-
-//      System.out.println(numbers);
-
-      }
-
-    } catch (Exception e) {
-      e.printStackTrace();
-      System.out.println("Error");
     }
+  }
 
+  public static List<Integer> getTopFiveCounts(Map<String, Integer> numberCounts) {
+    List<Integer> allCounts = new ArrayList<>();
+    for (Map.Entry<String, Integer> entry : numberCounts.entrySet()) {
+      allCounts.add(entry.getValue());
+    }
+    Collections.sort(allCounts);
+    Collections.reverse(allCounts);
+    return allCounts.subList(0, 5);
+  }
+
+  public static Map<String, Integer> getNumberCounts(List<String> allNumbers) {
+    Map<String, Integer> numberCounts = new HashMap<String, Integer>();
+    for (String number : allNumbers) {
+      if (numberCounts.containsKey(number)) {
+        numberCounts.put(number, numberCounts.get(number) + 1);
+      } else {
+        numberCounts.put(number, 1);
+      }
+    }
+    return numberCounts;
+  }
+
+  public static List<String> parseAllNumbersFromFile() {
+    List<String> allNumbers = new ArrayList<>();
+    List<String> lines = readFileLines();
+    for (String line : lines) {
+      String[] values = Arrays.copyOfRange(line.split(SEPARATOR), NUMBER_START_INDEX, NUMBER_START_INDEX + LOTTERY_COUNT);
+      for (String number : values) {
+        allNumbers.add(number);
+      }
+    }
+    return allNumbers;
+  }
+
+  public static List<String> readFileLines() {
+    List<String> lines;
+    try {
+      Path rawCsv = Paths.get(CSV_PATH);
+      lines = Files.readAllLines(rawCsv);
+    } catch (IOException e) {
+      System.out.println("Unable to read the file :(");
+      lines = new ArrayList<>();
+    }
+    System.out.println("File is loaded");
+    return lines;
   }
 }
