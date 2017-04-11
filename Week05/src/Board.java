@@ -1,4 +1,5 @@
 import javafx.scene.layout.Background;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -52,7 +53,8 @@ public class Board extends JComponent implements KeyListener {
             {1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
     };
-
+    int skeletonx = (int)(Math.random());
+    int skeletony = (int)(Math.random() * 144);
     int wallX = 0;
     int wallY = 0;
     for (int x = 0; x < map.length; x++) {
@@ -68,6 +70,8 @@ public class Board extends JComponent implements KeyListener {
           }
         }
       }
+      PositionedImage skeleton = new PositionedImage("./assets/skeleton.png",skeletonx, skeletony);
+      skeleton.draw(graphics);
 
       PositionedImage hero = new PositionedImage(heroImage, testBoxX, testBoxY);
       hero.draw(graphics);
@@ -90,9 +94,11 @@ public class Board extends JComponent implements KeyListener {
   @Override
   public void keyTyped(KeyEvent e) {
   }
+
   @Override
   public void keyPressed(KeyEvent e) {
   }
+
   // But actually we can use just this one for our goals here
   @Override
   public void keyReleased(KeyEvent e) {
