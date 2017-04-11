@@ -9,8 +9,8 @@ public class Board extends JComponent implements KeyListener {
   int testBoxY;
 
   public Board() {
-    testBoxX = 300;
-    testBoxY = 300;
+    testBoxX = 0;
+    testBoxY = 0;
 
     // set the size of your draw board
     setPreferredSize(new Dimension(720, 720));
@@ -20,23 +20,25 @@ public class Board extends JComponent implements KeyListener {
   @Override
   public void paint(Graphics graphics) {
     super.paint(graphics);
-    graphics.fillRect(testBoxX, testBoxY, 100, 100);
+    graphics.fillRect(testBoxX, testBoxY, 72, 72);
 
     // here you have a 720x720 canvas
     // you can create and draw an image using the class below e.g.
-    PositionedImage image = new PositionedImage("assets/floor.png", 0, 0);
-    image.draw(graphics);
-    for (int i = 0;i < 10;i++) {
-      image.posX = image.posX + 72;
-      image.draw(graphics);
+    int posX = 0;
+    int posY = 0;
+    for (int i = 0; i < 10; i++) {
       for (int j = 0; j < 10; j++) {
-        image.posY = image.posY + 72;
+        PositionedImage image = new PositionedImage("./assets/floor.png", posX, posY);
         image.draw(graphics);
+        posX = j * 72;
       }
+      posY = i * 72;
     }
-
+    graphics.fillRect(testBoxX, testBoxY, 72, 72);
 
   }
+
+
 
   // To be a KeyListener the class needs to have these 3 methods in it
   @Override
@@ -54,13 +56,13 @@ public class Board extends JComponent implements KeyListener {
   public void keyReleased(KeyEvent e) {
     // When the up or down keys hit, we change the position of our box
     if (e.getKeyCode() == KeyEvent.VK_UP) {
-      testBoxY -= 100;
-    } else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
-      testBoxY += 100;
-    }else if(e.getKeyCode() == KeyEvent.VK_LEFT) {
-      testBoxX -= 100;
-    }else if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
-      testBoxX += 100;
+      testBoxY -= 72;
+    } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+      testBoxY += 72;
+    } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+      testBoxX -= 72;
+    } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+      testBoxX += 72;
     }
     // and redraw to have a new picture with the new coordinates
     repaint();
