@@ -14,14 +14,14 @@ public class Board extends JComponent implements KeyListener {
   int CurrentLocationX = testBoxX;
   int CurrentLocationY = testBoxY;
   int[][] map = {
-          {0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+          {0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0},
           {0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
           {0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0},
           {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
           {0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0},
           {0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-          {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-          {1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0},
+          {0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0},
+          {1, 1, 1, 1, 1, 0, 0, 0, 0, 2, 0},
           {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
   };
 
@@ -52,15 +52,15 @@ public class Board extends JComponent implements KeyListener {
       posY = i * 72;
     }
 
-    int counter = 0;
-    while (counter < 3){
-      int mapPosX = (int)(Math.random() * 10);
-      int mapPosY = (int)(Math.random() * 9);
-      if (map[mapPosY][mapPosX] == 0) {
-        map[mapPosY][mapPosX] = 2;
-        counter = counter + 1;
-      }
-    }
+//    int counter = 0;
+//    while (counter < 3){
+//      int mapPosX = (int)(Math.random() * 11);
+//      int mapPosY = (int)(Math.random() * 9);
+//      if (map[mapPosY][mapPosX] == 0) {
+//        map[mapPosY][mapPosX] = 2;
+//        counter = counter + 1;
+//      }
+//    }
 
     int wallX = 0;
     int wallY = 0;
