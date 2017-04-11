@@ -1,20 +1,23 @@
 import javafx.scene.layout.Background;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.ArrayList;
 
 public class Board extends JComponent implements KeyListener {
 
   int testBoxX;
   int testBoxY;
   String heroImage;
+  int CurrentLocationX = testBoxX;
+  int CurrentLocationY = testBoxY;
 
   public Board() {
     testBoxX = 0;
     testBoxY = 0;
     heroImage = "./assets/hero-down.png";
+
 
     // set the size of your draw board
     setPreferredSize(new Dimension(720, 720));
@@ -37,6 +40,8 @@ public class Board extends JComponent implements KeyListener {
       }
       posY = i * 72;
     }
+
+//    ArrayList<Integer> savedCoordinates = new ArrayList<>();
     int[][] map = {
             {0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
             {0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -48,8 +53,8 @@ public class Board extends JComponent implements KeyListener {
             {1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
     };
-    int wallX;
-    int wallY;
+    int wallX = 0;
+    int wallY = 0;
     for (int x = 0; x < map.length; x++) {
       for (int y = 0; y < map[x].length; y++) {
         if (map[x][y] == 1) {
@@ -57,27 +62,31 @@ public class Board extends JComponent implements KeyListener {
           wallY = x * 72;
           PositionedImage wall = new PositionedImage("./assets/wall.png", wallX, wallY);
           wall.draw(graphics);
+          if (testBoxX == wallX && testBoxY == wallY) {
+            testBoxY = CurrentLocationY;
+            testBoxX = CurrentLocationX;
+          }
         }
       }
-    }
-    PositionedImage hero = new PositionedImage(heroImage, testBoxX, testBoxY);
-    setBackground(null);
-    hero.draw(graphics);
-    if (testBoxX == 720) {
-      testBoxX -= 72;
-    } else if (testBoxX == -72) {
-      testBoxX = 0;
-    } else if (testBoxY == -72) {
-      testBoxY = 0;
-    } else if (testBoxY == +720) {
-      testBoxY -= 72;
-    }
-// else if (testBoxX == wallX && testBoxY == wallY){
-//      testBoxX -= 72;
-//
-//    }
-  }
 
+      PositionedImage hero = new PositionedImage(heroImage, testBoxX, testBoxY);
+      hero.draw(graphics);
+      CurrentLocationX = testBoxX;
+      CurrentLocationY = testBoxY;
+
+      if (testBoxX == 720) {
+        testBoxX -= 72;
+      } else if (testBoxX == -72) {
+        testBoxX = 0;
+      } else if (testBoxY == -72) {
+        testBoxY = 0;
+      } else if (testBoxY == +720) {
+        testBoxY -= 72;
+      }
+
+    }
+
+  }
 
 
   // To be a KeyListener the class needs to have these 3 methods in it
