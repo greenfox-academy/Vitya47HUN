@@ -13,6 +13,17 @@ public class Board extends JComponent implements KeyListener {
   String heroImage;
   int CurrentLocationX = testBoxX;
   int CurrentLocationY = testBoxY;
+  int[][] map = {
+          {0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+          {0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+          {0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0},
+          {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
+          {0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0},
+          {0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+          {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+          {1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0},
+          {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+  };
 
   public Board() {
     testBoxX = 0;
@@ -42,19 +53,19 @@ public class Board extends JComponent implements KeyListener {
     }
 
 //    ArrayList<Integer> savedCoordinates = new ArrayList<>();
-    int[][] map = {
-            {0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
-            {0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0},
-            {0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-    };
-    int skeletonx = (int)(Math.random());
-    int skeletony = (int)(Math.random() * 144);
+//    int[][] map = {
+//            {0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+//            {0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+//            {0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0},
+//            {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
+//            {0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0},
+//            {0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+//            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+//            {1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0},
+//            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+//    };
+
+
     int wallX = 0;
     int wallY = 0;
     for (int x = 0; x < map.length; x++) {
@@ -70,8 +81,6 @@ public class Board extends JComponent implements KeyListener {
           }
         }
       }
-      PositionedImage skeleton = new PositionedImage("./assets/skeleton.png",skeletonx, skeletony);
-      skeleton.draw(graphics);
 
       PositionedImage hero = new PositionedImage(heroImage, testBoxX, testBoxY);
       hero.draw(graphics);
@@ -88,7 +97,20 @@ public class Board extends JComponent implements KeyListener {
     }
     CurrentLocationX = testBoxX;
     CurrentLocationY = testBoxY;
+    drawSkeleton(graphics);
   }
+
+  public void drawSkeleton(Graphics graphics) {
+    for (int i = 0; i < 3; i++) {
+      int randomForX = (int) (Math.random() * 10);
+      int randomForY = (int) (Math.random() * 10);
+      if (map[randomForY][randomForX] == 0) {
+        PositionedImage skeleton = new PositionedImage("./assets/skeleton.png", randomForX * 72, randomForY * 72);
+        skeleton.draw(graphics);
+      }
+    }
+  }
+
 
   // To be a KeyListener the class needs to have these 3 methods in it
   @Override
@@ -119,4 +141,5 @@ public class Board extends JComponent implements KeyListener {
     // and redraw to have a new picture with the new coordinates
     repaint();
   }
+
 }
