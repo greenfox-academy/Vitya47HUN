@@ -18,7 +18,6 @@ public class Board extends JComponent implements KeyListener {
     testBoxY = 0;
     heroImage = "./assets/hero-down.png";
 
-
     // set the size of your draw board
     setPreferredSize(new Dimension(720, 720));
     setVisible(true);
@@ -53,6 +52,7 @@ public class Board extends JComponent implements KeyListener {
             {1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
     };
+
     int wallX = 0;
     int wallY = 0;
     for (int x = 0; x < map.length; x++) {
@@ -71,8 +71,6 @@ public class Board extends JComponent implements KeyListener {
 
       PositionedImage hero = new PositionedImage(heroImage, testBoxX, testBoxY);
       hero.draw(graphics);
-      CurrentLocationX = testBoxX;
-      CurrentLocationY = testBoxY;
 
       if (testBoxX == 720) {
         testBoxX -= 72;
@@ -83,11 +81,10 @@ public class Board extends JComponent implements KeyListener {
       } else if (testBoxY == +720) {
         testBoxY -= 72;
       }
-
     }
-
+    CurrentLocationX = testBoxX;
+    CurrentLocationY = testBoxY;
   }
-
 
   // To be a KeyListener the class needs to have these 3 methods in it
   @Override
