@@ -1,5 +1,4 @@
 import javafx.scene.layout.Background;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -7,6 +6,7 @@ import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
 public class Board extends JComponent implements KeyListener {
+
   int o = 0;
   int testBoxX;
   int testBoxY;
@@ -51,6 +51,7 @@ public class Board extends JComponent implements KeyListener {
       }
       posY = i * 72;
     }
+
 
 //    int counter = 0;
 //    while (counter < 3){
@@ -98,7 +99,10 @@ public class Board extends JComponent implements KeyListener {
     }
     CurrentLocationX = testBoxX;
     CurrentLocationY = testBoxY;
-
+    Hero Geralt = new Hero(2,150,5,15);
+    graphics.setColor(Color.RED);
+    graphics.setFont(new Font("TimesRoman", Font.PLAIN, 16));
+    graphics.drawString(Geralt.toString(),140,640);
   }
 
   // To be a KeyListener the class needs to have these 3 methods in it
