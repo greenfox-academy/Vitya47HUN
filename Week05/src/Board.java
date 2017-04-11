@@ -37,17 +37,42 @@ public class Board extends JComponent implements KeyListener {
       posY = i * 72;
     }
     graphics.fillRect(testBoxX, testBoxY, 72, 72);
-    if (testBoxX == 720){
+    if (testBoxX == 720) {
       testBoxX -= 72;
-    }else if (testBoxX == -72){
+    } else if (testBoxX == -72) {
       testBoxX = 0;
-    }else if (testBoxY == -72) {
+    } else if (testBoxY == -72) {
       testBoxY = 0;
-    }else if (testBoxY == +720) {
+    } else if (testBoxY == +720) {
       testBoxY -= 72;
     }
-    PositionedImage wall = new PositionedImage("./assets/wall.png", 144, 144);
-    wall.draw(graphics);
+
+
+    int[][] map = {
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+            {0, 0, 0, 1, 0, 0, 0, 0, 0, 0,},
+            {0, 0, 0, 1, 0, 0, 0, 0, 0, 0,},
+            {0, 1, 1, 1, 0, 0, 0, 0, 0, 0,},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+    };
+    int wallX;
+    int wallY;
+    for (int x = 0; x < map.length; x++) {
+      for (int y = 0; y < map[x].length; y++) {
+        if (map[x][y] == 1) {
+          wallX = x * 72;
+          wallY = y * 72;
+          PositionedImage wall = new PositionedImage("./assets/wall.png", wallX, wallY);
+          wall.draw(graphics);
+        }
+      }
+
+    }
   }
 
 
