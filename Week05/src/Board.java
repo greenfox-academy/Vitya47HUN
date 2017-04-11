@@ -53,14 +53,14 @@ public class Board extends JComponent implements KeyListener {
     }
 
     int counter = 0;
-    do if (counter < 3){
+    while (counter < 3){
       int mapPosX = (int)(Math.random() * 10);
-      int mapPosY = (int)(Math.random() * 10);
+      int mapPosY = (int)(Math.random() * 9);
       if (map[mapPosY][mapPosX] == 0) {
-        map[posY][mapPosX] = 2;
+        map[mapPosY][mapPosX] = 2;
         counter = counter + 1;
       }
-    } while (counter < 3);
+    }
 
     int wallX = 0;
     int wallY = 0;
@@ -76,7 +76,7 @@ public class Board extends JComponent implements KeyListener {
             testBoxX = CurrentLocationX;
           }
         }
-        if (map[y][x] == 2) {
+        if (map[x][y] == 2) {
           int skeletonY = (x * 72);
           int skeletonX = (y * 72);
           PositionedImage skeleton = new PositionedImage("./assets/skeleton.png",skeletonX,skeletonY);
@@ -99,25 +99,7 @@ public class Board extends JComponent implements KeyListener {
     CurrentLocationX = testBoxX;
     CurrentLocationY = testBoxY;
 
-//    while(o < 3) {
-//      drawSkeleton(graphics);
-//      o = o + 1;
-//    }
   }
-
-
-
-//  public void drawSkeleton(Graphics graphics) {
-//    for (int i = 0; i < 3; i++) {
-//      int randomForX = (int) (Math.random() * 10);
-//      int randomForY = (int) (Math.random() * 10);
-//      if (map[randomForY][randomForX] == 0) {
-//        PositionedImage skeleton = new PositionedImage("./assets/skeleton.png", randomForX * 72, randomForY * 72);
-//        skeleton.draw(graphics);
-//      }
-//    }
-//  }
-
 
   // To be a KeyListener the class needs to have these 3 methods in it
   @Override
@@ -148,5 +130,4 @@ public class Board extends JComponent implements KeyListener {
     // and redraw to have a new picture with the new coordinates
     repaint();
   }
-
 }
