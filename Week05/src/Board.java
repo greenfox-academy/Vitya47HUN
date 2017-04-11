@@ -27,7 +27,7 @@ public class Board extends JComponent implements KeyListener {
     // you can create and draw an image using the class below e.g.
     int posX = 0;
     int posY = 0;
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 11; i++) {
       for (int j = 0; j < 10; j++) {
         PositionedImage image = new PositionedImage("./assets/floor.png", posX, posY);
         image.draw(graphics);
@@ -36,19 +36,18 @@ public class Board extends JComponent implements KeyListener {
       posY = i * 72;
     }
     int[][] map = {
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-            {0, 0, 0, 1, 0, 0, 0, 0, 0, 0,},
-            {0, 0, 0, 1, 0, 0, 0, 0, 0, 0,},
-            {0, 1, 1, 1, 0, 0, 0, 0, 0, 0,},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
+            {0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
     };
-    int wallX;
-    int wallY;
+    int wallX = 0;
+    int wallY = 0;
     for (int x = 0; x < map.length; x++) {
       for (int y = 0; y < map[x].length; y++) {
         if (map[x][y] == 1) {
@@ -58,7 +57,6 @@ public class Board extends JComponent implements KeyListener {
           wall.draw(graphics);
         }
       }
-
     }
     PositionedImage hero = new PositionedImage("./assets/hero-down.png", testBoxX, testBoxY);
     setBackground(null);
@@ -71,6 +69,9 @@ public class Board extends JComponent implements KeyListener {
       testBoxY = 0;
     } else if (testBoxY == +720) {
       testBoxY -= 72;
+    } else if (testBoxX == wallX && testBoxY == wallY){
+      testBoxX -= 72;
+      
     }
   }
 
@@ -79,14 +80,10 @@ public class Board extends JComponent implements KeyListener {
   // To be a KeyListener the class needs to have these 3 methods in it
   @Override
   public void keyTyped(KeyEvent e) {
-
   }
-
   @Override
   public void keyPressed(KeyEvent e) {
-
   }
-
   // But actually we can use just this one for our goals here
   @Override
   public void keyReleased(KeyEvent e) {
