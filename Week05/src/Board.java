@@ -61,7 +61,7 @@ public class Board extends JComponent implements KeyListener {
         counter = counter + 1;
       }
     } while (counter < 3);
-    
+
     int wallX = 0;
     int wallY = 0;
     for (int x = 0; x < map.length; x++) {
@@ -75,6 +75,12 @@ public class Board extends JComponent implements KeyListener {
             testBoxY = CurrentLocationY;
             testBoxX = CurrentLocationX;
           }
+        }
+        if (map[y][x] == 2) {
+          int skeletonY = (x * 72);
+          int skeletonX = (y * 72);
+          PositionedImage skeleton = new PositionedImage("./assets/skeleton.png",skeletonX,skeletonY);
+          skeleton.draw(graphics);
         }
       }
       PositionedImage hero = new PositionedImage(heroImage, testBoxX, testBoxY);
