@@ -22,7 +22,6 @@ public class Board extends JComponent implements KeyListener {
   @Override
   public void paint(Graphics graphics) {
     super.paint(graphics);
-    graphics.fillRect(testBoxX, testBoxY, 72, 72);
 
     // here you have a 720x720 canvas
     // you can create and draw an image using the class below e.g.
@@ -36,18 +35,6 @@ public class Board extends JComponent implements KeyListener {
       }
       posY = i * 72;
     }
-    graphics.fillRect(testBoxX, testBoxY, 72, 72);
-    if (testBoxX == 720) {
-      testBoxX -= 72;
-    } else if (testBoxX == -72) {
-      testBoxX = 0;
-    } else if (testBoxY == -72) {
-      testBoxY = 0;
-    } else if (testBoxY == +720) {
-      testBoxY -= 72;
-    }
-
-
     int[][] map = {
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
@@ -72,6 +59,18 @@ public class Board extends JComponent implements KeyListener {
         }
       }
 
+    }
+    PositionedImage hero = new PositionedImage("./assets/hero-down.png", testBoxX, testBoxY);
+    setBackground(null);
+    hero.draw(graphics);
+    if (testBoxX == 720) {
+      testBoxX -= 72;
+    } else if (testBoxX == -72) {
+      testBoxX = 0;
+    } else if (testBoxY == -72) {
+      testBoxY = 0;
+    } else if (testBoxY == +720) {
+      testBoxY -= 72;
     }
   }
 
