@@ -1,3 +1,5 @@
+import javafx.scene.layout.Background;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -35,7 +37,17 @@ public class Board extends JComponent implements KeyListener {
       posY = i * 72;
     }
     graphics.fillRect(testBoxX, testBoxY, 72, 72);
-
+    if (testBoxX == 720){
+      testBoxX -= 72;
+    }else if (testBoxX == -72){
+      testBoxX = 0;
+    }else if (testBoxY == -72) {
+      testBoxY = 0;
+    }else if (testBoxY == +720) {
+      testBoxY -= 72;
+    }
+    PositionedImage wall = new PositionedImage("./assets/wall.png", 144, 144);
+    wall.draw(graphics);
   }
 
 
