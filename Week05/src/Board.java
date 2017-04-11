@@ -7,7 +7,7 @@ import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
 public class Board extends JComponent implements KeyListener {
-
+  int o = 0;
   int testBoxX;
   int testBoxY;
   String heroImage;
@@ -52,20 +52,16 @@ public class Board extends JComponent implements KeyListener {
       posY = i * 72;
     }
 
-//    ArrayList<Integer> savedCoordinates = new ArrayList<>();
-//    int[][] map = {
-//            {0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
-//            {0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
-//            {0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0},
-//            {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
-//            {0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0},
-//            {0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-//            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-//            {1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0},
-//            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-//    };
-
-
+    int counter = 0;
+    do if (counter < 3){
+      int mapPosX = (int)(Math.random() * 10);
+      int mapPosY = (int)(Math.random() * 10);
+      if (map[mapPosY][mapPosX] == 0) {
+        map[posY][mapPosX] = 2;
+        counter = counter + 1;
+      }
+    } while (counter < 3);
+    
     int wallX = 0;
     int wallY = 0;
     for (int x = 0; x < map.length; x++) {
@@ -81,7 +77,6 @@ public class Board extends JComponent implements KeyListener {
           }
         }
       }
-
       PositionedImage hero = new PositionedImage(heroImage, testBoxX, testBoxY);
       hero.draw(graphics);
 
@@ -97,19 +92,25 @@ public class Board extends JComponent implements KeyListener {
     }
     CurrentLocationX = testBoxX;
     CurrentLocationY = testBoxY;
-    drawSkeleton(graphics);
+
+//    while(o < 3) {
+//      drawSkeleton(graphics);
+//      o = o + 1;
+//    }
   }
 
-  public void drawSkeleton(Graphics graphics) {
-    for (int i = 0; i < 3; i++) {
-      int randomForX = (int) (Math.random() * 10);
-      int randomForY = (int) (Math.random() * 10);
-      if (map[randomForY][randomForX] == 0) {
-        PositionedImage skeleton = new PositionedImage("./assets/skeleton.png", randomForX * 72, randomForY * 72);
-        skeleton.draw(graphics);
-      }
-    }
-  }
+
+
+//  public void drawSkeleton(Graphics graphics) {
+//    for (int i = 0; i < 3; i++) {
+//      int randomForX = (int) (Math.random() * 10);
+//      int randomForY = (int) (Math.random() * 10);
+//      if (map[randomForY][randomForX] == 0) {
+//        PositionedImage skeleton = new PositionedImage("./assets/skeleton.png", randomForX * 72, randomForY * 72);
+//        skeleton.draw(graphics);
+//      }
+//    }
+//  }
 
 
   // To be a KeyListener the class needs to have these 3 methods in it
