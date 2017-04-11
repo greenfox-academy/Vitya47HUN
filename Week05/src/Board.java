@@ -9,10 +9,12 @@ public class Board extends JComponent implements KeyListener {
 
   int testBoxX;
   int testBoxY;
+  String heroImage;
 
   public Board() {
     testBoxX = 0;
     testBoxY = 0;
+    heroImage = "./assets/hero-down.png";
 
     // set the size of your draw board
     setPreferredSize(new Dimension(720, 720));
@@ -36,29 +38,29 @@ public class Board extends JComponent implements KeyListener {
       posY = i * 72;
     }
     int[][] map = {
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0},
             {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
-            {0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0},
+            {0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0},
+            {0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
     };
-    int wallX = 0;
-    int wallY = 0;
+    int wallX;
+    int wallY;
     for (int x = 0; x < map.length; x++) {
       for (int y = 0; y < map[x].length; y++) {
         if (map[x][y] == 1) {
-          wallX = x * 72;
-          wallY = y * 72;
+          wallX = y * 72;
+          wallY = x * 72;
           PositionedImage wall = new PositionedImage("./assets/wall.png", wallX, wallY);
           wall.draw(graphics);
         }
       }
     }
-    PositionedImage hero = new PositionedImage("./assets/hero-down.png", testBoxX, testBoxY);
+    PositionedImage hero = new PositionedImage(heroImage, testBoxX, testBoxY);
     setBackground(null);
     hero.draw(graphics);
     if (testBoxX == 720) {
@@ -69,10 +71,11 @@ public class Board extends JComponent implements KeyListener {
       testBoxY = 0;
     } else if (testBoxY == +720) {
       testBoxY -= 72;
-    } else if (testBoxX == wallX && testBoxY == wallY){
-      testBoxX -= 72;
-      
     }
+// else if (testBoxX == wallX && testBoxY == wallY){
+//      testBoxX -= 72;
+//
+//    }
   }
 
 
@@ -90,12 +93,16 @@ public class Board extends JComponent implements KeyListener {
     // When the up or down keys hit, we change the position of our box
     if (e.getKeyCode() == KeyEvent.VK_UP) {
       testBoxY -= 72;
+      heroImage = "./assets/hero-up.png";
     } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
       testBoxY += 72;
+      heroImage = "./assets/hero-down.png";
     } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
       testBoxX -= 72;
+      heroImage = "./assets/hero-left.png";
     } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
       testBoxX += 72;
+      heroImage = "./assets/hero-right.png";
     }
     // and redraw to have a new picture with the new coordinates
     repaint();
