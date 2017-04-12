@@ -21,6 +21,8 @@ public class Hero extends Character {
     } else if (keyCode == KeyEvent.VK_RIGHT && canMove(x + 1, y, map)) {
       x += 1;
       setImage("./assets/hero-right.png");
+    } else if (keyCode == KeyEvent.VK_SPACE){
+
     }
 
   }

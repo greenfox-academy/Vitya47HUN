@@ -9,37 +9,30 @@ public class Character {
   int currentHp;
   int attackP;
   int x, y;
-  BufferedImage image;
+  String imageName;
 
-  public Character(int x, int y, String imageName,int maxHp,int currentHp,int attackP) {
+  public Character(int x, int y, String imageName, int maxHp, int currentHp, int attackP) {
     this.x = x;
     this.y = y;
+    this.imageName = imageName;
     this.maxHp = maxHp;
     this.currentHp = currentHp;
     this.attackP = attackP;
-
-    setImage(imageName);
   }
 
-  void setImage(String filename) {
-    try {
-      image = ImageIO.read(new File(filename));
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
+  public void setImage(String filename) {
+    this.imageName = filename;
+
   }
 
   public void update(int[][] map, int keyCode) {
-    }
-
-  public int attack(Character in){
-    in.currentHp = in.currentHp -getDamaged();
-   return in.currentHp;
   }
 
-  public int getDamaged(){
-    return 5;
-  }
+//  public int attack(){
+//    this.x ==
+//    in.currentHp = in.currentHp -getDamaged();
+//   return in.currentHp;
+//  }
 
   boolean canMove(int toX, int toY, int[][] map) {
 
@@ -49,7 +42,8 @@ public class Character {
     return map[toY][toX] == 0;
   }
 
-  public void draw(Graphics graphics) {
+  public void draw(Graphics graphics) throws IOException {
+    BufferedImage image = ImageIO.read(new File(imageName));
     if (image != null) {
       graphics.drawImage(image, x * 72, y * 72, null);
     }

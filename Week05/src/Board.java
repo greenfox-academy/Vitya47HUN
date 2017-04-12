@@ -1,3 +1,4 @@
+import javafx.geometry.Pos;
 import javafx.scene.layout.Background;
 import javax.swing.*;
 import java.awt.*;
@@ -9,7 +10,7 @@ import java.util.List;
 public class Board extends JComponent implements KeyListener {
 
   public final int f = 72; // Field size
-
+  Hero Geralt = new Hero(0, 0, "./assets/hero-down.png", 100, 100, 15);
   int lastKey;
   List<Character> characters;
 
@@ -43,12 +44,9 @@ public class Board extends JComponent implements KeyListener {
       y = (int) (Math.random() * 9);
     }
     characters.add(new Boss(x, y, "./assets/boss.png", 50, 50, 10));
-    Hero Geralt = new Hero(0, 0, "./assets/hero-down.png", 100, 100, 15);
     characters.add(Geralt);
 //    characters.add(new Skeleton(x,y, "./assets/skeleton.png"));
-    Geralt.attack(characters.get(1));
-    Geralt.attack(characters.get(1));
-    Geralt.attack(characters.get(1));
+
   }
 
   @Override
@@ -65,19 +63,20 @@ public class Board extends JComponent implements KeyListener {
 
     // Draw characteres
     for (Character character : characters) {
-      character.draw(graphics);
+      PositionedImage tempImage = new PositionedImage(character.imageName, character.x * f, character.y * f);
+      tempImage.draw(graphics);
     }
 
     // Draw hero's pos
     Character hero = characters.get(3);
     graphics.setColor(Color.RED);
     graphics.setFont(new Font("TimesRoman", Font.PLAIN, 16));
-    graphics.drawString("Hero Health: " + hero.currentHp + "/" + hero.maxHp + " | " + "AP :" + hero.attackP,730,72);
+    graphics.drawString("Hero Health: " + hero.currentHp + "/" + hero.maxHp + " | " + "AP :" + hero.attackP, 730, 72);
 
     Character skele = characters.get(1);
     graphics.setColor(Color.RED);
     graphics.setFont(new Font("TimesRoman", Font.PLAIN, 16));
-    graphics.drawString("Skeleton Health: " + skele.currentHp + "/" + skele.maxHp + " | " + "AP :" + skele.attackP,730,150);
+    graphics.drawString("Skeleton Health: " + skele.currentHp + "/" + skele.maxHp + " | " + "AP :" + skele.attackP, 730, 150);
   }
 
   void drawMap(Graphics graphics) {
@@ -124,5 +123,14 @@ public class Board extends JComponent implements KeyListener {
     lastKey = e.getKeyCode();
 
     repaint();
+  }
+
+  public int attack() {
+    for (Character a : characters) {
+      if (a.imageName == Geralt.imageName) {
+        a.currentHp = a.currentHp - 15;
+      }
+    }
+    return attack();
   }
 }
