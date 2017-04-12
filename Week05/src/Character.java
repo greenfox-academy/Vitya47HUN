@@ -3,20 +3,21 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.Random;
 
-/**
- * Created by Vitya on 2017.04.11..
- */
 public class Character {
-
+  int maxHp;
+  int currentHp;
+  int attackP;
   int x, y;
   BufferedImage image;
 
-
-  public Character(int x, int y, String imageName) {
+  public Character(int x, int y, String imageName,int maxHp,int currentHp,int attackP) {
     this.x = x;
     this.y = y;
+    this.maxHp = maxHp;
+    this.currentHp = currentHp;
+    this.attackP = attackP;
+
     setImage(imageName);
   }
 
@@ -29,6 +30,15 @@ public class Character {
   }
 
   public void update(int[][] map, int keyCode) {
+    }
+
+  public int attack(Character in){
+    in.currentHp = in.currentHp -getDamaged();
+   return in.currentHp;
+  }
+
+  public int getDamaged(){
+    return 5;
   }
 
   boolean canMove(int toX, int toY, int[][] map) {

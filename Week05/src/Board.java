@@ -16,14 +16,14 @@ public class Board extends JComponent implements KeyListener {
   int[][] map = {
           {0, 0, 1, 0, 0, 0, 0, 0, 0, 0,},
           {0, 0, 1, 0, 0, 0, 0, 0, 0, 0,},
-          {0, 0, 1, 1, 0, 0, 0, 0, 0, 0,},
-          {0, 0, 0, 1, 0, 0, 0, 0, 0, 0,},
-          {0, 1, 1, 1, 1, 0, 0, 0, 0, 0,},
-          {0, 1, 0, 0, 0, 0, 0, 0, 0, 0,},
-          {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-          {1, 1, 1, 1, 1, 0, 0, 0, 0, 0,},
-          {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-          {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+          {0, 0, 1, 1, 0, 0, 1, 1, 1, 0,},
+          {0, 0, 0, 1, 0, 0, 1, 0, 0, 0,},
+          {0, 1, 1, 1, 1, 0, 1, 0, 0, 0,},
+          {0, 1, 0, 0, 0, 0, 1, 0, 0, 0,},
+          {0, 0, 0, 0, 0, 0, 1, 0, 0, 0,},
+          {1, 1, 1, 1, 1, 0, 1, 1, 1, 0,},
+          {0, 0, 0, 0, 0, 0, 0, 0, 1, 0,},
+          {0, 0, 0, 0, 0, 0, 0, 0, 1, 1,},
   };
 
   public Board() {
@@ -31,17 +31,24 @@ public class Board extends JComponent implements KeyListener {
     characters = new ArrayList<Character>();
     setPreferredSize(new Dimension(720, 720));
     setVisible(true);
-    int x = (int)(Math.random() * 9);
-    int y = (int)(Math.random() * 9);
-    while(map[y][x] == 1){
-      x = (int)(Math.random() * 9);
-      y = (int)(Math.random() * 9);
+    int x = (int) (Math.random() * 9);
+    int y = (int) (Math.random() * 9);
+    for (int c = 0; c < 3; c++) {
+      while (map[y][x] == 1) {
+        x = (int) (Math.random() * 9);
+        y = (int) (Math.random() * 9);
+      }
+      characters.add(new Skeleton(x, y, "./assets/skeleton.png", 25, 25, 5));
+      x = (int) (Math.random() * 9);
+      y = (int) (Math.random() * 9);
     }
-
-    characters.add(new Boss(x,y, "./assets/boss.png"));
-    characters.add(new Hero(5, 5, "./assets/hero-down.png"));
-    characters.add(new Skeleton(x,y, "./assets/skeleton.png"));
-
+    characters.add(new Boss(x, y, "./assets/boss.png", 50, 50, 10));
+    Hero Geralt = new Hero(0, 0, "./assets/hero-down.png", 100, 100, 15);
+    characters.add(Geralt);
+//    characters.add(new Skeleton(x,y, "./assets/skeleton.png"));
+    Geralt.attack(characters.get(1));
+    Geralt.attack(characters.get(1));
+    Geralt.attack(characters.get(1));
   }
 
   @Override
@@ -49,7 +56,7 @@ public class Board extends JComponent implements KeyListener {
     super.paint(graphics);
 
     // Update characters
-    for (Character character: characters){
+    for (Character character : characters) {
       character.update(map, lastKey);
     }
 
@@ -62,11 +69,15 @@ public class Board extends JComponent implements KeyListener {
     }
 
     // Draw hero's pos
-    Character hero = characters.get(0);
+    Character hero = characters.get(3);
     graphics.setColor(Color.RED);
     graphics.setFont(new Font("TimesRoman", Font.PLAIN, 16));
-    graphics.drawString("hero pos: " +hero.x + ", " + hero.y,140,640);
+    graphics.drawString("Hero Health: " + hero.currentHp + "/" + hero.maxHp + " | " + "AP :" + hero.attackP,730,72);
 
+    Character skele = characters.get(1);
+    graphics.setColor(Color.RED);
+    graphics.setFont(new Font("TimesRoman", Font.PLAIN, 16));
+    graphics.drawString("Skeleton Health: " + skele.currentHp + "/" + skele.maxHp + " | " + "AP :" + skele.attackP,730,150);
   }
 
   void drawMap(Graphics graphics) {
