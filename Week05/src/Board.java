@@ -3,44 +3,74 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.ArrayList;
+import java.util.*;
+import java.util.List;
 
 public class Board extends JComponent implements KeyListener {
 
-  int o = 0;
-  int testBoxX;
-  int testBoxY;
-  String heroImage;
-  int CurrentLocationX = testBoxX;
-  int CurrentLocationY = testBoxY;
+  public final int f = 72; // Field size
+
+  int lastKey;
+  List<Character> characters;
+
   int[][] map = {
-          {0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0},
-          {0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
-          {0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0},
-          {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
-          {0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0},
-          {0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-          {0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0},
-          {1, 1, 1, 1, 1, 0, 0, 0, 0, 2, 0},
-          {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+          {0, 0, 1, 0, 0, 0, 0, 0, 0, 0,},
+          {0, 0, 1, 0, 0, 0, 0, 0, 0, 0,},
+          {0, 0, 1, 1, 0, 0, 0, 0, 0, 0,},
+          {0, 0, 0, 1, 0, 0, 0, 0, 0, 0,},
+          {0, 1, 1, 1, 1, 0, 0, 0, 0, 0,},
+          {0, 1, 0, 0, 0, 0, 0, 0, 0, 0,},
+          {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+          {1, 1, 1, 1, 1, 0, 0, 0, 0, 0,},
+          {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+          {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
   };
 
   public Board() {
-    testBoxX = 0;
-    testBoxY = 0;
-    heroImage = "./assets/hero-down.png";
 
-    // set the size of your draw board
+    characters = new ArrayList<Character>();
     setPreferredSize(new Dimension(720, 720));
     setVisible(true);
+    int x = (int)(Math.random() * 9);
+    int y = (int)(Math.random() * 9);
+    while(map[y][x] == 1){
+      x = (int)(Math.random() * 9);
+      y = (int)(Math.random() * 9);
+    }
+
+    characters.add(new Boss(x,y, "./assets/boss.png"));
+    characters.add(new Hero(5, 5, "./assets/hero-down.png"));
+    characters.add(new Skeleton(x,y, "./assets/skeleton.png"));
+
   }
 
   @Override
   public void paint(Graphics graphics) {
     super.paint(graphics);
 
-    // here you have a 720x720 canvas
-    // you can create and draw an image using the class below e.g.
+    // Update characters
+    for (Character character: characters){
+      character.update(map, lastKey);
+    }
+
+    // Draw map
+    drawMap(graphics);
+
+    // Draw characteres
+    for (Character character : characters) {
+      character.draw(graphics);
+    }
+
+    // Draw hero's pos
+    Character hero = characters.get(0);
+    graphics.setColor(Color.RED);
+    graphics.setFont(new Font("TimesRoman", Font.PLAIN, 16));
+    graphics.drawString("hero pos: " +hero.x + ", " + hero.y,140,640);
+
+  }
+
+  void drawMap(Graphics graphics) {
+    // Draw floor
     int posX = 0;
     int posY = 0;
     for (int i = 0; i < 11; i++) {
@@ -52,17 +82,7 @@ public class Board extends JComponent implements KeyListener {
       posY = i * 72;
     }
 
-
-//    int counter = 0;
-//    while (counter < 3){
-//      int mapPosX = (int)(Math.random() * 11);
-//      int mapPosY = (int)(Math.random() * 9);
-//      if (map[mapPosY][mapPosX] == 0) {
-//        map[mapPosY][mapPosX] = 2;
-//        counter = counter + 1;
-//      }
-//    }
-
+    // Draw walls
     int wallX = 0;
     int wallY = 0;
     for (int x = 0; x < map.length; x++) {
@@ -72,37 +92,9 @@ public class Board extends JComponent implements KeyListener {
           wallY = x * 72;
           PositionedImage wall = new PositionedImage("./assets/wall.png", wallX, wallY);
           wall.draw(graphics);
-          if (testBoxX == wallX && testBoxY == wallY) {
-            testBoxY = CurrentLocationY;
-            testBoxX = CurrentLocationX;
-          }
         }
-        if (map[x][y] == 2) {
-          int skeletonY = (x * 72);
-          int skeletonX = (y * 72);
-          PositionedImage skeleton = new PositionedImage("./assets/skeleton.png",skeletonX,skeletonY);
-          skeleton.draw(graphics);
-        }
-      }
-      PositionedImage hero = new PositionedImage(heroImage, testBoxX, testBoxY);
-      hero.draw(graphics);
-
-      if (testBoxX == 720) {
-        testBoxX -= 72;
-      } else if (testBoxX == -72) {
-        testBoxX = 0;
-      } else if (testBoxY == -72) {
-        testBoxY = 0;
-      } else if (testBoxY == +720) {
-        testBoxY -= 72;
       }
     }
-    CurrentLocationX = testBoxX;
-    CurrentLocationY = testBoxY;
-    Hero Geralt = new Hero(2,150,5,15);
-    graphics.setColor(Color.RED);
-    graphics.setFont(new Font("TimesRoman", Font.PLAIN, 16));
-    graphics.drawString(Geralt.toString(),140,640);
   }
 
   // To be a KeyListener the class needs to have these 3 methods in it
@@ -117,21 +109,9 @@ public class Board extends JComponent implements KeyListener {
   // But actually we can use just this one for our goals here
   @Override
   public void keyReleased(KeyEvent e) {
-    // When the up or down keys hit, we change the position of our box
-    if (e.getKeyCode() == KeyEvent.VK_UP) {
-      testBoxY -= 72;
-      heroImage = "./assets/hero-up.png";
-    } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-      testBoxY += 72;
-      heroImage = "./assets/hero-down.png";
-    } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-      testBoxX -= 72;
-      heroImage = "./assets/hero-left.png";
-    } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-      testBoxX += 72;
-      heroImage = "./assets/hero-right.png";
-    }
-    // and redraw to have a new picture with the new coordinates
+
+    lastKey = e.getKeyCode();
+
     repaint();
   }
 }
