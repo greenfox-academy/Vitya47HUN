@@ -67,7 +67,7 @@ public class Board extends JComponent implements KeyListener {
       tempImage.draw(graphics);
     }
 
-    // Draw hero's pos
+    // Draw some character's stats
     Character hero = characters.get(3);
     graphics.setColor(Color.RED);
     graphics.setFont(new Font("TimesRoman", Font.PLAIN, 16));
@@ -78,7 +78,6 @@ public class Board extends JComponent implements KeyListener {
     graphics.setFont(new Font("TimesRoman", Font.PLAIN, 16));
     graphics.drawString("Skeleton Health: " + skele.currentHp + "/" + skele.maxHp + " | " + "AP :" + skele.attackP, 730, 150);
   }
-
   void drawMap(Graphics graphics) {
     // Draw floor
     int posX = 0;
@@ -91,7 +90,6 @@ public class Board extends JComponent implements KeyListener {
       }
       posY = i * 72;
     }
-
     // Draw walls
     int wallX = 0;
     int wallY = 0;
@@ -106,31 +104,26 @@ public class Board extends JComponent implements KeyListener {
       }
     }
   }
-
   // To be a KeyListener the class needs to have these 3 methods in it
   @Override
   public void keyTyped(KeyEvent e) {
   }
-
   @Override
   public void keyPressed(KeyEvent e) {
   }
-
   // But actually we can use just this one for our goals here
   @Override
   public void keyReleased(KeyEvent e) {
 
     lastKey = e.getKeyCode();
-
     repaint();
   }
 
-  public int attack() {
+  public void attack() {
     for (Character a : characters) {
       if (a.imageName == Geralt.imageName) {
         a.currentHp = a.currentHp - 15;
       }
     }
-    return attack();
   }
 }

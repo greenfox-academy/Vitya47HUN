@@ -17,9 +17,7 @@ public class PositionedImage {
     } catch (IOException e) {
       e.printStackTrace();
     }
-
   }
-
   public void draw(Graphics graphics) {
     if (image != null) {
       graphics.drawImage(image, posX, posY, null);
