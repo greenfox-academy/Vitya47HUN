@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 public class Character {
   int maxHp;
@@ -37,16 +38,27 @@ public class Character {
   public void attack(Character target) {
     target.currentHp = target.currentHp - this.attackP;
   }
-  boolean canMove(int toX, int toY,int[][] map) {
-    if (toX < 0 || toX >= map.length){
+
+  boolean canMove(int toX, int toY, int[][] map) {
+    if (toX < 0 || toX >= map.length) {
       return false;
     }
-    if (toY < 0 || toY >= map.length){
+    if (toY < 0 || toY >= map.length) {
       return false;
     }
     return map[toY][toX] == 0;
   }
+
+  public void die(List<Character> characters) {
+    for (int c = 0; c < characters.size(); c++) {
+      if (characters.get(c).currentHp <= 0) {
+        characters.remove(c);
+        c = 0;
+      }
+    }
+  }
 }
+
 
 
 

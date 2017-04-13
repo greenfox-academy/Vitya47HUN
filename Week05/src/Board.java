@@ -16,16 +16,16 @@ public class Board extends JComponent implements KeyListener {
   List<Character> characters;
 
   int[][] map = {
-          {0, 0, 1, 0, 0, 0, 0, 0, 0, 0,},
-          {0, 0, 1, 0, 0, 0, 1, 1, 0, 0,},
-          {0, 0, 1, 1, 0, 0, 1, 1, 1, 1,},
-          {0, 0, 0, 1, 0, 0, 1, 0, 0, 0,},
-          {0, 1, 1, 1, 1, 0, 1, 0, 0, 0,},
-          {0, 1, 1, 1, 1, 0, 0, 0, 1, 0,},
-          {0, 0, 0, 0, 0, 0, 1, 0, 1, 0,},
-          {1, 1, 1, 1, 1, 0, 1, 1, 1, 0,},
-          {0, 0, 0, 0, 0, 0, 0, 0, 1, 0,},
-          {0, 0, 0, 0, 0, 0, 0, 0, 1, 1,},
+          {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+          {0, 1, 1, 1, 0, 0, 1, 1, 1, 0,},
+          {0, 0, 1, 0, 0, 0, 0, 1, 0, 0,},
+          {0, 0, 1, 0, 0, 0, 0, 1, 0, 0,},
+          {0, 0, 1, 0, 0, 0, 0, 1, 0, 0,},
+          {0, 1, 1, 1, 0, 0, 1, 1, 1, 0,},
+          {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+          {0, 1, 0, 0, 1, 1, 0, 0, 1, 0,},
+          {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+          {1, 1, 1, 1, 0, 0, 1, 1, 1, 1,},
   };
 
   public Board() {
@@ -39,7 +39,7 @@ public class Board extends JComponent implements KeyListener {
         x = (int) (Math.random() * 9);
         y = (int) (Math.random() * 9);
       }
-      characters.add(new Skeleton(x, y, "./assets/skeleton.png", 25, 25, 5));
+      characters.add(new Skeleton(x, y, "./assets/frog02.gif", 25, 25, 5));
       x = (int) (Math.random() * 9);
       y = (int) (Math.random() * 9);
     }
@@ -61,6 +61,7 @@ public class Board extends JComponent implements KeyListener {
     // Update characters
     for (Character character: characters){
       character.update(map, lastKey);
+      character.die(characters);
     }
 
 
@@ -77,7 +78,7 @@ public class Board extends JComponent implements KeyListener {
       if (a.imageName != Geralt.imageName && a.x == Geralt.x && a.y == Geralt.y) {
         graphics.setColor(Color.RED);
         graphics.setFont(new Font("TimesRoman", Font.PLAIN, 16));
-        graphics.drawString("Enemy health : " + a.currentHp + "/" + a.maxHp + " | " + "AP :" + a.attackP, 730, 150);
+        graphics.drawString("Enemy health : " + a.currentHp + "/" + a.maxHp, 730, 150);
       }
     }
   }
@@ -108,7 +109,6 @@ public class Board extends JComponent implements KeyListener {
       }
     }
   }
-
   // To be a KeyListener the class needs to have these 3 methods in it
   @Override
   public void keyTyped(KeyEvent e) {
@@ -138,15 +138,14 @@ public class Board extends JComponent implements KeyListener {
         }
       }
     }
-    for (int c = 0; c < characters.size(); c++) {
-      if (characters.get(c).currentHp <= 0) {
-        characters.remove(c);
-        c = 0;
-      }
-    }
+//    for (int c = 0; c < characters.size(); c++) {
+//      if (characters.get(c).currentHp <= 0) {
+//        characters.remove(c);
+//        c = 0;
+//      }
+//    }
     repaint();
   }
-
   boolean canMove(int toX, int toY) {
     if (toX < 0 || toX >= map.length){
       return false;
