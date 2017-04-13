@@ -58,6 +58,12 @@ public class Board extends JComponent implements KeyListener {
     // Draw map
     drawMap(graphics);
 
+    // Update characters
+    for (Character character: characters){
+      character.update(map, lastKey);
+    }
+
+
     // Draw characteres
     for (Character character : characters) {
       PositionedImage tempImage = new PositionedImage(character.imageName, character.x * f, character.y * f);
@@ -142,8 +148,12 @@ public class Board extends JComponent implements KeyListener {
   }
 
   boolean canMove(int toX, int toY) {
-    if (toX < 0 || toX >= map.length) return false;
-    if (toY < 0 || toY >= map.length) return false;
+    if (toX < 0 || toX >= map.length){
+      return false;
+    }
+    if (toY < 0 || toY >= map.length){
+      return false;
+    }
     return map[toY][toX] == 0;
   }
 
