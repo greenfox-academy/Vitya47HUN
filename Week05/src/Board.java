@@ -59,7 +59,7 @@ public class Board extends JComponent implements KeyListener {
     drawMap(graphics);
 
     // Update characters
-    for (Character character: characters){
+    for (Character character : characters) {
       character.update(map, lastKey);
       character.die(characters);
     }
@@ -109,6 +109,7 @@ public class Board extends JComponent implements KeyListener {
       }
     }
   }
+
   // To be a KeyListener the class needs to have these 3 methods in it
   @Override
   public void keyTyped(KeyEvent e) {
@@ -138,30 +139,16 @@ public class Board extends JComponent implements KeyListener {
         }
       }
     }
-//    for (int c = 0; c < characters.size(); c++) {
-//      if (characters.get(c).currentHp <= 0) {
-//        characters.remove(c);
-//        c = 0;
-//      }
-//    }
     repaint();
   }
+
   boolean canMove(int toX, int toY) {
-    if (toX < 0 || toX >= map.length){
+    if (toX < 0 || toX >= map.length) {
       return false;
     }
-    if (toY < 0 || toY >= map.length){
+    if (toY < 0 || toY >= map.length) {
       return false;
     }
     return map[toY][toX] == 0;
   }
-
-//  public boolean enableCombat() {
-//    for (Character a : characters) {
-//      if (a.imageName != Geralt.imageName && a.x == Geralt.x && a.y == Geralt.y) {
-//        return true;
-//      }
-//    }
-//    return false;
-//  }
 }
