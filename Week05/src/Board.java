@@ -49,17 +49,11 @@ public class Board extends JComponent implements KeyListener {
     }
     characters.add(new Boss(x, y, "./assets/boss.png", 50, 50, 15));
     characters.add(Geralt);
-//    characters.add(new Skeleton(x,y, "./assets/skeleton.png"));
   }
 
   @Override
   public void paint(Graphics graphics) {
     super.paint(graphics);
-
-    // Update characters
-//    for (Character character : characters) {
-//      character.update(map, lastKey);
-//    }
 
     // Draw map
     drawMap(graphics);
@@ -73,11 +67,13 @@ public class Board extends JComponent implements KeyListener {
     graphics.setColor(Color.RED);
     graphics.setFont(new Font("TimesRoman", Font.PLAIN, 16));
     graphics.drawString("Hero Health: " + Geralt.currentHp + "/" + Geralt.maxHp + " | " + "AP :" + Geralt.attackP, 730, 72);
-
-    Character skele = characters.get(1);
-    graphics.setColor(Color.RED);
-    graphics.setFont(new Font("TimesRoman", Font.PLAIN, 16));
-    graphics.drawString("Skeleton Health: " + skele.currentHp + "/" + skele.maxHp + " | " + "AP :" + skele.attackP, 730, 150);
+    for (Character a : characters) {
+      if (a.imageName != Geralt.imageName && a.x == Geralt.x && a.y == Geralt.y) {
+        graphics.setColor(Color.RED);
+        graphics.setFont(new Font("TimesRoman", Font.PLAIN, 16));
+        graphics.drawString("Enemy health : " + a.currentHp + "/" + a.maxHp + " | " + "AP :" + a.attackP, 730, 150);
+      }
+    }
   }
 
   void drawMap(Graphics graphics) {
@@ -136,7 +132,12 @@ public class Board extends JComponent implements KeyListener {
         }
       }
     }
-
+    for (int c = 0; c < characters.size(); c++) {
+      if (characters.get(c).currentHp <= 0) {
+        characters.remove(c);
+        c = 0;
+      }
+    }
     repaint();
   }
 
@@ -146,12 +147,12 @@ public class Board extends JComponent implements KeyListener {
     return map[toY][toX] == 0;
   }
 
-  public boolean enableCombat() {
-    for (Character a : characters) {
-      if (a.imageName != Geralt.imageName && a.x == Geralt.x && a.y == Geralt.y) {
-        return true;
-      }
-    }
-    return false;
-  }
+//  public boolean enableCombat() {
+//    for (Character a : characters) {
+//      if (a.imageName != Geralt.imageName && a.x == Geralt.x && a.y == Geralt.y) {
+//        return true;
+//      }
+//    }
+//    return false;
+//  }
 }

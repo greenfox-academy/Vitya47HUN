@@ -22,25 +22,10 @@ public class Character {
 
   public void setImage(String filename) {
     this.imageName = filename;
-
   }
 
   public void update(int[][] map, int keyCode) {
   }
-
-//  public int attack(){
-//    this.x ==
-//    in.currentHp = in.currentHp -getDamaged();
-//   return in.currentHp;
-//  }
-
-//  boolean canMove(int toX, int toY, int[][] map) {
-//
-//    if (toX < 0 || toX >= map.length) return false;
-//    if (toY < 0 || toY >= map.length) return false;
-//
-//    return map[toY][toX] == 0;
-//  }
 
   public void draw(Graphics graphics) throws IOException {
     BufferedImage image = ImageIO.read(new File(imageName));
@@ -51,7 +36,6 @@ public class Character {
 
   public void attack(Character target) {
     target.currentHp = target.currentHp - this.attackP;
-
   }
 }
 

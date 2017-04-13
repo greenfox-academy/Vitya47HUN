@@ -8,14 +8,5 @@ public class Boss extends Character {
 
   @Override
   public void update(int[][] map, int keyCode) {
-//    int moveX = (int)(Math.random() * 3) - 1;
-//    int moveY = (int)(Math.random() * 3) - 1;
-
-    // TODO csak az egyik ir�nyba l�pjen
-
-//    if (canMove(x + moveX, y + moveY, map)) {
-//      x += moveX;
-//      y += moveY;
   }
 }
-//}
