@@ -12,7 +12,7 @@ public class Skeleton extends Character {
 //    int moveX = (int)(Math.random() * 3) - 1;
 //    int moveY = (int)(Math.random() * 3) - 1;
 
-    // TODO csak az egyik ir�nyba l�pjen
+    // Random moving.
 
 //    if (canMove(x + moveX, y + moveY, map)) {
 //      x += moveX;
