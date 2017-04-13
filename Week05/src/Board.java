@@ -10,7 +10,7 @@ import java.util.List;
 public class Board extends JComponent implements KeyListener {
 
   public final int f = 72; // Field size
-  Hero Geralt = new Hero(0, 0, "./assets/hero-down.png", 100, 100, 5);
+  Hero Geralt = new Hero(0, 0, "./assets/hero-down.png", 100, 100, 15);
   int lastKey;
   List<Character> characters;
 
@@ -46,7 +46,7 @@ public class Board extends JComponent implements KeyListener {
       x = (int) (Math.random() * 9);
       y = (int) (Math.random() * 9);
     }
-    characters.add(new Boss(x, y, "./assets/boss.png", 50, 50, 15));
+    characters.add(new Boss(x, y, "./assets/boss.png", 50, 50, 10));
     characters.add(Geralt);
   }
 
@@ -135,6 +135,7 @@ public class Board extends JComponent implements KeyListener {
       for (Character a : characters) {
         if (a.imageName != Geralt.imageName && a.x == Geralt.x && a.y == Geralt.y) {
           Geralt.attack(a);
+          a.attack(Geralt);
         }
       }
     }
