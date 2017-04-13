@@ -1,6 +1,5 @@
 import javafx.geometry.Pos;
 import javafx.scene.layout.Background;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -72,12 +71,12 @@ public class Board extends JComponent implements KeyListener {
     }
     // Draw some character's stats
     graphics.setColor(Color.RED);
-    graphics.setFont(new Font("TimesRoman", Font.PLAIN, 16));
+    graphics.setFont(new Font("TimesRoman", Font.PLAIN, 32));
     graphics.drawString("Hero Health: " + Geralt.currentHp + "/" + Geralt.maxHp + " | " + "AP :" + Geralt.attackP, 730, 72);
     for (Character a : characters) {
       if (a.imageName != Geralt.imageName && a.x == Geralt.x && a.y == Geralt.y) {
         graphics.setColor(Color.RED);
-        graphics.setFont(new Font("TimesRoman", Font.PLAIN, 16));
+        graphics.setFont(new Font("TimesRoman", Font.PLAIN, 32));
         graphics.drawString("Enemy health : " + a.currentHp + "/" + a.maxHp, 730, 150);
       }
     }
@@ -89,7 +88,7 @@ public class Board extends JComponent implements KeyListener {
     int posY = 0;
     for (int i = 0; i < 11; i++) {
       for (int j = 0; j < 10; j++) {
-        PositionedImage image = new PositionedImage("./assets/floor.png", posX, posY);
+        PositionedImage image = new PositionedImage("./assets/grass.png", posX, posY);
         image.draw(graphics);
         posX = j * 72;
       }
