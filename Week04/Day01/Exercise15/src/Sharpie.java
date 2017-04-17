@@ -8,11 +8,9 @@ public class Sharpie {
     this.width = width;
     this.inkAmount = inkAmount;
   }
-
   public double getValue() {
     return inkAmount;
   }
-
   public void use() {
     inkAmount--;
   }
