@@ -6,7 +6,7 @@ public class Reptile extends Animal{
 
   @Override
   void greet() {
-
+    System.out.println(name + " welcomes you!");
   }
 
   @Override
@@ -16,7 +16,7 @@ public class Reptile extends Animal{
 
   @Override
   void isHungry() {
-
+    System.out.println(name + "wants to eat insects");
   }
 
   @Override
