@@ -191,3 +191,10 @@ Expectation
 @Before, @BeforeClass
 @After, @AfterClass
 assertEquals(), assertTrue(), assertFalse()
+
+
+final - can be initialized once, cannot be overridden by subclasses
+annotation
+HTTP
+API
+JSON
