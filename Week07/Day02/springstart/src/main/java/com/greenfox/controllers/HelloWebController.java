@@ -43,7 +43,6 @@ public class HelloWebController {
   public String differentColor(String[] input){
     String currentColor = "";
     for(int a = 0;a < input.length;a++){
-
       Random random = new Random();
       int nextInt = random.nextInt(256*256*256);
       String colorCode = String.format("#%06x", nextInt);

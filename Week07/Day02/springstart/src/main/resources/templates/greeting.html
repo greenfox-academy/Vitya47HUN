@@ -1,10 +1,11 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:color="http://www.w3.org/1999/xhtml">
 <head>
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<p th:text="<font color=${color}>${hello}</font> + ${name} + '!' + ' This site was loaded ' + ${number} + ' times since last server start.'"/>
+<p th:inline="text">
+    <span th:style="'color:' + ${color}">[[${color}]] [[${hello}]]</span> [[${name}]] ! This site was loaded [[${number}]] times since last server start.</p>
 </body>
 </html>
