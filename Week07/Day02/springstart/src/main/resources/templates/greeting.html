@@ -6,6 +6,6 @@
 </head>
 <body>
 <p th:inline="text">
-    <span th:style="'color:' + ${color}">[[${color}]] [[${hello}]]</span> [[${name}]] ! This site was loaded [[${number}]] times since last server start.</p>
+<span th:each="item, iter : ${hello}"  th:style="'color:' + ${color}">[[${item}]]</span> [[${name}]] ! This site was loaded [[${number}]] times since last server start.</p>
 </body>
 </html>

@@ -25,24 +25,23 @@ public class HelloWebController {
   public String greeting(Model model,@RequestParam("name") String name) {
     model.addAttribute("name", " " + name);
     model.addAttribute("number",aLong.getAndIncrement());
-    model.addAttribute("hello",differentHello(hellos));
-    model.addAttribute("color",differentColor(hellos));
+    model.addAttribute("hello",hellos);
+    model.addAttribute("color",differentColor());
     return "greeting";
   }
 
-  public String differentHello(String[] input){
-    String currentHello = "";
-    for(int a = 0;a < input.length;a++){
-      Random random = new Random();
-      currentHello = currentHello + " " + input[a];
-    }
-    return currentHello;
-  }
+//  public String differentHello(String[] input){
+//    String currentHello = "";
+//    for(int a = 0;a < input.length;a++){
+//      Random random = new Random();
+//      currentHello = currentHello + " " + input[a];
+//    }
+//    return currentHello;
+//  }
 
-
-  public String differentColor(String[] input){
+  public String differentColor(){
     String currentColor = "";
-    for(int a = 0;a < input.length;a++){
+    for(int a = 0;a < 256 ;a++){
       Random random = new Random();
       int nextInt = random.nextInt(256*256*256);
       String colorCode = String.format("#%06x", nextInt);
