@@ -8,8 +8,11 @@ public class HelloRESTController {
 
   @RequestMapping
   public Greetings greeting(@RequestParam("name") String name){
-    Greetings newGreet = new Greetings(1,"Hello Your name");
+    Greetings newGreet = new Greetings(1,name);
     return newGreet;
   }
 
+  public class AtomicLong{
+  }
+  
 }
