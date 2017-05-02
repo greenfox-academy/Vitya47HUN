@@ -7,16 +7,13 @@ import java.util.concurrent.atomic.AtomicLong;
 
 @Controller
 public class HelloWebController {
+
+  AtomicLong aLong = new AtomicLong(1);
   @RequestMapping("/web/greeting")
   public String greeting(Model model,@RequestParam("name") String name) {
     model.addAttribute("name", " " + name);
+    model.addAttribute("number",aLong.getAndIncrement());
     return "greeting";
   }
 
-  public AtomicLong greetingnum(Model model){
-   aLong.getAndIncrement();
-   return aLong;
-  }
-
-  AtomicLong aLong = new AtomicLong(1);
 }
