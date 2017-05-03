@@ -7,5 +7,7 @@
 </head>
 <body>
     <p th:text="${name} + ' has ' + ${balance} + ' Zebra' + ' and is a ' + ${type}"/>
+    <p th:utext="This is an <em>HTML</em> text. <b>Enjoy yourself!</b>"/>
+    <p th:text="This is an <em>HTML</em> text. <b>Enjoy yourself!</b>"/>
 </body>
 </html>
