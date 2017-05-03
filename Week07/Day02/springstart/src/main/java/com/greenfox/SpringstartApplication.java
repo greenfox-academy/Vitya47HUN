@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @SpringBootApplication
 @Controller
 public class SpringstartApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(SpringstartApplication.class, args);
 	}
