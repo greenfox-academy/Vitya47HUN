@@ -6,6 +6,6 @@ import lombok.Getter;
 @Getter
 public class BankAccount {
   String name;
-  int balance;
+  double balance;
   String animalType;
 }
