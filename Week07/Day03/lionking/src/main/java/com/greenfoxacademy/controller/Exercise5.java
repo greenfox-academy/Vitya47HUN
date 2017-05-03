@@ -21,7 +21,6 @@ public class Exercise5 {
     accountList.add(new BankAccount("Pugna",550,"support"));
     accountList.add(new BankAccount("Pudge",2500,"tank"));
     model.addAttribute("accounts",accountList);
-
     return "accounts";
   }
 }

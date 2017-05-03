@@ -6,13 +6,10 @@
     <meta charset="utf-8" />
 </head>
 <body>
-<table>
-<tr th:each="account : ${accounts}">
-    <td th:text="${accountStat.index} + ${account.getName()}"></td>
-    <td>
-        <span th:if="${account.animalType} == 'carry'">Special offer!</span>
-    </td>
-</tr>
-</table>
+<p th:each="account : ${accounts}">
+    <span th:class="(${account.animalType} == 'carry') ? offer : offer2">
+        <span th:text="${accountStat.index} + ${account.getName()}"></span>
+    </span>
+</p>
 </body>
 </html>
