@@ -9,7 +9,9 @@
 <p th:each="account : ${accounts}">
     <span th:class="(${account.animalType} == 'carry') ? offer : offer2">
         <span th:text="${accountStat.index} + ${account.getName()}"></span>
-         <span th:if="${account.isHeBad == false}">NotBadGuy</span>
+         <!--<span th:if="${account.isHeBad()} ? #{true} : #{false}">NotBadGuy</span>-->
+        <span th:if="${account.isHeBad()}">NotBadGuy</span>
+        <span th:unless="${account.isHeBad()}">BadGuy</span>
         </span>
 
 </p>
