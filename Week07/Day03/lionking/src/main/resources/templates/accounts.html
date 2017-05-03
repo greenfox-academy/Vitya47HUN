@@ -6,6 +6,10 @@
     <meta charset="utf-8" />
 </head>
 <body>
-    <p th:text="${accounts}"/>
+<table>
+<tr th:each="account : ${accounts}">
+    <td th:text="${accountStat.index}"></td>
+</tr>
+</table>
 </body>
 </html>
