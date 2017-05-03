@@ -17,9 +17,9 @@ public class Exercise5 {
   @RequestMapping("accounts")
   public String getBankAccount(Model model, @RequestParam("name") String name) {
     ArrayList<BankAccount> accountList = new ArrayList<>();
-    accountList.add(new BankAccount("PhantomAssassin",9000,"carry"));
-    accountList.add(new BankAccount("Pugna",550,"support"));
-    accountList.add(new BankAccount("Pudge",2500,"tank"));
+    accountList.add(new BankAccount("PhantomAssassin",9000,"carry",true));
+    accountList.add(new BankAccount("Pugna",550,"support",true));
+    accountList.add(new BankAccount("Pudge",2500,"tank",false));
     model.addAttribute("accounts",accountList);
     return "accounts";
   }

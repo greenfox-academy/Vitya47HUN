@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class Exercise1 {
-  BankAccount newAccount = new BankAccount("Simba", 2000, "lion");
+  BankAccount newAccount = new BankAccount("Simba", 2000, "lion",true);
 
   @RequestMapping("getBankAccount1")
   public String getBankAccount(Model model, @RequestParam("name") String name) {

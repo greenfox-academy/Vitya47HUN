@@ -11,7 +11,7 @@ import java.text.DecimalFormat;
 
 @Controller
 public class Exercise2 {
-  BankAccount newAccount = new BankAccount("Simba", 2000.000, "lion");
+  BankAccount newAccount = new BankAccount("Simba", 2000.000, "lion",true);
   DecimalFormat formater = new DecimalFormat("0.00");
 
 
