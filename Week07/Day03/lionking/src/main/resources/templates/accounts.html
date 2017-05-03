@@ -2,16 +2,20 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Thymeleaf Exercise #</title>
-    <link rel="stylesheet" th:href="@{/style.css}" />
-    <meta charset="utf-8" />
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <meta charset="utf-8"/>
 </head>
 <body>
 <p th:each="account : ${accounts}">
     <span th:class="(${account.animalType} == 'carry') ? offer : offer2">
-        <span th:text="${accountStat.index} + ${account.getName()}"></span>
-         <!--<span th:if="${account.isHeBad()} ? #{true} : #{false}">NotBadGuy</span>-->
-        <span th:if="${account.isHeBad()}">NotBadGuy</span>
-        <span th:unless="${account.isHeBad()}">BadGuy</span>
+        <span th:text="${accountStat.index} + ' ' + ${account.getName()}"></span>
+        <span th:switch="${account.isHeBad()}">
+<span th:case="true">Not a Bad Guy</span>
+<span th:case="false">A Bad Guy</span>
+</span>
+        <!--<span th:if="${account.isHeBad()} ? #{true} : #{false}">NotBadGuy</span>-->
+        <!--<span th:if="${account.isHeBad()}">Not BadGuy</span>-->
+        <!--<span th:unless="${account.isHeBad()}">BadGuy</span>-->
         </span>
 
 </p>
