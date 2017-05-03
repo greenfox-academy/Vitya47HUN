@@ -10,15 +10,10 @@ import java.text.DecimalFormat;
 
 @Controller
 public class Exercise4 {
-  BankAccount newAccount = new BankAccount("Simba", 2000.000, "lion");
-  DecimalFormat formater = new DecimalFormat("0.00");
-
 
   @RequestMapping("thisText")
-  public String thisText(Model model, @RequestParam("name") String name) {
-    model.addAttribute("name",newAccount.getName());
-    model.addAttribute("balance",formater.format(newAccount.getBalance()));
-    model.addAttribute("type",newAccount.getAnimalType());
+  public String thisText(Model model,@RequestParam("name") String name) {
+    model.addAttribute("string","This is an <em>HTML</em> text. <b>Enjoy yourself!</b>");
     return "thisText";
   }
 }
