@@ -13,11 +13,14 @@
 
 <img th:src="@{greenfox.png}"/>
 
-<p th:text="'This is ' + ${name} + ' currently livin on ' + ${food} + ' and lemonade.He knows 2 tricks.'"></p>
+<p th:text="'This is ' + ${name} + ' currently livin on ' + ${food} + ' and lemonade.He knows ' + ${tricks} + ' tricks.'"></p>
 <h1>Known Tricks</h1>
+<p th:each="trick: ${tricks}">
+    <span th:text="${trick}">A</span>
+    <span th:if="(${tricks.getTricks().size()} == 0)">Not BadGuy</span>
+</p>
 <ul>
     <li>write HTML</li>
-    <li>code in JAVA</li>
 </ul>
 </body>
 </html>
