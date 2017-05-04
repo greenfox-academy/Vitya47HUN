@@ -15,15 +15,13 @@
 
 <p th:text="'This is ' + ${fox.name} + '. Currently living on '
 + ${fox.food} + '. He knows ' + ${fox.getTrickSize()} + ' tricks.'"/>
-<!--<p th:each="trick : ${tricks}">-->
-        <!--<span th:text="${trick}"></span>-->
+
 <h1>Known Tricks</h1>
-<!--<p th:each="trick: ${tricks}">-->
-    <!--<span th:text="${trick}">A</span>-->
-    <!--<span th:if="(${tricks.getTricks().size()} == 0)">Not BadGuy</span>-->
-<!--</p>-->
-<ul>
-    <li>write HTML</li>
-</ul>
+<span th:if="${fox.getTrickSize() == 0}">You know no tricks, yet. Go and learn some.</span>
+<span th:if="${fox.getTrickSize() > 0}">
+    <ul>
+        <li th:each="trick : ${fox.trick}" th:text="${trick}"> </li>
+    </ul>
+</span>
 </body>
 </html>

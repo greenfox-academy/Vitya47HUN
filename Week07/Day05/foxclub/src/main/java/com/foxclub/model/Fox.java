@@ -1,18 +1,17 @@
 package com.foxclub.model;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
+import java.util.ArrayList;
 import java.util.List;
 
-@NoArgsConstructor
 @Getter
 @Setter
 public class Fox {
   private String name;
   private String food;
-  private List<String> trick;
+  private List<String> trick = new ArrayList<>();
 
-  public void add(String input){
+  public void add(final String input){
     trick.add(input);
   }
 
