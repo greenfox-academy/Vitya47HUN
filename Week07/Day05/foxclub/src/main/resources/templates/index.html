@@ -13,7 +13,7 @@
 
 <img th:src="@{greenfox.png}"/>
 
-<p>This is Mr.FoxyFoxBoy currently livin on pizza and lemonade.He knows 2 tricks.</p>
+<p th:text="'This is ' + ${name} + ' currently livin on ' + ${food} + ' and lemonade.He knows 2 tricks.'"></p>
 <h1>Known Tricks</h1>
 <ul>
     <li>write HTML</li>
