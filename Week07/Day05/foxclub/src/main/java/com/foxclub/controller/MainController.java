@@ -1,5 +1,6 @@
 package com.foxclub.controller;
 import com.foxclub.model.Fox;
+import com.foxclub.model.Trick;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,9 +19,9 @@ public class MainController {
   public String index(Model model) {
     foxy.setName("Foxyka");
     foxy.setFood("Rabbit");
-    model.addAttribute("name",foxy.getName());
-    model.addAttribute("food",foxy.getFood());
-    model.addAttribute("tricks",foxy.getTricks());
+//    foxy.add("Jump");
+    model.addAttribute("fox",foxy);
+
     return "index";
   }
 

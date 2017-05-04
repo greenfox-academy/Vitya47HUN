@@ -9,11 +9,14 @@ import java.util.List;
 @Setter
 public class Fox {
   private String name;
-  private List<Trick> tricks;
   private String food;
+  private List<String> trick;
 
-  public Fox(List<Trick> tricks) {
-    this.tricks = tricks;
+  public void add(String input){
+    trick.add(input);
   }
 
+  public int getTrickSize(){
+    return trick.size();
+  }
 }
