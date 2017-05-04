@@ -40,12 +40,12 @@ public class MainController {
     return "redirect:";
   }
 
-//  @RequestMapping("/changenutrition")
-//  public String addnutrition(@RequestParam String food,String drink) {
-//    foxy.setFood(food);
-//    foxy.setDrink(drink);
-//    return "redirect:";
-//  }
+  @RequestMapping("/changenutrition")
+  public String addnutrition(@RequestParam String food,String drink) {
+    foxy.setFood(food);
+    foxy.setDrink(drink);
+    return "redirect:";
+  }
 
 
 }

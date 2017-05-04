@@ -17,40 +17,42 @@
     <tr>
         <th>Water</th>
     </tr>
-        <td><input type="list" name="drink"/></td>
-        <td><input type="submit" value="Add"/></td>
+    <td><input type="list" name="drink"/></td>
+    <td><input type="submit" value="Add"/></td>
     </tr>
 </form>
 <h1>Your menu Mr.Foxy</h1>
-        <span th:if="${fox.getfoodsSize() == 0 and fox.getdrinksSize() == 0}">NO NUTRITION ON THE MENU.</span>
-        <span th:if="${fox.getfoodsSize() > 0 }">Foods
+<span th:if="${fox.getfoodsSize() == 0 and fox.getdrinksSize() == 0}">NO NUTRITION ON THE MENU.</span>
+<span th:if="${fox.getfoodsSize() > 0 }">Foods
     <ul>
         <li th:each="food : ${fox.foods}" th:text="${food}"> </li>
     </ul>
         </span>
-        <span th:if="${fox.getdrinksSize() > 0 }">Drinks
+<span th:if="${fox.getdrinksSize() > 0 }">Drinks
     <ul>
         <li th:each="drink : ${fox.drinks}" th:text="${drink}"> </li>
     </ul>
 
         </span>
-<!--<table>-->
-<!--<form action="/changenutrition">-->
-<!--<tr>-->
-<!--<th>Select your nutrition</th>-->
-<!--</tr>-->
-<!--<tr>-->
-<!--<td>-->
-<!--<select name="changefood">-->
-<!--<option th:each="feed : ${foxy.foods}"-->
-<!--th:value="${feed}"-->
-<!--th:text="${feed}">-->
-<!--</option>-->
-<!--</select>-->
-<!--</td>-->
-<!--<td><input type="submit" value="Eat this!"/></td>-->
-<!--</tr>-->
-    <!--</form>-->
-<!--</table>-->
+<table>
+    <form action="/changenutrition">
+        <tr>
+            <th>Select your nutrition</th>
+        </tr>
+        <tr>
+            <td>
+                <select name="food">
+                    <option th:each="food : ${fox.foods}" th:value="${food}" th:text="${food}">Food</option>
+                </select>
+            </td>
+            <td>
+                <select name="drink">
+                    <option th:each="drink : ${fox.drinks}" th:value="${drink}" th:text="${drink}">Drink</option>
+                </select>
+            </td>
+            <td><input type="submit" value="Take these!"/></td>
+        </tr>
+    </form>
+</table>
 </body>
 </html>
