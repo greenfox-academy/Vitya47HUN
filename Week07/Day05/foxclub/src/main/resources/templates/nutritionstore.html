@@ -8,18 +8,43 @@
 <ul>
     <li><a th:href="@{'/'}">Information</a></li>
 </ul>
-<form action="/changenutrition">
+<form action="/addnutrition">
     <tr>
         <th>Food</th>
     </tr>
     <tr>
+        <td><input type="list" name="food"/></td>
+    <tr>
         <th>Water</th>
     </tr>
-    <tr>
-        <td><input type="list" name="food"/></td>
         <td><input type="list" name="drink"/></td>
-        <td><input type="submit" value="Change"/></td>
+        <td><input type="submit" value="Add"/></td>
     </tr>
 </form>
+<!--<table>-->
+<h1>Your menu Mr.Foxy</h1>
+    <!--<form action="/changenutrition">-->
+        <span th:if="${fox.getfoodsSize() == 0}">NO FOODS.</span>
+        <span th:if="${fox.getfoodsSize() > 0}">
+    <ul>
+        <li th:each="food : ${fox.food}" th:text="${food}"> </li>
+    </ul>
+        <!--<tr>-->
+            <!--<th>Add Some Nutrition</th>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td>-->
+                <!--<select name="changefood">-->
+                    <!--<option th:each="feed : ${foxy.foods}"-->
+                            <!--th:value="${feed}"-->
+                            <!--th:text="${feed}">-->
+                    <!--</option>-->
+                <!--</select>-->
+            <!--</td>-->
+            <!--<td><input type="submit" value="Eat"/></td>-->
+        <!--</tr>-->
+        </span>
+    <!--</form>-->
+<!--</table>-->
 </body>
 </html>
