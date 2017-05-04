@@ -1,0 +1,20 @@
+package com.messageservice.configuration;
+import com.messageservice.service.EmailService;
+import com.messageservice.service.MessageService;
+import com.messageservice.service.TwitterService;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class MessageConfiguration {
+
+  @Bean
+  public MessageService makeEmail(){
+    return new EmailService();
+  }
+
+  @Bean
+  public MessageService makeTwitter(){
+    return new TwitterService();
+  }
+}
