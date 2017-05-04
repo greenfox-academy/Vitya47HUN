@@ -4,17 +4,25 @@ import com.messageservice.service.MessageService;
 import com.messageservice.service.TwitterService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 @Configuration
 public class MessageConfiguration {
+
 
   @Bean
   public MessageService makeEmail(){
     return new EmailService();
   }
-
+  @Primary
   @Bean
   public MessageService makeTwitter(){
     return new TwitterService();
   }
+
+  @Bean
+  public MessageProceeder makeProceeder(){
+    return new MessageProceeder();
+  }
+
 }
