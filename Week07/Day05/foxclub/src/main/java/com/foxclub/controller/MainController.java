@@ -13,30 +13,31 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class MainController {
 
   @Autowired
-  private Fox foxy;
   private Menu menu;
+  
+  @Autowired
+  private Fox foxy;
+
 
 
   @RequestMapping("/")
   public String index(Model model) {
-//    foxy.setName("A");
-//    foxy.setFood("A");
-//    foxy.add("Jump");
     model.addAttribute("fox",foxy);
-//    model.addAttribute("menu",menu);
+    model.addAttribute("menu",menu);
     return "index";
   }
 
   @RequestMapping("/nutritionstore")
   public String nutrition(Model model) {
     model.addAttribute("fox",foxy);
+    model.addAttribute("menu",menu);
     return "nutritionstore";
   }
 
   @RequestMapping("/addnutrition")
   public String changenutrition(@RequestParam String food,String drink) {
-    foxy.addfood(food);
-    foxy.adddrink(drink);
+    menu.addfood(food);
+    menu.adddrink(drink);
     return "redirect:";
   }
 

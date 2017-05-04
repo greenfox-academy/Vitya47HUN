@@ -1,7 +1,12 @@
 package com.foxclub.model;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
+@Setter
 public class Menu {
   private List<String> foods = new ArrayList<>();
   private List<String> drinks = new ArrayList<>();

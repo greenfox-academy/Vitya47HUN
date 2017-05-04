@@ -5,6 +5,7 @@
     <title>Foxy</title>
 </head>
 <body>
+<h1>Nutrition Store</h1>
 <ul>
     <li><a th:href="@{'/'}">Information</a></li>
 </ul>
@@ -21,19 +22,6 @@
     <td><input type="submit" value="Add"/></td>
     </tr>
 </form>
-<h1>Your menu Mr.Foxy</h1>
-<span th:if="${fox.getfoodsSize() == 0 and fox.getdrinksSize() == 0}">NO NUTRITION ON THE MENU.</span>
-<span th:if="${fox.getfoodsSize() > 0 }">Foods
-    <ul>
-        <li th:each="food : ${fox.foods}" th:text="${food}"> </li>
-    </ul>
-        </span>
-<span th:if="${fox.getdrinksSize() > 0 }">Drinks
-    <ul>
-        <li th:each="drink : ${fox.drinks}" th:text="${drink}"> </li>
-    </ul>
-
-        </span>
 <table>
     <form action="/changenutrition">
         <tr>
@@ -42,12 +30,12 @@
         <tr>
             <td>
                 <select name="food">
-                    <option th:each="food : ${fox.foods}" th:value="${food}" th:text="${food}">Food</option>
+                    <option th:each="food : ${menu.foods}" th:value="${food}" th:text="${food}">Food</option>
                 </select>
             </td>
             <td>
                 <select name="drink">
-                    <option th:each="drink : ${fox.drinks}" th:value="${drink}" th:text="${drink}">Drink</option>
+                    <option th:each="drink : ${menu.drinks}" th:value="${drink}" th:text="${drink}">Drink</option>
                 </select>
             </td>
             <td><input type="submit" value="Take these!"/></td>
