@@ -19,8 +19,12 @@ public class MainController {
     foxy.setFood("Rabbit");
     foxy.add("Jump");
     model.addAttribute("fox",foxy);
-
     return "index";
+  }
+
+  @RequestMapping("/nutritionstore")
+  public String nutrition(Model model1) {
+    return "nutritionstore";
   }
 
 }
