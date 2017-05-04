@@ -9,11 +9,11 @@ import org.springframework.context.annotation.Primary;
 @Configuration
 public class MessageConfiguration {
 
-
   @Bean
   public MessageService makeEmail(){
     return new EmailService();
   }
+
   @Primary
   @Bean
   public MessageService makeTwitter(){
