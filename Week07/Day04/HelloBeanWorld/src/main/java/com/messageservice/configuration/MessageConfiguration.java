@@ -10,6 +10,11 @@ import org.springframework.context.annotation.Primary;
 public class MessageConfiguration {
 
   @Bean
+  public MessageProceeder makeProceeder(){
+    return new MessageProceeder();
+  }
+
+  @Bean
   public MessageService makeEmail(){
     return new EmailService();
   }
@@ -18,11 +23,6 @@ public class MessageConfiguration {
   @Bean
   public MessageService makeTwitter(){
     return new TwitterService();
-  }
-
-  @Bean
-  public MessageProceeder makeProceeder(){
-    return new MessageProceeder();
   }
 
 }
