@@ -21,29 +21,35 @@
         <td><input type="submit" value="Add"/></td>
     </tr>
 </form>
-<!--<table>-->
 <h1>Your menu Mr.Foxy</h1>
-    <!--<form action="/changenutrition">-->
-        <span th:if="${fox.getfoodsSize() == 0}">NO FOODS.</span>
-        <span th:if="${fox.getfoodsSize() > 0}">
+        <span th:if="${fox.getfoodsSize() == 0 and fox.getdrinksSize() == 0}">NO NUTRITION ON THE MENU.</span>
+        <span th:if="${fox.getfoodsSize() > 0 }">Foods
     <ul>
-        <li th:each="food : ${fox.food}" th:text="${food}"> </li>
+        <li th:each="food : ${fox.foods}" th:text="${food}"> </li>
     </ul>
-        <!--<tr>-->
-            <!--<th>Add Some Nutrition</th>-->
-        <!--</tr>-->
-        <!--<tr>-->
-            <!--<td>-->
-                <!--<select name="changefood">-->
-                    <!--<option th:each="feed : ${foxy.foods}"-->
-                            <!--th:value="${feed}"-->
-                            <!--th:text="${feed}">-->
-                    <!--</option>-->
-                <!--</select>-->
-            <!--</td>-->
-            <!--<td><input type="submit" value="Eat"/></td>-->
-        <!--</tr>-->
         </span>
+        <span th:if="${fox.getdrinksSize() > 0 }">Drinks
+    <ul>
+        <li th:each="drink : ${fox.drinks}" th:text="${drink}"> </li>
+    </ul>
+
+        </span>
+<!--<table>-->
+<!--<form action="/changenutrition">-->
+<!--<tr>-->
+<!--<th>Select your nutrition</th>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td>-->
+<!--<select name="changefood">-->
+<!--<option th:each="feed : ${foxy.foods}"-->
+<!--th:value="${feed}"-->
+<!--th:text="${feed}">-->
+<!--</option>-->
+<!--</select>-->
+<!--</td>-->
+<!--<td><input type="submit" value="Eat this!"/></td>-->
+<!--</tr>-->
     <!--</form>-->
 <!--</table>-->
 </body>
