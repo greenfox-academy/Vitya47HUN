@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
@@ -15,9 +16,9 @@ public class MainController {
 
   @RequestMapping("/")
   public String index(Model model) {
-    foxy.setName("Foxyka");
-    foxy.setFood("Rabbit");
-    foxy.add("Jump");
+//    foxy.setName("A");
+//    foxy.setFood("A");
+//    foxy.add("Jump");
     model.addAttribute("fox",foxy);
     return "index";
   }
@@ -26,5 +27,13 @@ public class MainController {
   public String nutrition(Model model1) {
     return "nutritionstore";
   }
+
+  @RequestMapping("/changenutrition")
+  public String changenutrition(@RequestParam String food,String drink) {
+    foxy.setFood(food);
+    foxy.setDrink(drink);
+    return "redirect:";
+  }
+
 
 }

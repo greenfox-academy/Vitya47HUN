@@ -12,7 +12,7 @@
 <img th:src="@{greenfox.png}"/>
 
 <p th:text="'This is ' + ${fox.name} + '. Currently living on '
-+ ${fox.food} + '. He knows ' + ${fox.getTrickSize()} + ' tricks.'"/>
++ ${fox.food} + ' and ' + ${fox.drink} + '. He knows ' + ${fox.getTrickSize()} + ' tricks.'"/>
 
 <h1>Known Tricks</h1>
 <span th:if="${fox.getTrickSize() == 0}">You know no tricks, yet. Go and learn some.</span>
