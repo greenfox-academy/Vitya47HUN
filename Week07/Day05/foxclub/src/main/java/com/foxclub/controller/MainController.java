@@ -80,13 +80,6 @@ public class MainController {
       trickList.delete(trick);
       return "redirect:";
     }
-
-//  @RequestMapping("/dotrick")
-//  public String dotrick(@RequestParam String trick) {
-//    trickList.getTricks().get(1);
-//    return "redirect:";
-//  }
-
   }
 
 
