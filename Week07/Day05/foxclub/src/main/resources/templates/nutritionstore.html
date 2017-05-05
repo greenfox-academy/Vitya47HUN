@@ -16,7 +16,7 @@
     <tr>
         <td><input type="list" name="food"/></td>
     <tr>
-        <th>Water</th>
+        <th>Drink</th>
     </tr>
     <td><input type="list" name="drink"/></td>
     <td><input type="submit" value="Add"/></td>
@@ -24,22 +24,24 @@
 </form>
 <table>
     <form action="/changenutrition">
+        <tr><th>Select your nutrition</th></tr>
         <tr>
-            <th>Select your nutrition</th>
+            <th>Food</th>
         </tr>
-        <tr>
             <td>
                 <select name="food">
                     <option th:each="food : ${menu.foods}" th:value="${food}" th:text="${food}">Food</option>
                 </select>
             </td>
+        <tr>
+            <th>Drink</th>
+        </tr>
             <td>
                 <select name="drink">
                     <option th:each="drink : ${menu.drinks}" th:value="${drink}" th:text="${drink}">Drink</option>
                 </select>
             </td>
             <td><input type="submit" value="Take these!"/></td>
-        </tr>
     </form>
 </table>
 </body>

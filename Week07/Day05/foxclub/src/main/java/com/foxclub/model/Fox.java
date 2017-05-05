@@ -11,8 +11,6 @@ public class Fox {
   private String food;
   private String drink;
   private List<String> trick = new ArrayList<>();
-  private List<String> foods = new ArrayList<>();
-  private List<String> drinks = new ArrayList<>();
 
   public void add(final String input){
     trick.add(input);
@@ -45,29 +43,6 @@ public class Fox {
 
   public void setDrink(String drink) {
     this.drink = drink;
-  }
-
-  public void addfood(final String input) {
-    foods.add(input);
-  }
-
-  public void adddrink(final String input) {
-    drinks.add(input);
-  }
-
-  public int getfoodsSize() {
-    return foods.size();
-  }
-
-  public int getdrinksSize() {
-    return drinks.size();
-  }
-
-  public List<String> getDrinks() {
-    return drinks;
-  }
-  public List<String> getFoods() {
-    return foods;
   }
 
 }

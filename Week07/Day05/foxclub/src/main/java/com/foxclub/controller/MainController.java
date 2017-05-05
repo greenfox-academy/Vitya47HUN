@@ -14,7 +14,7 @@ public class MainController {
 
   @Autowired
   private Menu menu;
-  
+
   @Autowired
   private Fox foxy;
 
@@ -22,6 +22,7 @@ public class MainController {
 
   @RequestMapping("/")
   public String index(Model model) {
+    foxy.setName("Reinhardt a Selymes");
     model.addAttribute("fox",foxy);
     model.addAttribute("menu",menu);
     return "index";
