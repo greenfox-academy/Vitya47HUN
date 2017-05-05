@@ -12,22 +12,24 @@
     <li><a th:href="@{'/nutritionstore'}">Nutrition Store</a></li>
     <li><a th:href="@{'/trickcenter'}">Trick Center</a></li>
 </ul>
-<img class="imgB1" th:src="@{greenfox.png}"/>
+<img class="imgC1" th:src="@{greenfox.png}"/>
 <p th:each="trick : ${fox.tricks}">
 <div th:if="${trick} == 'Fly'"><img class="imgA1" th:src="@{wings.png}"/></div>
 <div th:unless="${trick} == 'Fly'"></div>
+<div th:if="${trick} == 'Generate ION shield'"><img class="imgB1" th:src="@{shield.png}"/></div>
+<div th:unless="${trick} == 'Generate ION shield'"></div>
 </p>
-<h3>Please ask for some nutrition</h3>
+<h3>Please order some nutrition.</h3>
 <form action="/addnutrition">
     <tr>
         <th>Food</th>
     </tr>
     <tr>
-        <td><input type="list" name="food" /></td>
+        <td><input type="list" name="food"/></td>
     <tr>
         <th>Drink</th>
     </tr>
-    <td><input type="list" name="drink" /></td>
+    <td><input type="list" name="drink"/></td>
     <td><input type="submit" value="Add"/></td>
     </tr>
 </form>
@@ -35,19 +37,19 @@
     <p th:if="${menu.getfoodsSize() == 0}">You have no foods to eat!!!</p>
     <form action="/changenutrition" th:unless="${menu.getfoodsSize() == 0}">
         <h3>Select your nutrition</h3>
-            <th>Food</th>
-            <td>
-                <select name="food">
-                    <option th:each="food : ${menu.foods}" th:value="${food}" th:text="${food}">Food</option>
-                </select>
-            </td>
+        <th>Food</th>
+        <td>
+            <select name="food">
+                <option th:each="food : ${menu.foods}" th:value="${food}" th:text="${food}">Food</option>
+            </select>
+        </td>
         <th>Drink</th>
-            <td>
-                <select name="drink">
-                    <option th:each="drink : ${menu.drinks}" th:value="${drink}" th:text="${drink}">Drink</option>
-                </select>
-            </td>
-            <td><input type="submit" value="Take these!"/></td>
+        <td>
+            <select name="drink">
+                <option th:each="drink : ${menu.drinks}" th:value="${drink}" th:text="${drink}">Drink</option>
+            </select>
+        </td>
+        <td><input type="submit" value="Take these!"/></td>
     </form>
 </table>
 </body>

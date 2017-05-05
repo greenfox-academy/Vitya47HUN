@@ -1,18 +1,23 @@
-img{
+img {
     position: absolute;
-    top: 0px;
-    left: 555px;
+    top: 50px;
+    left: 655px;
 }
 
-.textform{
+.textform {
 
     font-weight: bold;
     font-size: large;
 }
 
 .imgA1 {
-    z-index: 0;
-}
-.imgB1 {
     z-index: 1;
+}
+
+.imgB1 {
+    z-index: 2;
+}
+
+.imgC1 {
+    z-index: 3;
 }

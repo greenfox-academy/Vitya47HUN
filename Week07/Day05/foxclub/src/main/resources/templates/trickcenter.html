@@ -12,10 +12,12 @@
     <li><a th:href="@{'/nutritionstore'}">Nutrition Store</a></li>
     <li><a th:href="@{'/trickcenter'}">Trick Center</a></li>
 </ul>
-<img class="imgB1" th:src="@{greenfox.png}"/>
+<img class="imgC1" th:src="@{greenfox.png}"/>
 <p th:each="trick : ${fox.tricks}">
 <div th:if="${trick} == 'Fly'"><img class="imgA1" th:src="@{wings.png}"/></div>
 <div th:unless="${trick} == 'Fly'"></div>
+<div th:if="${trick} == 'Generate ION shield'"><img class="imgB1" th:src="@{shield.png}"/></div>
+<div th:unless="${trick} == 'Generate ION shield'"></div>
 </p>
 <h3>Add some tricks to learn</h3>
 <form action="/addtrick">
@@ -24,7 +26,7 @@
     </tr>
     <tr>
         <td><input type="list" name="trick"/></td>
-    <td><input type="submit" value="Add"/></td>
+        <td><input type="submit" value="Add"/></td>
     </tr>
 </form>
 <p th:if="${list.getTricksSize() == 0}">You have no more tricks to learn, find some!</p>

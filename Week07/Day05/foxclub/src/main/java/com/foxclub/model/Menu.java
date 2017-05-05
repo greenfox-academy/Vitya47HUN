@@ -1,7 +1,6 @@
 package com.foxclub.model;
 import lombok.Getter;
 import lombok.Setter;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +9,6 @@ import java.util.List;
 public class Menu {
   private List<String> foods = new ArrayList<>();
   private List<String> drinks = new ArrayList<>();
-
 
   public void addfood(final String input) {
     foods.add(input);

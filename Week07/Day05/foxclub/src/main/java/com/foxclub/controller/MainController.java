@@ -1,5 +1,4 @@
 package com.foxclub.controller;
-
 import com.foxclub.model.Fox;
 import com.foxclub.model.Menu;
 import com.foxclub.model.TrickList;
@@ -8,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 
 @Controller
 public class MainController {
@@ -21,7 +19,6 @@ public class MainController {
 
   @Autowired
   private Fox foxy;
-
 
   @RequestMapping("/")
   public String index(Model model) {
@@ -51,7 +48,6 @@ public class MainController {
     return "redirect:";
   }
 
-
   @RequestMapping("/changenutrition")
   public String addnutrition(@RequestParam String food, String drink) {
     foxy.setFood(food);
@@ -68,7 +64,7 @@ public class MainController {
 
   @RequestMapping("/addtrick")
   public String addtrick(@RequestParam String trick) {
-    if(!trick.equals("")) {
+    if (!trick.equals("")) {
       trickList.addTrick(trick);
     }
     return "redirect:";
@@ -76,12 +72,11 @@ public class MainController {
 
   @RequestMapping("/learntrick")
   public String changetrick(@RequestParam(value = "trick", required = false) String trick) {
-      foxy.add(trick);
-      trickList.delete(trick);
-      return "redirect:";
-    }
-
+    foxy.add(trick);
+    trickList.delete(trick);
+    return "redirect:";
   }
+}
 
 
 
