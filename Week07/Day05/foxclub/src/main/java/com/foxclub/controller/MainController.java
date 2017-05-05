@@ -48,6 +48,9 @@ public class MainController {
     foxy.setDrink(drink);
     return "redirect:";
   }
-
+  @RequestMapping("/trickcenter")
+  public String trickcenter(Model model) {
+    return "trickcenter";
+  }
 
 }
