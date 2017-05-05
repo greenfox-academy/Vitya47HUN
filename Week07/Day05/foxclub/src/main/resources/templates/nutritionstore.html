@@ -24,18 +24,14 @@
 </form>
 <table>
     <form action="/changenutrition">
-        <tr><th>Select your nutrition</th></tr>
-        <tr>
+        <h3>Select your nutrition</h3>
             <th>Food</th>
-        </tr>
             <td>
                 <select name="food">
                     <option th:each="food : ${menu.foods}" th:value="${food}" th:text="${food}">Food</option>
                 </select>
             </td>
-        <tr>
-            <th>Drink</th>
-        </tr>
+        <th>Drink</th>
             <td>
                 <select name="drink">
                     <option th:each="drink : ${menu.drinks}" th:value="${drink}" th:text="${drink}">Drink</option>
