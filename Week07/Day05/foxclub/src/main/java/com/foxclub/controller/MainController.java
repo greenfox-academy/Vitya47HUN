@@ -68,7 +68,9 @@ public class MainController {
 
   @RequestMapping("/addtrick")
   public String addtrick(@RequestParam String trick) {
-    trickList.addTrick(trick);
+    if(!trick.equals("")) {
+      trickList.addTrick(trick);
+    }
     return "redirect:";
   }
 
