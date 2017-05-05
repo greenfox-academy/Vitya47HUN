@@ -80,6 +80,7 @@ public class MainController {
       trickList.delete(trick);
       return "redirect:";
     }
+
   }
 
 

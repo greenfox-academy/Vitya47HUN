@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Foxy</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
 </head>
 <body>
 <h1>Trick Center</h1>
@@ -11,7 +12,11 @@
     <li><a th:href="@{'/nutritionstore'}">Nutrition Store</a></li>
     <li><a th:href="@{'/trickcenter'}">Trick Center</a></li>
 </ul>
-<img th:src="@{greenfox.png}"/>
+<img class="imgB1" th:src="@{greenfox.png}"/>
+<p th:each="trick : ${fox.tricks}">
+<div th:if="${trick} == 'Fly'"><img class="imgA1" th:src="@{wings.png}"/></div>
+<div th:unless="${trick} == 'Fly'"></div>
+</p>
 <h3>Add some tricks to learn</h3>
 <form action="/addtrick">
     <tr>
