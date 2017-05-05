@@ -1,7 +1,6 @@
 package com.foxclub.configuration;
 import com.foxclub.model.Fox;
 import com.foxclub.model.Menu;
-import com.foxclub.model.Trick;
 import com.foxclub.model.TrickList;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

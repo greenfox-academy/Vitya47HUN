@@ -21,8 +21,9 @@
     <td><input type="submit" value="Add"/></td>
     </tr>
 </form>
+<p th:if="${list.getTricksSize() == 0}">You know no tricks, yet. Go and learn some.</p>
 <table>
-    <form action="/learntrick">
+    <form action="/learntrick" th:unless="${list.getTricksSize() == 0}">
         <h3>Select your trick to learn it</h3>
         <th>Tricks</th>
         <td>

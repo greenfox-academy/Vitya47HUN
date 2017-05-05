@@ -2,18 +2,12 @@ package com.foxclub.controller;
 
 import com.foxclub.model.Fox;
 import com.foxclub.model.Menu;
-import com.foxclub.model.Trick;
 import com.foxclub.model.TrickList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import sun.applet.Main;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 
 @Controller
@@ -74,9 +68,6 @@ public class MainController {
 
   @RequestMapping("/learntrick")
   public String changetrick(@RequestParam(value = "trick", required = false) String trick) {
-    if (trick.equals(null)) {
-      return "redirect:";
-    } else {
       foxy.add(trick);
       trickList.delete(trick);
       return "redirect:";
@@ -88,5 +79,5 @@ public class MainController {
 //  public String nothing(){
 //    return "redirect:";
 //  }
-}
+
 
