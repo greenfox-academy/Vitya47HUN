@@ -1,2 +1,1 @@
-cat < lakes.txt
-cat lakes.txt 
+if et lehet e rakni <form action="/addtrick"> on kivulre, hogy akkore ervenyesuljon ha stbstbstb...

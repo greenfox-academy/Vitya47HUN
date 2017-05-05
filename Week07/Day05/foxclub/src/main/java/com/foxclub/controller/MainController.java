@@ -32,54 +32,61 @@ public class MainController {
   @RequestMapping("/")
   public String index(Model model) {
     foxy.setName("Reinhardt a Selymes");
-    model.addAttribute("fox",foxy);
-    model.addAttribute("menu",menu);
-    model.addAttribute("list",trickList);
+    model.addAttribute("fox", foxy);
+    model.addAttribute("menu", menu);
+    model.addAttribute("list", trickList);
     return "index";
   }
 
   @RequestMapping("/nutritionstore")
   public String nutrition(Model model) {
-    model.addAttribute("fox",foxy);
-    model.addAttribute("menu",menu);
+    model.addAttribute("fox", foxy);
+    model.addAttribute("menu", menu);
     return "nutritionstore";
   }
 
   @RequestMapping("/addnutrition")
-  public String changenutrition(@RequestParam String food,String drink) {
+  public String changenutrition(@RequestParam String food, String drink) {
     menu.addfood(food);
     menu.adddrink(drink);
     return "redirect:";
   }
 
   @RequestMapping("/changenutrition")
-  public String addnutrition(@RequestParam String food,String drink) {
+  public String addnutrition(@RequestParam String food, String drink) {
     foxy.setFood(food);
     foxy.setDrink(drink);
     return "redirect:";
   }
+
   @RequestMapping("/trickcenter")
   public String trickcenter(Model model) {
-    model.addAttribute("fox",foxy);
-    model.addAttribute("list",trickList);
+    model.addAttribute("fox", foxy);
+    model.addAttribute("list", trickList);
     return "trickcenter";
   }
 
   @RequestMapping("/addtrick")
-  public String addtrick(@RequestParam String trick){
+  public String addtrick(@RequestParam String trick) {
     trickList.addTrick(trick);
     return "redirect:";
   }
 
   @RequestMapping("/learntrick")
-  public String changetrick(@RequestParam String trick){
-  foxy.add(trick);
-  trickList.delete(trick);
-  return "redirect:";
+  public String changetrick(@RequestParam(value = "trick", required = false) String trick) {
+    if (trick.equals(null)) {
+      return "redirect:";
+    } else {
+      foxy.add(trick);
+      trickList.delete(trick);
+      return "redirect:";
+    }
   }
 
-  @RequestMapping("/learntrick")
-  public String nothing(){
-    return "redirect:";
-  }
+
+//  @RequestMapping("/learntrick")
+//  public String nothing(){
+//    return "redirect:";
+//  }
 }
+
