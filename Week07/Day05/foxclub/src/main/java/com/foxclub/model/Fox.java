@@ -10,14 +10,14 @@ public class Fox {
   private String name;
   private String food;
   private String drink;
-  private List<String> trick = new ArrayList<>();
+  private List<String> tricks = new ArrayList<>();
 
   public void add(final String input){
-    trick.add(input);
+    tricks.add(input);
   }
 
-  public int getTrickSize(){
-    return trick.size();
+  public int getTricksSize(){
+    return tricks.size();
   }
 
   public String getName() {

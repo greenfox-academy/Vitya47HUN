@@ -2,11 +2,16 @@ package com.foxclub.controller;
 
 import com.foxclub.model.Fox;
 import com.foxclub.model.Menu;
+import com.foxclub.model.Trick;
+import com.foxclub.model.TrickList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import sun.applet.Main;
+import java.util.Arrays;
+import java.util.List;
 
 
 @Controller
@@ -16,8 +21,10 @@ public class MainController {
   private Menu menu;
 
   @Autowired
-  private Fox foxy;
+  private TrickList trickList;
 
+  @Autowired
+  private Fox foxy;
 
 
   @RequestMapping("/")
@@ -25,6 +32,7 @@ public class MainController {
     foxy.setName("Reinhardt a Selymes");
     model.addAttribute("fox",foxy);
     model.addAttribute("menu",menu);
+    model.addAttribute("list",trickList);
     return "index";
   }
 
@@ -50,7 +58,21 @@ public class MainController {
   }
   @RequestMapping("/trickcenter")
   public String trickcenter(Model model) {
+    model.addAttribute("fox",foxy);
+    model.addAttribute("list",trickList);
     return "trickcenter";
   }
 
+  @RequestMapping("/addtrick")
+  public String addtrick(@RequestParam String trick){
+    trickList.addTrick(trick);
+    return "redirect:";
+  }
+
+  @RequestMapping("/learntrick")
+  public String changetrick(@RequestParam String trick){
+  foxy.add(trick);
+  trickList.delete(trick);
+  return "redirect:";
+  }
 }
