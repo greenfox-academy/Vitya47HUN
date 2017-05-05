@@ -16,6 +16,10 @@ public class Fox {
     tricks.add(input);
   }
 
+  public int getTrick(String s){
+    return tricks.indexOf(s);
+  }
+
   public int getTricksSize(){
     return tricks.size();
   }

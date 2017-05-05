@@ -40,11 +40,17 @@ public class MainController {
   }
 
   @RequestMapping("/addnutrition")
-  public String changenutrition(@RequestParam String food, String drink) {
-    menu.addfood(food);
-    menu.adddrink(drink);
+  public String changenutrition(@RequestParam String food,
+                                @RequestParam String drink) {
+    if (!food.equals("")) {
+      menu.addfood(food);
+    }
+    if (!drink.equals("")) {
+      menu.adddrink(drink);
+    }
     return "redirect:";
   }
+
 
   @RequestMapping("/changenutrition")
   public String addnutrition(@RequestParam String food, String drink) {
@@ -72,6 +78,13 @@ public class MainController {
       trickList.delete(trick);
       return "redirect:";
     }
+
+//  @RequestMapping("/dotrick")
+//  public String dotrick(@RequestParam String trick) {
+//    trickList.getTricks().get(1);
+//    return "redirect:";
+//  }
+
   }
 
 
