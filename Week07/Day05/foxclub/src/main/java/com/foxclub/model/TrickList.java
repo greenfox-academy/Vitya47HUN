@@ -1,15 +1,19 @@
 package com.foxclub.model;
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter
-@Setter
+
 public class TrickList {
   private List<String> tricks = new ArrayList<>();
+
+  public TrickList(){
+    tricks.add("Fly");
+    tricks.add("Program Java on a GODLIKE level");
+    tricks.add("Generate ION shield");
+    tricks.add("Inhale oxygen intentionally");
+  }
 
   public void addTrick(final String input) {
     tricks.add(input);

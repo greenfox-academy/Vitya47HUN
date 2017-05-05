@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import sun.applet.Main;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -74,5 +76,10 @@ public class MainController {
   foxy.add(trick);
   trickList.delete(trick);
   return "redirect:";
+  }
+
+  @RequestMapping("/learntrick")
+  public String nothing(){
+    return "redirect:";
   }
 }
