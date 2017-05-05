@@ -75,9 +75,4 @@ public class MainController {
   }
 
 
-//  @RequestMapping("/learntrick")
-//  public String nothing(){
-//    return "redirect:";
-//  }
-
 

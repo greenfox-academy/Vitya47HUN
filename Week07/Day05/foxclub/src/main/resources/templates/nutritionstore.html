@@ -27,7 +27,8 @@
     </tr>
 </form>
 <table>
-    <form action="/changenutrition">
+    <p th:if="${menu.getfoodsSize() == 0}">You have no foods to eat!!!</p>
+    <form action="/changenutrition" th:unless="${menu.getfoodsSize() == 0}">
         <h3>Select your nutrition</h3>
             <th>Food</th>
             <td>
