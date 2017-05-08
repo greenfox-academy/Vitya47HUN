@@ -1,0 +1,122 @@
+data - adat
+database - rendszerezett adat tarolo
+navigational - 
+relational
+oodb
+dbms
+SQL - strukturalt lekerdezo nyelv, structural questioning language, nem case sensitive parancsok
+normalization - data is only defined in 1 place, no repeated definitions, ne legyen benne 1 adat 2 szer,
+1nf - id|name|list-of-phone-numbers|
+2nf - mfg|mfg-city|model-machine|
+3nf - tournament|year|winner|winner's date of birth|
+
+keys
+primary key - egyertelmuen tudunk azonositani 1 recordot, (id)
+candidate - potencialis primary key, ?nem kell tudni
+composite - 2 oszlopbol csinal 1 kulcsot, first name + last name = 1 primary key
+cascading deletes - ha kitorolsz 1 oszlopbol 1 adatot, akkor mindenonnan kitorli azt az adatot
+
+database operations - create - adatbazis letrehozasa
+		         use - kijeloli az adatbazist
+table operations - create -  
+		   alter - egesz tablat valtoztatja
+	      	   alter column - csak a fieldet valtoztatja
+ 	           drop - egesz tablat torol
+		   delete - DELETE
+		   describe - 
+		   insert into ... values() - CREATE
+		   select - READ
+		   update - UPDATE
+
+data types
+text - szoveg, nagyon hosszu es fix(65000 character)
+varchar vs char - characternek van fix hossza(pl max5 character), varcharnak van 1 maxium hossza,tud dinamikusan noni
+n (text, varchar, char); nvarcharX = n'text' - 
+datetime - 
+timestamp - nincs elvalasztva a karakter
+date - nincs benne ora,perc
+null - ures mezo erteke
+identity - 
+auto-increment - ID, fix erteke van a soroknak s torles eseten nem valtozik az ID, a kovetkezo megadott sor novekmenyes IDt kap
+select statement - select * from sabers;
+		- kivalasztas | kijelol mindent | honnan | a neve a tablazatnak
+
+		where - pl: SELECT NAME 
+				FROM SABER
+				WHERE NAME = "Zoltan"; 
+				AND AGE = 6;
+
+				vagy : WHERE NAME = "Nagy%"
+
+			- a where 1 szuresi feltetel
+		predicate - 
+		constraint - 
+operators (= , > , < , 
+<> = NEM EGYENLO 
+like - hasonlitja oket, pl : NAME LIKE 
+between - vmi kozott
+not like - 
+not between, 
+in - NAME IN ("Zoltan","Istvan"), nezze meg valamiben van e valami, s akkor valami. 
+nested selects - tudsz irni kivalasztast barhova, SELECT (SELECT * FROM ZODIAC)
+group by -  csoportositas , 
+aggregate functions (max, sum, min, avg, count) - beepitett funkciok, pl : osszes atlag eletkor : avg,
+having
+join - 2 tabla osszekotese vagy akar tobb,
+	pl : SELECT * FROM T1 LEFT JOIN T2 ON CITY_ID = ID
+			WHERE NAME = "Budapest"
+			WHERE T2.NAME = "Budapest"
+inner, outer
+on operator
+
+coalesce() - visszaadja az argumentumaik kozuli elso nem NULL elemet, pl: COALESCE(NULL,1,NULL) 1et ad vissza
+									  COALESCE(T1.AGE,1,NULL)
+isnull() -
+ifnull() - 
+order - WHERE T2.NAME = "Bp"
+	ORDER BY (T2.NAME) ASC vagy DESC
+
+
+
+SELECT name FROM Rating
+    LEFT JOIN Reviewer
+    ON Rating.rID = Reviewer.rID
+    WHERE ratingDate IS NULL;
+
+
+
+--------------------------------------------------------
+
+
+SELECT TITLE FROM MOVIE
+EXCEPT
+SELECT title FROM Movie,Rating
+    WHERE MOVIE.MID = RATING.MID
+
+
+--------------------------------------------------------
+
+
+SELECT * FROM RATING R1, RATING R2
+WHERE R1.MID = R2.MID
+
+
+--------------------------------------------------------
+
+
+SELECT down.av1980down - up.av1980up 
+FROM (SELECT AVG(avgst) AS av1980up 
+FROM (SELECT title, AVG(stars) avgst
+FROM Movie,Rating
+WHERE year>1980 AND Movie.mID=Rating.mID GROUP BY title)) AS up,
+(SELECT AVG(avgst) AS av1980down FROM
+(SELECT title, AVG(stars) avgst
+FROM Movie,Rating 
+WHERE year<1980 AND Movie.mID=Rating.mID GROUP BY title)) AS down;
+
+
+--------------------------------------------------------
+
+
+SELECT role, AVG(years_employed)FROM employees
+GROUP BY role;
