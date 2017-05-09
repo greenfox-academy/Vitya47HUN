@@ -19,6 +19,5 @@ public class Todov2Application implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		TodoRepo.save(new Todo("I have to learn Object Relational Mapping"));
 	}
 }
