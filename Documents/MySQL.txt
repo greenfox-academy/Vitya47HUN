@@ -131,16 +131,17 @@ JPA -ez definialja, hogy mit kell teljesiteni, java persistent api, ez mondja me
 @Entity - ez 1 tabla aminek vannak oszlopai,
 @Table (name = "") - 
 @Id - primary key megjelolese
-@Column
-@GeneratedValue (strategy=GenerationType.AUTO)
-@Temporal
-@JoinColumn
-@ManyToOne
-CRUD
-findOne()
-findBy...()
-findAllBy...()
+@Column - object fieldjeit lehet be valutalni, oszlopoknak lehet ertekeket adni
+@GeneratedValue (strategy=GenerationType.AUTO) - 
+@Temporal - ez 1 segitseg h datum lesz
+@ManyToOne - 2 adattablat osszeadok amiben gondolom, hogy van kozos elem
+@JoinColumn - ebbe adjuk meg hogy milyen foreign key alapjan kapcsoljuk ossze a tablakat
+CRUD - Crudrepository interface java,
+findOne() - 
+findBy...() - 
+findAllBy...() - 
 Optional
+set,SortedSet - ha belepakolsz ugyanolyan szamokat nem rakja bele meg1szer.
 
 Hibernate - a JPA-t implementalja,
 Web Layer, Service Layer
