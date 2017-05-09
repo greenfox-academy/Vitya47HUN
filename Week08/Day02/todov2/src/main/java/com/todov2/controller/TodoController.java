@@ -1,7 +1,7 @@
-package com.todos.controller;
+package com.todov2.controller;
 
-import com.todos.model.Todo;
-import com.todos.repository.TodoRepository;
+import com.todov2.model.Todo;
+import com.todov2.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
