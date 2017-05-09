@@ -1,6 +1,5 @@
 package com.todov2;
 
-import com.todov2.model.Todo;
 import com.todov2.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

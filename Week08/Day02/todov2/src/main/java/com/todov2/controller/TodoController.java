@@ -3,6 +3,7 @@ package com.todov2.controller;
 import com.todov2.model.Todo;
 import com.todov2.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +21,8 @@ public class TodoController {
   }
 
   @RequestMapping("/todo")
-  public String todo(Model model) {
+  public String todo(Model model,@RequestParam(value = "isActive", required = false) String bool) {
+    model.addAttribute("bool",bool);
     model.addAttribute("todo", TodoRepo.findAll());
     return "todo";
   }
