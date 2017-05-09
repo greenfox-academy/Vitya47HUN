@@ -120,3 +120,29 @@ WHERE year<1980 AND Movie.mID=Rating.mID GROUP BY title)) AS down;
 
 SELECT role, AVG(years_employed)FROM employees
 GROUP BY role;
+
+
+--------------------------------------------------------
+
+
+ORM - object relational mapping, adatbazis s program hogyan kommunikal, hogy tarolunk adatokat , ez 1 elv, hogy kommunikalnunk kell az objektumaink s adatbazisaink kozott
+H2 - engine,
+JPA -ez definialja, hogy mit kell teljesiteni, java persistent api, ez mondja meg, hogy kommunikalunk a szerverrel, ez 1 specifikacio ,(JPA IS THE DANCE , HIBERNATE IS THE DANCER)
+@Entity - ez 1 tabla aminek vannak oszlopai,
+@Table (name = "") - 
+@Id - primary key megjelolese
+@Column
+@GeneratedValue (strategy=GenerationType.AUTO)
+@Temporal
+@JoinColumn
+@ManyToOne
+CRUD
+findOne()
+findBy...()
+findAllBy...()
+Optional
+
+Hibernate - a JPA-t implementalja,
+Web Layer, Service Layer
+@Query
+@NamedQuery
