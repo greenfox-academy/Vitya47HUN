@@ -147,3 +147,16 @@ Hibernate - a JPA-t implementalja,
 Web Layer, Service Layer
 @Query
 @NamedQuery
+
+API - appliccation programming interface
+Service - olyan mint a @Component csak ezt nagyobb reszre hasznaljuk
+REST - 
+HTTP methods - 
+GET - 
+POST - infot adunk
+PUT - update
+DELETE - 
+Json - megkapunk barmilyen objektumot amit definialtunk 
+Postman - 
+Jackson - fordit java s jason kozott,
+RestController - nem kell html, fix formatumban kapjuk az adatokat, objektumokat
