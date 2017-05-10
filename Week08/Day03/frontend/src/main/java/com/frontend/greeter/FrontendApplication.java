@@ -1,4 +1,4 @@
-package com.frontend;
+package com.frontend.greeter;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
