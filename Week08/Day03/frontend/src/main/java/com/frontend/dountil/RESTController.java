@@ -24,7 +24,6 @@ public class RESTController {
         dountil.setResult(1);
         for (int j = 1; j < until.getUntil() + 1; j++) {
           dountil.setResult(dountil.getResult() * j);
-          System.out.println(dountil.getResult());
         }
       }
     return dountil;
