@@ -13,6 +13,7 @@ public class Post {
   @GeneratedValue(strategy = GenerationType.AUTO)
   long id;
 
+  String username;
   String title;
   String href;
   Timestamp timestamp;
@@ -27,10 +28,19 @@ public class Post {
     this.href = href;
     this.timestamp = new Timestamp(System.currentTimeMillis() / 1000);
     this.score = score;
+    this.username = username;
   }
 
   public long getId() {
     return id;
+  }
+
+  public String getUsername() {
+    return username;
+  }
+
+  public void setUsername(String username) {
+    this.username = username;
   }
 
   public void setId(long id) {
@@ -67,6 +77,14 @@ public class Post {
 
   public void addScore(){
     score++;
+  }
+
+  public void downScore(){
+    score--;
+  }
+
+  public void changeTitle(){
+    this.title = title;
   }
 
   public void setScore(int score) {
