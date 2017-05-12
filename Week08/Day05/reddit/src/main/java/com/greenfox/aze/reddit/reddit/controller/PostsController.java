@@ -21,9 +21,9 @@ public class PostsController {
   }
 
   @PostMapping(value = "/posts")
-  public Posts addPost(@RequestBody Post post) {
-
-    return postList;
+  public Post addPost(@RequestBody Post post) {
+  PostRepo.save(post);
+  return post;
   }
 
 

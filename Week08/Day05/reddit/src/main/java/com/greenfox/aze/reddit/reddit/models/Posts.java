@@ -17,4 +17,7 @@ public class Posts {
   public void setPosts(Iterable<Post> posts) {
     this.posts = posts;
   }
+
+
+
 }

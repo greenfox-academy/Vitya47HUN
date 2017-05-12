@@ -20,6 +20,13 @@ public class Post {
   public Post(){
   }
 
+  public Post(String title) {
+    this.title = title;
+    this.href = href;
+    this.timestamp = timestamp;
+    this.score = score;
+  }
+
   public int getId() {
     return id;
   }
@@ -60,8 +67,5 @@ public class Post {
     this.score = score;
   }
 
-  public Post(String title) {
-    this.title = title;
-  }
 
 }
