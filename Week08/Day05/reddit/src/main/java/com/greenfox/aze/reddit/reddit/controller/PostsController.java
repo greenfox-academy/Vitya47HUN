@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class PostsController {
 
-
   @Autowired
   PostRepository PostRepo;
   Posts postList = new Posts();
@@ -63,5 +62,4 @@ public class PostsController {
   postList.setPosts(PostRepo.findAllByUsername(username));
     return postList;
   }
-
 }
