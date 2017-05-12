@@ -4,34 +4,36 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.sql.Timestamp;
 
 @Entity
 public class Post {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  int id;
+  long id;
 
   String title;
   String href;
-  long timestamp;
+  Timestamp timestamp;
   int score;
 
   public Post(){
+    this.timestamp = new Timestamp(System.currentTimeMillis() / 1000);
   }
 
   public Post(String title) {
     this.title = title;
     this.href = href;
-    this.timestamp = timestamp;
+    this.timestamp = new Timestamp(System.currentTimeMillis() / 1000);
     this.score = score;
   }
 
-  public int getId() {
+  public long getId() {
     return id;
   }
 
-  public void setId(int id) {
+  public void setId(long id) {
     this.id = id;
   }
 
@@ -51,16 +53,20 @@ public class Post {
     this.href = href;
   }
 
-  public long getTimestamp() {
+  public Timestamp getTimestamp() {
     return timestamp;
   }
 
-  public void setTimestamp(long timestamp) {
+  public void setTimestamp(Timestamp timestamp) {
     this.timestamp = timestamp;
   }
 
   public int getScore() {
     return score;
+  }
+
+  public void addScore(){
+    score++;
   }
 
   public void setScore(int score) {

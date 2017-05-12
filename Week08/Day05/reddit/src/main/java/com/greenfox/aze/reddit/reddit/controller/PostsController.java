@@ -26,5 +26,13 @@ public class PostsController {
   return post;
   }
 
+  @PutMapping(value = "/posts/{id}/upvote")
+  public Post putPost(@PathVariable("id") Long id) {
+    Post post = PostRepo.findOne(id);
+    PostRepo.findOne(id).addScore();
+    PostRepo.save(post);
+    return post;
+  }
+
 
 }
