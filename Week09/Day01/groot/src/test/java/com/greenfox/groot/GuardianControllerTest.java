@@ -13,6 +13,7 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import static org.hamcrest.Matchers.is;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -112,6 +113,13 @@ public class GuardianControllerTest {
             .andExpect(jsonPath("$.name", is("korte")))
             .andExpect(jsonPath("$.amount", is(1)))
             .andExpect(jsonPath("$.calorie", is(153)));
+  }
+
+  @Test
+  public void testCalorieDelete() throws Exception {
+    mockMvc.perform(delete("/drax/remove/{name}").contentType(MediaType.APPLICATION_JSON))
+            .andExpect(status().isOk());
+    //STILL NEEDS TO BE TESTED//
   }
 
 }
