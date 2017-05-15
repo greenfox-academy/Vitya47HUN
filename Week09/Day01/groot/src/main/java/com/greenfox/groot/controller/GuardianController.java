@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class GuardianController {
 
+  CalorieTable calorieTable = new CalorieTable();
   Rocket rocket = new Rocket();
   Ship ship = new Ship();
 
@@ -67,6 +68,37 @@ public class GuardianController {
       System.out.println("50cal added");
     }
     return ship;
+  }
+
+  @RequestMapping(value = "/drax", method = RequestMethod.GET)
+  public CalorieTable getDraxTable(){
+    return calorieTable;
+  }
+
+  // -- WORKING WITH GET --- //
+
+//  @RequestMapping(value = "/drax/add", method = RequestMethod.GET)
+//  public CalorieTable addFoodToTable(@RequestParam("foodName") String foodName,@RequestParam("foodAmount") int foodAmount,@RequestParam("foodCalorie") int foodCalorie){
+//    Food currentFood = new Food();
+//    currentFood.setName(foodName);
+//    currentFood.setAmount(foodAmount);
+//    currentFood.setCalorie(foodCalorie * foodAmount);
+//    calorieTable.addFood(currentFood);
+//    return calorieTable;
+//  }
+
+
+  @RequestMapping(value = "/drax/add", method = RequestMethod.POST)
+  public Food addFoodToTable(@RequestBody Food food){
+    food.setCalorie(food.getCalorie() * food.getAmount());
+    calorieTable.addFood(food);
+    return food;
+  }
+
+  @RequestMapping(value = "/drax/remove/{name}", method = RequestMethod.DELETE)
+  public CalorieTable deleteFoodToTable(@PathVariable String name){
+    calorieTable.removeFood(name);
+    return calorieTable;
   }
 
 }
