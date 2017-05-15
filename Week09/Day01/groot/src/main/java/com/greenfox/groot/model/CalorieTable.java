@@ -22,6 +22,15 @@ public class CalorieTable {
     foodList.add(food);
   }
 
+  public Food getElementByName(String name){
+    for (int i=0;i<foodList.size();i++){
+      if (foodList.get(i).name.equals(name)){
+        return foodList.get(i);
+      }
+    }
+    return null;
+  }
+
   public void removeFood(String name){
     for (int i=0;i<foodList.size();i++){
       if (foodList.get(i).name.equals(name)){

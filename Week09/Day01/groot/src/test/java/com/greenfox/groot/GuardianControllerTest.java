@@ -92,4 +92,22 @@ public class GuardianControllerTest {
 
   }
 
+  @Test
+  public void testCalorieRuns() throws Exception {
+    mockMvc.perform(get("/drax"))
+            .andExpect(status().isOk());
+  }
+
+  @Test
+  public void testCalorieAdd() throws Exception {
+    mockMvc.perform(get("/drax/add")
+    .param("name","korte")
+            .param("amount","1")
+            .param("calorie","500"))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.name", is("korte")))
+            .andExpect(jsonPath("$.amount", is(1)))
+            .andExpect(jsonPath("$.calorie", is(500)));
+  }
+
 }

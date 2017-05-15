@@ -101,4 +101,10 @@ public class GuardianController {
     return calorieTable;
   }
 
+  @RequestMapping(value = "/drax/update/{name}", method = RequestMethod.PUT)
+  public Food deleteFoodToTable(@PathVariable String name,@RequestBody Food food){
+    calorieTable.getElementByName(name).setAmount(food.getAmount());
+    return food;
+  }
+
 }
