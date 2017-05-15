@@ -80,8 +80,15 @@ public class GuardianControllerTest {
     mockMvc.perform(get("/rocket/fill?caliber=.50&amount=12500"))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.received", is(".50")))
-            .andExpect(jsonPath("$.amount", is(12500)))
+            .andExpect(jsonPath("$.amount", is(5000)))
             .andExpect(jsonPath("$.shipstatus", is("40%")));
+  }
+
+  @Test
+  public void testFillNoValue() throws Exception {
+    mockMvc.perform(get("/rocket/fill"))
+            .andExpect(status().isOk());
+
   }
 
 }
