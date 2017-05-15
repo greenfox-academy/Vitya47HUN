@@ -41,27 +41,30 @@ public class GuardianController {
       rocket.setReady(true);
       rocket.setShipstatus("full");
       ship.setShipstatus("full");
-    }if(rocket.getCaliber25() + rocket.getCaliber30() + rocket.getCaliber50() > MaximumAmount){
+      System.out.println("full");
+    }else if(rocket.getCaliber25() + rocket.getCaliber30() + rocket.getCaliber50() > MaximumAmount){
       rocket.setShipstatus("overloaded");
       ship.setShipstatus("overloaded");
-    }if(caliber.equals(".25")) {
+      System.out.println("over");
+    }else if(caliber.equals(".25")) {
       ship.setReceived(caliber);
       rocket.setCaliber25(rocket.getCaliber25() + amount);
       ship.setAmount(rocket.getCaliber25());
       ship.setShipstatus(ship.getShipstatus().valueOf(ship.getAmount() / 125) + "%");
       rocket.setShipstatus(ship.getShipstatus().valueOf(ship.getAmount() / 125) + "%");
-    }if(caliber.equals(".30")) {
+    }else if(caliber.equals(".30")) {
       ship.setReceived(caliber);
       rocket.setCaliber30(rocket.getCaliber30() + amount);
       ship.setAmount(rocket.getCaliber30());
       ship.setShipstatus(ship.getShipstatus().valueOf(ship.getAmount() / 125) + "%");
       rocket.setShipstatus(ship.getShipstatus().valueOf(ship.getAmount() / 125) + "%");
-    }if(caliber.equals(".50")) {
+    }else if(caliber.equals(".50")) {
       ship.setReceived(caliber);
       rocket.setCaliber50(rocket.getCaliber50() + amount);
       ship.setAmount(rocket.getCaliber50());
       ship.setShipstatus(ship.getShipstatus().valueOf(ship.getAmount() / 125) + "%");
       rocket.setShipstatus(ship.getShipstatus().valueOf(ship.getAmount() / 125) + "%");
+      System.out.println("50cal added");
     }
     return ship;
   }

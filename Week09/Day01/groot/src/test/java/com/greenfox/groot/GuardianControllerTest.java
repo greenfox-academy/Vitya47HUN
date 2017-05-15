@@ -87,7 +87,8 @@ public class GuardianControllerTest {
   @Test
   public void testFillNoValue() throws Exception {
     mockMvc.perform(get("/rocket/fill"))
-            .andExpect(status().isOk());
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.error", is("I am Groot!")));
 
   }
 
