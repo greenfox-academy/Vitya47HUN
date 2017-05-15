@@ -2,24 +2,23 @@ package com.greenfox.groot.controller;
 
 
 import com.greenfox.groot.model.ErrorMessage;
-import com.greenfox.groot.model.Message;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import com.greenfox.groot.model.Groot;
+import org.springframework.web.bind.MissingServletRequestParameterException;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class GuardianController {
 
-  @ExceptionHandler(Exception.class)
-  public ErrorMessage someException(Exception e) {
+  @ExceptionHandler(MissingServletRequestParameterException.class)
+  public ErrorMessage someException(MissingServletRequestParameterException e) {
+    String error = e.getParameterName();
     return new ErrorMessage("I am Groot!");
   }
 
-@GetMapping(value = "/groot/{input}")
-  public Message message(@PathVariable("input") String input){
-  Message message = new Message();
-  return message;
-}
+  @RequestMapping(value = "/groot", method = RequestMethod.GET)
+  public Groot getMessage(@RequestParam("message") String message) {
+    Groot groot = new Groot(message);
+    return groot;
+  }
 
 }

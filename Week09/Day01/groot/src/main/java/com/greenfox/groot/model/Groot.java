@@ -1,16 +1,22 @@
 package com.greenfox.groot.model;
 
-public class Message {
+public class Groot {
   String received;
   String translated;
 
-  public Message(String received, String translated) {
+  public Groot(String received, String translated) {
     this.received = received;
     this.translated = translated;
   }
 
-  public Message(){
+  public Groot(){
   }
+
+  public Groot(String input){
+    received = input;
+    translated = "I am Groot!";
+  }
+
 
   public String getReceived() {
     return received;
