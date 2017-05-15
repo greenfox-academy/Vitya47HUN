@@ -66,4 +66,22 @@ public class GuardianControllerTest {
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.error", is("I am Groot!")));
   }
+
+  @Test
+  public void testRocket() throws Exception {
+    mockMvc.perform(get("/rocket"))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.shipstatus", is("empty")))
+            .andExpect(jsonPath("$.ready", is(false)));
+  }
+
+  @Test
+  public void testFill() throws Exception {
+    mockMvc.perform(get("/rocket/fill?caliber=.50&amount=12500"))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.received", is(".50")))
+            .andExpect(jsonPath("$.amount", is(12500)))
+            .andExpect(jsonPath("$.shipstatus", is("40%")));
+  }
+
 }
