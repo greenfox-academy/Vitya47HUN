@@ -256,3 +256,17 @@ annotations
 Optional
 
 serialization
+
+
+Integration Test - nagy program, buisnes logika tesztelese,
+Unit Test - kis egysegek tesztelese
+Business Layer - business logika,
+DispatcherServlet - 
+@WebAppConfiguration -  should be loaded for the test using a default for the path to the root of the web application. To override the default, specify an explicit resource path via the value() attribute.
+MockMvc - kamu MVC , 1 olyan object ami nem kuld HTTP requestet,
+contentType() - 
+andExpect()
+andDo()
+JSONPath
+
+contex 
