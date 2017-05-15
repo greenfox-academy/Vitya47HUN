@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
@@ -13,6 +14,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
@@ -100,14 +102,16 @@ public class GuardianControllerTest {
 
   @Test
   public void testCalorieAdd() throws Exception {
-    mockMvc.perform(get("/drax/add")
-    .param("name","korte")
-            .param("amount","1")
-            .param("calorie","500"))
+    mockMvc.perform(post("/drax/add").contentType(MediaType.APPLICATION_JSON)
+    .content("    {\n" +
+            "      \"name\": \"korte\",\n" +
+            "      \"amount\": 1,\n" +
+            "      \"calorie\": 153\n" +
+            "    }"))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.name", is("korte")))
             .andExpect(jsonPath("$.amount", is(1)))
-            .andExpect(jsonPath("$.calorie", is(500)));
+            .andExpect(jsonPath("$.calorie", is(153)));
   }
 
 }
