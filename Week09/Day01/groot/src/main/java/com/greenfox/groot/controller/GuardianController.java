@@ -23,9 +23,9 @@ public class GuardianController {
   }
 
   @RequestMapping(value = "/yondu", method = RequestMethod.GET)
-  public Groot getMessage(@RequestParam("distance") double distance,@RequestParam("time") double time){
+  public Yondu getMessage(@RequestParam("distance") double distance,@RequestParam("time") double time){
     Yondu yondu = new Yondu(distance,time);
-    return groot;
+    return yondu;
   }
 
 }
