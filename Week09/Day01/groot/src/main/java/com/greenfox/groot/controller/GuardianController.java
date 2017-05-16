@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class GuardianController {
 
+  AwsomeMix songList = new AwsomeMix();
   CalorieTable calorieTable = new CalorieTable();
   Rocket rocket = new Rocket();
   Ship ship = new Ship();
@@ -75,19 +76,6 @@ public class GuardianController {
     return calorieTable;
   }
 
-  // -- WORKING WITH GET --- //
-
-//  @RequestMapping(value = "/drax/add", method = RequestMethod.GET)
-//  public CalorieTable addFoodToTable(@RequestParam("foodName") String foodName,@RequestParam("foodAmount") int foodAmount,@RequestParam("foodCalorie") int foodCalorie){
-//    Food currentFood = new Food();
-//    currentFood.setName(foodName);
-//    currentFood.setAmount(foodAmount);
-//    currentFood.setCalorie(foodCalorie * foodAmount);
-//    calorieTable.addFood(currentFood);
-//    return calorieTable;
-//  }
-
-
   @RequestMapping(value = "/drax/add", method = RequestMethod.POST)
   public Food addFoodToTable(@RequestBody Food food){
     food.setCalorie(food.getCalorie() * food.getAmount());
@@ -106,5 +94,17 @@ public class GuardianController {
     calorieTable.getElementByName(name).setAmount(food.getAmount());
     return food;
   }
+
+  @RequestMapping(value = "/awsome", method = RequestMethod.GET)
+  public AwsomeMix getAwsomeMix(){
+    return songList;
+  }
+
+  @RequestMapping(value = "/awsome/add", method = RequestMethod.GET)
+  public Song addSong(@RequestBody Song song){
+    
+    return song;
+  }
+
 
 }
