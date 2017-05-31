@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Foxy</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+</head>
+<body>
+<h1>Trick Center</h1>
+<ul>
+    <li><a th:href="@{'/'}">Information</a></li>
+    <li><a th:href="@{'/nutritionstore'}">Nutrition Store</a></li>
+    <li><a th:href="@{'/trickcenter'}">Trick Center</a></li>
+</ul>
+<img class="imgC1" th:src="@{greenfox.png}"/>
+<p th:each="trick : ${fox.tricks}">
+<div th:if="${trick} == 'Fly'"><img class="imgA1" th:src="@{wings.png}"/></div>
+<div th:unless="${trick} == 'Fly'"></div>
+<div th:if="${trick} == 'Generate ION shield'"><img class="imgB1" th:src="@{shield.png}"/></div>
+<div th:unless="${trick} == 'Generate ION shield'"></div>
+</p>
+<h3>Add some tricks to learn</h3>
+<form action="/addtrick">
+    <tr>
+        <th>Trick</th>
+    </tr>
+    <tr>
+        <td><input type="list" name="trick"/></td>
+        <td><input type="submit" value="Add"/></td>
+    </tr>
+</form>
+<p th:if="${list.getTricksSize() == 0}">You have no more tricks to learn, find some!</p>
+<table>
+    <form action="/learntrick" th:unless="${list.getTricksSize() == 0}">
+        <h3>Select your trick to learn it</h3>
+        <th>Tricks</th>
+        <td>
+            <select name="trick">
+                <option th:each="trick : ${list.tricks}" th:value="${trick}" th:text="${trick}"></option>
+            </select>
+        </td>
+        <td><input type="submit" value="Learn it!"/></td>
+    </form>
+</table>
+</body>
+</html>
