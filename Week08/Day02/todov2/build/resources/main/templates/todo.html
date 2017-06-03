@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Todo Notes</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+</head>
+<body>
+<h1>Todos for today:</h1>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Todo</th>
+        <th>Done</th>
+        <th>Urgent</th>
+    </tr>
+    <div th:if="${bool} == 'false'">
+    <tr th:each="todoline : ${todo}">
+        <div th:if="${todoline.isDone()} == false">
+            <th th:text="${todoline.id}"></th>
+            <th th:text="${todoline.title}"></th>
+            <th th:text="${todoline.isDone()}"></th>
+            <th th:text="${todoline.isUrgent()}"></th>
+        </div>
+        <div th:unless="${bool} == 'false'"></div>
+    </tr>
+    </div>
+    <div th:if="${bool} == null ">
+        <tr th:each="todoline : ${todo}">
+            <th th:text="${todoline.id}"></th>
+            <th th:text="${todoline.title}"></th>
+            <th th:text="${todoline.isDone()}"></th>
+            <th th:text="${todoline.isUrgent()}"></th>
+        </tr>
+            </div>
+                <div th:unless="${bool} == null "></div>
+    </table>
+<form th:action="@{/addTodo}" method="post">
+    <input type="text" th:name="title"/>
+    <input type="submit"/>
+</form>
+</body>
+</html>

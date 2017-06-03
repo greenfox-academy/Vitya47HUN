@@ -24,4 +24,10 @@ public class Meal {
     this.timestamp = new Timestamp(System.currentTimeMillis());
   }
 
+  public Meal(String type, String description, int calories) {
+    this.type = type;
+    this.description = description;
+    this.calories = calories;
+  }
+
 }

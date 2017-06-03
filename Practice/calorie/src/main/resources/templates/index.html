@@ -1,10 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Calorie table</title>
 </head>
 <body>
-
+<h1>Calorie table</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Meal Date</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Calories</th>
+    </tr>
+    <tr th:each="meal : ${mealrepo}">
+        <td th:text="${meal.id}"></td>
+        <td th:text="${meal.mealDate}"></td>
+        <td th:text="${meal.type}"></td>
+        <td th:text="${meal.description}"></td>
+        <td th:text="${meal.calories}"></td>
+    </tr>
+</table>
 </body>
 </html>
