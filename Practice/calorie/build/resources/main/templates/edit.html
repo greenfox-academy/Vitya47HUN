@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Edit meal</title>
+</head>
+<body>
+<form method="post" th:action="@{/save?index=} + (${editfood}? ${editfood.id})">
+    <label>Date</label>
+    <input type="text" name="date" th:value="${editfood}? ${editfood.date}"/>
+    <label>Type</label>
+    <select name="type">
+        <option th:each="foodtype : ${foodtypes}" th:text="${foodtype}">Breakfast</option>
+    </select>
+    <label>Description</label>
+    <input type="text" name="description" th:value="${editfood}? ${editfood.description}"/>
+    <label>Calories</label>
+    <input type="text" name="calories" th:value="${editfood}? ${editfood.calories}"/>
+    <input type="submit" value="Save"/>
+</form>
+<form method="get" th:action="@{/}">
+    <input type="submit" value="Cancel"/>
+</form>
+</body>
+</html>
