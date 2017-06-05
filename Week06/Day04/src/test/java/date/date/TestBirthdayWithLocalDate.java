@@ -1,19 +1,19 @@
-package date;
+package main.java.date.date;
 
-import org.junit.Test;
-
+import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestBirthdayWithLocalDate {
 
   private static final String EXPECTED_DATE_STR = "2016-11-30";
   private static final LocalDate EXPECTED_DATE = LocalDate.parse(EXPECTED_DATE_STR, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 
-  private date.BirthdayCalculator<LocalDate> birthdayCalculator = new BirthdayWithLocalDate();
+  private date.BirthdayCalculator<LocalDate> birthdayCalculator = new date.BirthdayWithLocalDate();
 
   @Test
   public void testParseDate() throws Exception {

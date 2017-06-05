@@ -1,4 +1,4 @@
-package date;
+package main.java.date.date;
 
 public interface BirthdayCalculator<T> {
 
